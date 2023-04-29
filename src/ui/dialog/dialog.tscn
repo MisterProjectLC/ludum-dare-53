@@ -1,0 +1,265 @@
+[gd_scene load_steps=11 format=3 uid="uid://cc15b70sewytv"]
+
+[ext_resource type="Script" path="res://src/ui/dialog/dialog.gd" id="4"]
+[ext_resource type="Script" path="res://src/ui/dialog/live_dialog_box.gd" id="5"]
+[ext_resource type="FontFile" uid="uid://cx6s3op6yjnhp" path="res://assets/ui/fonts/Spring Snowstorm.ttf" id="5_xuo6c"]
+[ext_resource type="Script" path="res://src/ui/dialog/cutscene_dialog_box.gd" id="6"]
+
+[sub_resource type="Animation" id="6"]
+resource_name = "Appear"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="7"]
+resource_name = "Fade"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.5, 2.2, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ko6hr"]
+_data = {
+"Appear": SubResource("6"),
+"Fade": SubResource("7")
+}
+
+[sub_resource type="Animation" id="8"]
+resource_name = "Appear"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="9"]
+resource_name = "Fade"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.5, 2.2, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3m20s"]
+_data = {
+"Appear": SubResource("8"),
+"Fade": SubResource("9")
+}
+
+[node name="Dialog" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("4")
+metadata/_edit_lock_ = true
+
+[node name="CutsceneDialogBox" type="Control" parent="."]
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+script = ExtResource("6")
+metadata/_edit_lock_ = true
+
+[node name="Rect" type="ColorRect" parent="CutsceneDialogBox"]
+visible = false
+layout_mode = 0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -99.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.317647)
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="CutsceneDialogBox/Rect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.155
+anchor_top = 0.1
+anchor_right = 0.975
+anchor_bottom = 0.9
+offset_left = -163.56
+offset_top = 5.29998
+offset_right = -163.28
+offset_bottom = 4.42497
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_xuo6c")
+theme_override_font_sizes/font_size = 28
+text = "I'm flying up in the sky!"
+autowrap_mode = 2
+
+[node name="Portrait" type="TextureRect" parent="CutsceneDialogBox/Rect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1043.0
+offset_right = 1146.0
+offset_bottom = 92.0
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CutsceneDialogBox/Rect"]
+process_mode = 3
+libraries = {
+"": SubResource("AnimationLibrary_ko6hr")
+}
+
+[node name="Timer" type="Timer" parent="CutsceneDialogBox/Rect"]
+one_shot = true
+
+[node name="EndTimer" type="Timer" parent="CutsceneDialogBox"]
+one_shot = true
+
+[node name="PressTimer" type="Timer" parent="CutsceneDialogBox"]
+process_mode = 3
+wait_time = 0.1
+one_shot = true
+
+[node name="LiveDialogBox" type="Control" parent="."]
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+script = ExtResource("5")
+metadata/_edit_lock_ = true
+
+[node name="Rect" type="ColorRect" parent="LiveDialogBox"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -99.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.317647)
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="LiveDialogBox/Rect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.155
+anchor_top = 0.1
+anchor_right = 0.975
+anchor_bottom = 0.9
+offset_left = -163.16
+offset_top = 4.09998
+offset_right = -163.16
+offset_bottom = 4.09998
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_xuo6c")
+theme_override_font_sizes/font_size = 28
+text = "I'm flying up in space!"
+
+[node name="Portrait" type="TextureRect" parent="LiveDialogBox/Rect"]
+layout_mode = 0
+offset_left = 1043.0
+offset_right = 1146.0
+offset_bottom = 92.0
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LiveDialogBox/Rect"]
+libraries = {
+"": SubResource("AnimationLibrary_3m20s")
+}
+
+[node name="Timer" type="Timer" parent="LiveDialogBox/Rect"]
+one_shot = true
+
+[node name="EndTimer" type="Timer" parent="LiveDialogBox"]
+one_shot = true
+
+[connection signal="dialog_finished" from="CutsceneDialogBox" to="." method="_on_dialog_finished"]
+[connection signal="timeout" from="CutsceneDialogBox/Rect/Timer" to="CutsceneDialogBox" method="_on_Timer_timeout"]
+[connection signal="timeout" from="CutsceneDialogBox/EndTimer" to="CutsceneDialogBox" method="_on_EndTimer_timeout"]
+[connection signal="timeout" from="CutsceneDialogBox/PressTimer" to="CutsceneDialogBox" method="_on_press_timer_timeout"]
+[connection signal="dialog_finished" from="LiveDialogBox" to="." method="_on_dialog_finished"]
+[connection signal="timeout" from="LiveDialogBox/Rect/Timer" to="LiveDialogBox" method="_on_Timer_timeout"]
+[connection signal="timeout" from="LiveDialogBox/EndTimer" to="LiveDialogBox" method="_on_EndTimer_timeout"]

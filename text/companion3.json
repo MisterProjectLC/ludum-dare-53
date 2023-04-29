@@ -1,0 +1,14 @@
+{
+    "DATA":[
+        {"CHARACTER":"Hugo"},
+        {"LIVE_TEXT":"Do you...", "TIME":0.04},
+        {"APPEND_TEXT":" Do you like to talk about superheroes?", "TIME":0.02},
+        {"LIVE_TEXT":"...", "TIME":0.12},
+        {"LIVE_TEXT":"Yeah, they're so cool! Mr. Sponge, Helicopter Woman... my favorite is Octo-Boy!", "TIME":0.03},
+        {"LIVE_TEXT":"My mom used to draw comic books, you know... She even won prizes.", "TIME":0.04},
+        {"LIVE_TEXT":"She also said once that Octo-Boy was inspired by me! Dad used to buy every issue.", "TIME":0.03},
+        {"LIVE_TEXT":"...Hm?", "TIME":0.05},
+        {"LIVE_TEXT":"Oh, uh... yeah. Mom and dad don't talk to each other anymore.", "TIME":0.04},
+        {"END":"END"}
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "DATA":[
+        {"ANIMATION":"HugoPopup", "REQUIRED":true},
+        {"CHARACTER":"Hugo"},
+        {"TEXT":"Hiya little dude! Cool cardboard box! Hey, what's your name?", "TIME":0.01},
+        {"CHARACTER":"Player"},
+        {"TEXT":". . .", "TIME":0.12},
+        {"CHARACTER":"Hugo"},
+        {"TEXT":"Okay! So, uh, I'm Hugo! I, I was just wondering... May I go with you?", "TIME":0.02},
+        {"TEXT":"My dad doesn't let me out a lot, you know, because of the war! But today that everyone quit fighting...", "TIME":0.03},
+        {"TEXT":"Well, I thought it could be fun to go out to explore! So, uh, yeah, may I go with you?", "TIME":0.03},
+        {"CHARACTER":"Player"},
+        {"TEXT":". . .", "TIME":0.12},
+        {"CHARACTER":"Hugo"},
+        {"TEXT":"Thanks, little dude!! You pinky-promise you won't tell dad, right?", "TIME":0.02},
+        {"TEXT":"Cool! Alright, space, here we go!!", "TIME":0.02},
+        {"END":"END"}
+    ]
+}
