@@ -4,6 +4,7 @@ signal on_screen_changed(on_screen : bool)
 
 @export var ACCELERATION_STRENGTH = 25.0
 @export var MAX_SPEED = 1000.0
+@export var limit = 150000
 
 @onready var Pointer = $%Pointer
 
@@ -37,6 +38,15 @@ func manager_acceleration(delta):
 		move_velocity += look_vector*ACCELERATION_STRENGTH*delta
 		if move_velocity.length() > MAX_SPEED:
 			move_velocity = move_velocity.normalized()*MAX_SPEED
+	
+	if global_position.x > limit:
+		global_position.x = -limit + 100
+	if global_position.y > limit:
+		global_position.y = -limit + 100
+	if global_position.x < -limit:
+		global_position.x = limit - 100
+	if global_position.y < -limit:
+		global_position.y = limit - 100
 
 
 func manage_direction(_delta):

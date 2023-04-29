@@ -3,6 +3,8 @@ extends Node2D
 @onready var Planets = $Planets
 @onready var Asteroids = $Asteroids
 @onready var Station = $Station
+@onready var Spaceship = $Spaceship
+@onready var Camera = $CameraFollower
 @onready var CutscenePlayer = $CanvasLayer/CutsceneController
 @onready var DialogTimer = $DialogTimer
 
@@ -13,6 +15,8 @@ var planets_visited = 0
 var space_dialog_index = 0
 var game_stage = -1
 
+@export var limit = 100000
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,6 +26,9 @@ func _ready():
 		asteroid.connect("spaceship_approached", Callable(self, "on_spaceship_approached_asteroid"))
 	
 	Station.connect("spaceship_approached", Callable(self, "on_spaceship_approached_station"))
+	Spaceship.limit = limit
+	Camera.set_limit(limit)
+	
 
 
 func on_spaceship_approached_station(body):

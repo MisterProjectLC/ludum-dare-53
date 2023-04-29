@@ -15,6 +15,7 @@ func get_dialog_title():
 
 func set_active(t):
 	active = t
+	$ZoomSprite.visible = t
 
 
 func _on_area_2d_body_entered(_body):
