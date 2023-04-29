@@ -24,3 +24,11 @@ func _on_area_2d_body_entered(_body):
 	
 	area.set_deferred("monitoring", false)
 	emit_signal("spaceship_approached", self)
+
+
+func _on_long_range_detector_body_entered(body):
+	$ZoomSprite.visible = true
+
+
+func _on_long_range_detector_body_exited(body):
+	$ZoomSprite.visible = false
