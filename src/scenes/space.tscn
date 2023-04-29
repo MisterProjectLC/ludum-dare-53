@@ -10,11 +10,35 @@
 
 [node name="Space" type="Node2D"]
 script = ExtResource("1_sb46e")
+space_dialogs = Array[String](["radio0", "companion1", "companion2", "companion3"])
+
+[node name="DialogTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("4_ea8f2")]
+
+[node name="CutsceneController" parent="CanvasLayer" instance=ExtResource("5_pgckx")]
 
 [node name="Planets" type="Node2D" parent="."]
 
 [node name="Planet" parent="Planets" instance=ExtResource("4_57lwj")]
 position = Vector2(7772, 4305)
+dialog_title = "planet"
+
+[node name="Planet2" parent="Planets" instance=ExtResource("4_57lwj")]
+position = Vector2(-33468, -17010)
+dialog_title = "planet"
+
+[node name="Planet3" parent="Planets" instance=ExtResource("4_57lwj")]
+position = Vector2(33476, -23026)
+dialog_title = "planet"
+
+[node name="Station" parent="." instance=ExtResource("4_57lwj")]
+position = Vector2(-13604, 6993)
 dialog_title = "planet"
 
 [node name="Spaceship" parent="." instance=ExtResource("1_16udo")]
@@ -33,10 +57,7 @@ texture = ExtResource("3_hgr57")
 region_enabled = true
 region_rect = Rect2(0, 0, 100000, 100000)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="UI" parent="CanvasLayer" instance=ExtResource("4_ea8f2")]
-
-[node name="CutsceneController" parent="CanvasLayer" instance=ExtResource("5_pgckx")]
-
+[connection signal="timeout" from="DialogTimer" to="." method="_on_dialog_timer_timeout"]
+[connection signal="animation_requested" from="CanvasLayer/CutsceneController" to="." method="_on_cutscene_controller_animation_requested"]
+[connection signal="events_ended" from="CanvasLayer/CutsceneController" to="." method="_on_cutscene_controller_events_ended"]
 [connection signal="on_screen_changed" from="Spaceship" to="CameraFollower" method="_on_spaceship_on_screen_changed"]

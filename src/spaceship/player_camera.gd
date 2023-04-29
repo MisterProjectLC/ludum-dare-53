@@ -12,4 +12,3 @@ func change_zoom(delta):
 		set_zoom(Vector2.ONE * 0.01)
 	elif zoom.x > 5:
 		set_zoom(Vector2.ONE * 5)
-	print_debug(zoom.x)

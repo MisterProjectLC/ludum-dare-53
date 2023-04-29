@@ -10,7 +10,7 @@ func _on_Timer_timeout():
 		timer.start(current_char_time)
 	
 	else:
-		end_timer.start(1)
+		end_timer.start(1.3)
 
 
 func _on_EndTimer_timeout():

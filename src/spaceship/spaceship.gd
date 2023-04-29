@@ -14,7 +14,12 @@ var ori: Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	GlobalNode.connect("on_cutscene_changed", Callable(self, "on_cutscene_changed"))
+
+
+func on_cutscene_changed(in_cutscene):
+	if in_cutscene:
+		move_velocity = Vector2.ZERO
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
