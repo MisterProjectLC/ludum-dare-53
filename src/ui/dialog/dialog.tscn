@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://cc15b70sewytv"]
 
-[ext_resource type="FontFile" uid="uid://duxgmut5lki2" path="res://assets/ui/fonts/Kindergarden.ttf" id="3_fpeoq"]
 [ext_resource type="Script" path="res://src/ui/dialog/dialog.gd" id="4"]
 [ext_resource type="Script" path="res://src/ui/dialog/live_dialog_box.gd" id="5"]
+[ext_resource type="FontFile" uid="uid://cx6s3op6yjnhp" path="res://assets/ui/fonts/Spring Snowstorm.ttf" id="5_xuo6c"]
 [ext_resource type="Script" path="res://src/ui/dialog/cutscene_dialog_box.gd" id="6"]
 
 [sub_resource type="Animation" id="6"]
@@ -172,8 +172,8 @@ offset_right = -163.28
 offset_bottom = 4.42497
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_fpeoq")
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("5_xuo6c")
+theme_override_font_sizes/font_size = 28
 text = "I'm flying up in the sky!"
 autowrap_mode = 2
 
@@ -211,7 +211,7 @@ script = ExtResource("5")
 metadata/_edit_lock_ = true
 
 [node name="Rect" type="ColorRect" parent="LiveDialogBox"]
-visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -234,8 +234,8 @@ offset_right = -163.16
 offset_bottom = 4.09998
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_fpeoq")
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("5_xuo6c")
+theme_override_font_sizes/font_size = 28
 text = "I'm flying up in space!"
 
 [node name="Portrait" type="TextureRect" parent="LiveDialogBox/Rect"]

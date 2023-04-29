@@ -7,6 +7,8 @@ class_name CutsceneController
 @onready var waitObj = $Wait
 @onready var voiceover = $VoiceoverPlayer
 
+var stored_events = []
+var stored_character = ""
 
 func _ready():
 	TimeController.connect("paused_game", Callable(self, "on_paused_game"))
@@ -16,6 +18,8 @@ func load_events(scene):
 	waitObj.stop()
 	voiceover.stop()
 	dialog.stop()
+	stored_character = current_character
+	stored_events = future_events
 	future_events = []
 	super.load_events(scene)
 
@@ -47,6 +51,7 @@ func close_text(_event):
 	run_next_event()
 
 func character(event):
+	current_character = event["CHARACTER"]
 	dialog.change_character(event["CHARACTER"])
 
 func play_voiceover(event):
@@ -88,10 +93,19 @@ func stop():
 
 
 func end():
-	future_events = []
-	dialog.end()
-	GlobalNode.set_in_cutscene(false)
-	super.end()
+	if stored_events == []:
+		future_events = []
+		dialog.end()
+		GlobalNode.set_in_cutscene(false)
+		super.end()
+	else:
+		future_events = stored_events
+		current_character = stored_character
+		future_events.push_front({"CHARACTER":stored_character})
+		if stored_character == "Radio":
+			future_events.push_front({"LIVE_TEXT":"And we're back to our programming..."})
+		else:
+			future_events.push_front({"LIVE_TEXT":"Uh, so what I was saying was..."})
 
 
 func _on_Wait_timeout():
@@ -115,11 +129,3 @@ func _on_dialog_dialog_finished():
 	
 	if waiting_animation == null:
 		run_next_event()
-
-
-func _on_CodexReader_event_played(event):
-	run_event(event)
-
-
-func _on_CodexReader_events_ended():
-	end()

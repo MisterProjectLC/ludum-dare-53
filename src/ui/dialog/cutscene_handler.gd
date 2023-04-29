@@ -12,12 +12,14 @@ var custom
 var waiting_animation = null
 
 var current_scene = ""
+var current_character = ""
 
 
 func load_events(scene):
 	current_scene = scene
 	var filepath = ("text/" + scene)
 	_internal_load_events(FileLoader.load_json(filepath))
+
 
 func _internal_load_events(events):
 	future_events = events

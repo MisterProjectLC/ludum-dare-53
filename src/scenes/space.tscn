@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dkatjtsrcspru"]
+[gd_scene load_steps=9 format=3 uid="uid://dkatjtsrcspru"]
 
 [ext_resource type="PackedScene" uid="uid://cr3fciq260ss8" path="res://src/spaceship/spaceship.tscn" id="1_16udo"]
 [ext_resource type="Script" path="res://src/scenes/space.gd" id="1_sb46e"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c58n6r7ma2wu" path="res://assets/background/page_space_background.png" id="3_hgr57"]
 [ext_resource type="PackedScene" uid="uid://cfa5r1ixno5d6" path="res://src/scenes/planet.tscn" id="4_57lwj"]
 [ext_resource type="PackedScene" uid="uid://ti6aaccyf1kh" path="res://src/ui/ui.tscn" id="4_ea8f2"]
+[ext_resource type="PackedScene" uid="uid://cvem255yquq0s" path="res://src/scenes/asteroid.tscn" id="5_c1ndk"]
 [ext_resource type="PackedScene" uid="uid://hfbgrdp6bmgq" path="res://src/ui/dialog/cutscene_controller.tscn" id="5_pgckx"]
 
 [node name="Space" type="Node2D"]
@@ -22,6 +23,8 @@ autostart = true
 [node name="UI" parent="CanvasLayer" instance=ExtResource("4_ea8f2")]
 
 [node name="CutsceneController" parent="CanvasLayer" instance=ExtResource("5_pgckx")]
+voices = null
+disable_cutscenes = null
 
 [node name="Planets" type="Node2D" parent="."]
 
@@ -36,6 +39,12 @@ dialog_title = "planet"
 [node name="Planet3" parent="Planets" instance=ExtResource("4_57lwj")]
 position = Vector2(33476, -23026)
 dialog_title = "planet"
+
+[node name="Asteroids" type="Node2D" parent="."]
+
+[node name="Asteroid" parent="Asteroids" instance=ExtResource("5_c1ndk")]
+position = Vector2(-3084, 7379)
+active = true
 
 [node name="Station" parent="." instance=ExtResource("4_57lwj")]
 position = Vector2(-13604, 6993)

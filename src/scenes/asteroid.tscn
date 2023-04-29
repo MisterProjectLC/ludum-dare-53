@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvem255yquq0s"]
+
+[ext_resource type="Script" path="res://src/scenes/planet.gd" id="1_sddj6"]
+[ext_resource type="Texture2D" uid="uid://c1j7wiky7o0tw" path="res://icon.svg" id="2_er5am"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_824wv"]
+size = Vector2(128, 128)
+
+[node name="Asteroid" type="Node2D"]
+script = ExtResource("1_sddj6")
+dialog_title = "planet"
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("2_er5am")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(4, 4)
+collision_layer = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_824wv")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered" flags=18]

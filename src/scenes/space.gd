@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var Planets = $Planets
+@onready var Asteroids = $Asteroids
 @onready var Station = $Station
 @onready var CutscenePlayer = $CanvasLayer/CutsceneController
 @onready var DialogTimer = $DialogTimer
@@ -17,6 +18,9 @@ var game_stage = -1
 func _ready():
 	for planet in Planets.get_children():
 		planet.connect("spaceship_approached", Callable(self, "on_spaceship_approached_planet"))
+	for asteroid in Asteroids.get_children():
+		asteroid.connect("spaceship_approached", Callable(self, "on_spaceship_approached_asteroid"))
+	
 	Station.connect("spaceship_approached", Callable(self, "on_spaceship_approached_station"))
 
 
@@ -25,6 +29,10 @@ func on_spaceship_approached_station(body):
 	
 	space_dialog_index += 1
 	game_stage += 1
+	if game_stage == 0:
+		for asteroid in Asteroids.get_children():
+			asteroid.set_active(true)
+	
 	if (game_stage+1)*3 > Planets.get_child_count():
 		end_game()
 	else:
@@ -44,6 +52,10 @@ func on_spaceship_approached_planet(body):
 	on_planet = true
 
 
+func on_spaceship_approached_asteroid(body):
+	play_dialog(body.get_dialog_title())
+
+
 func play_dialog(events):
 	CutscenePlayer.load_events(events)
 
@@ -56,6 +68,7 @@ func _on_cutscene_controller_events_ended():
 	if on_planet:
 		on_planet = false
 		DialogTimer.start()
+	
 	elif game_stage == -1:
 		Station.set_active(true)
 

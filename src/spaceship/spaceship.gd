@@ -39,7 +39,6 @@ func manager_acceleration(delta):
 			move_velocity = move_velocity.normalized()*MAX_SPEED
 
 
-
 func manage_direction(_delta):
 	if ControllerManager.is_controller_active():
 		manage_direction_controller()
