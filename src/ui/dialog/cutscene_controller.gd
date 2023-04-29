@@ -21,12 +21,15 @@ func load_events(scene):
 
 
 func play_text(event):
+	GlobalNode.set_in_cutscene(true)
 	if event.has("TIME"):
 		dialog.add_text(event["TEXT"], event["TIME"])
 	else:
 		dialog.add_text(event["TEXT"])
 
+
 func play_live_text(event):
+	GlobalNode.set_in_cutscene(false)
 	if event.has("TIME"):
 		dialog.add_live_text(event["LIVE_TEXT"], event["TIME"])
 	else:

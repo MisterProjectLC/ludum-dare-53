@@ -11,17 +11,17 @@
 [node name="Space" type="Node2D"]
 script = ExtResource("1_sb46e")
 
-[node name="Spaceship" parent="." instance=ExtResource("1_16udo")]
-ACCELERATION_STRENGTH = 5.0
-MAX_SPEED = 500.0
-
-[node name="CameraFollower" parent="." instance=ExtResource("2_g1kqm")]
-
 [node name="Planets" type="Node2D" parent="."]
 
 [node name="Planet" parent="Planets" instance=ExtResource("4_57lwj")]
 position = Vector2(7772, 4305)
 dialog_title = "planet"
+
+[node name="Spaceship" parent="." instance=ExtResource("1_16udo")]
+ACCELERATION_STRENGTH = 5.0
+MAX_SPEED = 500.0
+
+[node name="CameraFollower" parent="." instance=ExtResource("2_g1kqm")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

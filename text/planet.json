@@ -6,7 +6,7 @@
         {"TEXT":"It seems there's no way around it...", "TIME":0.08},
         {"TEXT":"It does surround the entire Ministry.", "TIME":0.08},
         {"TEXT":"...", "TIME":0.1},
-        {"WAIT":1},
+        {"WAIT":1, "REQUIRED":true},
         {"TEXT":"Somehow, this feels man-made.", "TIME":0.1},
         {"END":"END"}
     ]

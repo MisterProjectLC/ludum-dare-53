@@ -21,5 +21,6 @@ script = ExtResource("2_dscwh")
 player_path = NodePath("../../Spaceship")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(1, 0, 1, 1)
 texture = ExtResource("3_1v226")
