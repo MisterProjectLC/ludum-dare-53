@@ -1,16 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkatjtsrcspru"]
+[gd_scene load_steps=8 format=3 uid="uid://dkatjtsrcspru"]
 
 [ext_resource type="PackedScene" uid="uid://cr3fciq260ss8" path="res://src/spaceship/spaceship.tscn" id="1_16udo"]
+[ext_resource type="Script" path="res://src/scenes/space.gd" id="1_sb46e"]
 [ext_resource type="PackedScene" uid="uid://0a34ry1c2h6b" path="res://src/spaceship/camera_follower.tscn" id="2_g1kqm"]
 [ext_resource type="Texture2D" uid="uid://c58n6r7ma2wu" path="res://assets/background/page_space_background.png" id="3_hgr57"]
+[ext_resource type="PackedScene" uid="uid://cfa5r1ixno5d6" path="res://src/scenes/planet.tscn" id="4_57lwj"]
+[ext_resource type="PackedScene" uid="uid://ti6aaccyf1kh" path="res://src/ui/ui.tscn" id="4_ea8f2"]
+[ext_resource type="PackedScene" uid="uid://hfbgrdp6bmgq" path="res://src/ui/dialog/cutscene_controller.tscn" id="5_pgckx"]
 
 [node name="Space" type="Node2D"]
+script = ExtResource("1_sb46e")
 
 [node name="Spaceship" parent="." instance=ExtResource("1_16udo")]
 ACCELERATION_STRENGTH = 5.0
 MAX_SPEED = 500.0
 
 [node name="CameraFollower" parent="." instance=ExtResource("2_g1kqm")]
+
+[node name="Planets" type="Node2D" parent="."]
+
+[node name="Planet" parent="Planets" instance=ExtResource("4_57lwj")]
+position = Vector2(7772, 4305)
+dialog_title = "planet"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -21,5 +32,11 @@ texture_repeat = 2
 texture = ExtResource("3_hgr57")
 region_enabled = true
 region_rect = Rect2(0, 0, 100000, 100000)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("4_ea8f2")]
+
+[node name="CutsceneController" parent="CanvasLayer" instance=ExtResource("5_pgckx")]
 
 [connection signal="on_screen_changed" from="Spaceship" to="CameraFollower" method="_on_spaceship_on_screen_changed"]

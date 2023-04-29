@@ -1,0 +1,13 @@
+{
+    "DATA":[
+        {"CHARACTER":"Player"},
+        {"TEXT":"Do I...", "TIME":0.15},
+        {"APPEND_TEXT":" Do I really have to go through this?", "TIME":0.08},
+        {"TEXT":"It seems there's no way around it...", "TIME":0.08},
+        {"TEXT":"It does surround the entire Ministry.", "TIME":0.08},
+        {"TEXT":"...", "TIME":0.1},
+        {"WAIT":1},
+        {"TEXT":"Somehow, this feels man-made.", "TIME":0.1},
+        {"END":"END"}
+    ]
+}

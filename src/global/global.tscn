@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cns8mjexuj7ks"]
+
+[ext_resource type="Script" path="res://src/global/global.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bhc03rcrnnc17" path="res://assets/spaceship/pointer.png" id="2_0xe6y"]
+
+[node name="Global" type="Node"]
+script = ExtResource("1")
+menu_mouse = ExtResource("2_0xe6y")
+game_mouse = ExtResource("2_0xe6y")
+_debug = true

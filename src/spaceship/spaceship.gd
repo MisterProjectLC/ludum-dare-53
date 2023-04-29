@@ -19,6 +19,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if GlobalNode.get_in_cutscene():
+		return
+	
 	manage_direction(delta)
 	manager_acceleration(delta)
 
@@ -32,7 +35,7 @@ func manager_acceleration(delta):
 
 
 
-func manage_direction(delta):
+func manage_direction(_delta):
 	if ControllerManager.is_controller_active():
 		manage_direction_controller()
 	else:
