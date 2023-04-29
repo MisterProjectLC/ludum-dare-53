@@ -23,8 +23,6 @@ autostart = true
 [node name="UI" parent="CanvasLayer" instance=ExtResource("4_ea8f2")]
 
 [node name="CutsceneController" parent="CanvasLayer" instance=ExtResource("5_pgckx")]
-voices = null
-disable_cutscenes = null
 
 [node name="Planets" type="Node2D" parent="."]
 
@@ -44,7 +42,6 @@ dialog_title = "planet"
 
 [node name="Asteroid" parent="Asteroids" instance=ExtResource("5_c1ndk")]
 position = Vector2(-3084, 7379)
-active = true
 
 [node name="Station" parent="." instance=ExtResource("4_57lwj")]
 position = Vector2(-13604, 6993)
