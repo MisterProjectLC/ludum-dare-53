@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://cr3fciq260ss8"]
+
+[ext_resource type="Script" path="res://src/spaceship/spaceship.gd" id="1_2sslo"]
+[ext_resource type="Texture2D" uid="uid://c1j7wiky7o0tw" path="res://icon.svg" id="2_7fdl3"]
+[ext_resource type="Texture2D" uid="uid://bhc03rcrnnc17" path="res://assets/spaceship/pointer.png" id="3_4qkpf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gvj4"]
+
+[node name="Spaceship" type="CharacterBody2D"]
+script = ExtResource("1_2sslo")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_7fdl3")
+
+[node name="Pointer" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+
+[node name="Pointer" type="Sprite2D" parent="Pointer"]
+rotation = 4.71239
+texture = ExtResource("3_4qkpf")
+offset = Vector2(0, -128)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(6.44, 6.44)
+shape = SubResource("RectangleShape2D_5gvj4")
+metadata/_edit_lock_ = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
