@@ -1,5 +1,25 @@
-[gd_scene format=3 uid="uid://dkatjtsrcspru"]
+[gd_scene load_steps=4 format=3 uid="uid://dkatjtsrcspru"]
+
+[ext_resource type="PackedScene" uid="uid://cr3fciq260ss8" path="res://src/spaceship/spaceship.tscn" id="1_16udo"]
+[ext_resource type="PackedScene" uid="uid://0a34ry1c2h6b" path="res://src/spaceship/camera_follower.tscn" id="2_g1kqm"]
+[ext_resource type="Texture2D" uid="uid://c58n6r7ma2wu" path="res://assets/background/page_space_background.png" id="3_hgr57"]
 
 [node name="Space" type="Node2D"]
 
-[node name="Spaceship" type="Node2D" parent="."]
+[node name="Spaceship" parent="." instance=ExtResource("1_16udo")]
+ACCELERATION_STRENGTH = 5.0
+MAX_SPEED = 500.0
+
+[node name="CameraFollower" parent="." instance=ExtResource("2_g1kqm")]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+texture = ExtResource("3_hgr57")
+region_enabled = true
+region_rect = Rect2(0, 0, 100000, 100000)
+
+[connection signal="on_screen_changed" from="Spaceship" to="CameraFollower" method="_on_spaceship_on_screen_changed"]
