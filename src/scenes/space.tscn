@@ -90,7 +90,7 @@ text = "Hold A to Zoom-Out"
 autowrap_mode = 2
 script = ExtResource("10_6w66c")
 keyboard_text = "Hold A to Zoom-Out"
-controller_text = "Hold L1 to Zoom-Out"
+controller_text = "Hold L2 to Zoom-Out"
 
 [node name="ZoomOut" type="Label" parent="."]
 offset_left = 293.0
@@ -103,7 +103,7 @@ text = "Hold D to Zoom-In"
 autowrap_mode = 2
 script = ExtResource("10_6w66c")
 keyboard_text = "Hold D to Zoom-In"
-controller_text = "Hold R1 to Zoom-In"
+controller_text = "Hold R2 to Zoom-In"
 
 [node name="Zoom" type="Label" parent="."]
 offset_left = -625.0
@@ -122,4 +122,5 @@ keyboard_text = "You can also use the Scroll Wheel to control Zoom"
 [connection signal="timeout" from="DialogTimer" to="." method="_on_dialog_timer_timeout"]
 [connection signal="animation_requested" from="CanvasLayer/CutsceneController" to="." method="_on_cutscene_controller_animation_requested"]
 [connection signal="events_ended" from="CanvasLayer/CutsceneController" to="." method="_on_cutscene_controller_events_ended"]
+[connection signal="dash_updated" from="Spaceship" to="CanvasLayer/UI" method="_on_spaceship_dash_updated"]
 [connection signal="on_screen_changed" from="Spaceship" to="CameraFollower" method="_on_spaceship_on_screen_changed"]

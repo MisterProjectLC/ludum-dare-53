@@ -54,6 +54,7 @@ func on_spaceship_approached_planet(body):
 	play_dialog(body.get_dialog_title())
 	if planets_visited % 3 == 0:
 		Station.set_active(true)
+	
 	planets_visited += 1
 	space_dialog_index += 1
 	on_planet = true
@@ -75,9 +76,12 @@ func _on_cutscene_controller_events_ended():
 	if on_planet:
 		on_planet = false
 		DialogTimer.start()
+		Spaceship.set_dash_enabled(false)
 	
-	elif game_stage == -1:
-		Station.set_active(true)
+	else:
+		Spaceship.set_dash_enabled(true)
+		if game_stage == -1:
+			Station.set_active(true)
 
 
 func _on_dialog_timer_timeout():

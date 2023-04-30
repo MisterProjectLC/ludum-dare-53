@@ -9,8 +9,9 @@
 
 [node name="Spaceship" type="CharacterBody2D"]
 script = ExtResource("1_2sslo")
-ACCELERATION_STRENGTH = 10.0
-MAX_SPEED = 500.0
+ACCELERATION_STRENGTH = 4.0
+MAX_SPEED = 400.0
+DASH_SPEED = 20.0
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1
