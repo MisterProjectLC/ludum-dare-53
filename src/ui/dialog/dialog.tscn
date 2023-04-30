@@ -1,8 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://cc15b70sewytv"]
+[gd_scene load_steps=14 format=3 uid="uid://cc15b70sewytv"]
 
+[ext_resource type="FontFile" uid="uid://c2e5qqn1a5qu7" path="res://assets/ui/fonts/Coffee and Crafts.ttf" id="2_7apce"]
 [ext_resource type="Texture2D" uid="uid://bmgy6te4aeuu2" path="res://assets/ui/dialog_hugo_low2.png" id="3_8g2k0"]
 [ext_resource type="Script" path="res://src/ui/dialog/dialog.gd" id="4"]
 [ext_resource type="Script" path="res://src/ui/dialog/live_dialog_box.gd" id="5"]
+[ext_resource type="FontFile" uid="uid://ejg6njgqesdf" path="res://assets/ui/fonts/CoffeCake.ttf" id="5_hpsoa"]
 [ext_resource type="FontFile" uid="uid://cx6s3op6yjnhp" path="res://assets/ui/fonts/Spring Snowstorm.ttf" id="5_xuo6c"]
 [ext_resource type="Script" path="res://src/ui/dialog/cutscene_dialog_box.gd" id="6"]
 
@@ -139,6 +141,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("4")
+default_font = ExtResource("2_7apce")
+narrator_font = ExtResource("5_xuo6c")
 metadata/_edit_lock_ = true
 
 [node name="CutsceneDialogBox" type="Control" parent="."]
@@ -184,7 +188,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 10
-theme_override_fonts/font = ExtResource("5_xuo6c")
+theme_override_fonts/font = ExtResource("5_hpsoa")
 theme_override_font_sizes/font_size = 28
 text = "I'm flying up in the sky!
 Teste"
@@ -237,6 +241,7 @@ metadata/_edit_lock_ = true
 [node name="Background" type="TextureRect" parent="LiveDialogBox/Rect"]
 modulate = Color(1, 1, 1, 0.301961)
 texture_filter = 1
+layout_mode = 0
 offset_left = 1.0
 offset_top = -72.0
 offset_right = 1149.0

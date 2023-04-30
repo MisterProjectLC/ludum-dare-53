@@ -1,5 +1,6 @@
 TEXT: Texto normal. Escreva diálogo aqui.
 -TIME: Tempo pra cada caracter aparecer. Se não estiver presente, default é 0.05.
+-NARRATOR: Caso true, texto muda de fonte.
 
 LIVE_TEXT: Texto que não bloqueia o jogo. Diálogo durante gameplay.
 -TIME: Idem.

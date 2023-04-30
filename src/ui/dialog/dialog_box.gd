@@ -37,6 +37,10 @@ func change_character(character):
 		"characters/" + character.to_lower())
 
 
+func set_font(font):
+	label.set("theme_override_fonts/font", font)
+
+
 func _show_text(time):
 	current_char_time = time
 	timer.start(time)
