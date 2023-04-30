@@ -1,11 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cr3fciq260ss8"]
+[gd_scene load_steps=7 format=3 uid="uid://cr3fciq260ss8"]
 
 [ext_resource type="Script" path="res://src/spaceship/spaceship.gd" id="1_2sslo"]
 [ext_resource type="Texture2D" uid="uid://c1j7wiky7o0tw" path="res://icon.svg" id="2_7fdl3"]
+[ext_resource type="Texture2D" uid="uid://bfdo0oq0rm5aw" path="res://assets/spaceship/foguete_v2.png" id="2_8wxfa"]
 [ext_resource type="Texture2D" uid="uid://bhc03rcrnnc17" path="res://assets/spaceship/pointer.png" id="3_4qkpf"]
 [ext_resource type="Script" path="res://src/spaceship/zoom_agnostic_sprite.gd" id="4_tmfj7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5gvj4"]
+size = Vector2(53.882, 36.3354)
 
 [node name="Spaceship" type="CharacterBody2D"]
 script = ExtResource("1_2sslo")
@@ -15,7 +17,7 @@ DASH_SPEED = 20.0
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_7fdl3")
+texture = ExtResource("2_8wxfa")
 
 [node name="Pointer" type="Sprite2D" parent="."]
 unique_name_in_owner = true
@@ -28,6 +30,7 @@ offset = Vector2(0, -128)
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(14.5, -1)
 scale = Vector2(6.44, 6.44)
 shape = SubResource("RectangleShape2D_5gvj4")
 metadata/_edit_lock_ = true
