@@ -1,0 +1,13 @@
+{
+    "DATA":[
+        {"CHARACTER":"Hugo"},
+        {"LIVE_TEXT":"Space is so huge! Hahaha...", "TIME":0.03},
+        {"LIVE_TEXT":"My friends are always going out and having fun. Dad doesn't let me leave, though.", "TIME":0.03},
+        {"LIVE_TEXT":"He says it's too dangerous... b-b-but look, I'm here! I can take care of myself!", "TIME":0.03},
+        {"LIVE_TEXT":"If I had a kid, I would take them to all the planets they ever wanted! T-That's a promise!", "TIME":0.03},
+        {"LIVE_TEXT":"...", "TIME":0.05},
+        {"LIVE_TEXT":"I just feel like...", "TIME":0.04},
+        {"LIVE_TEXT":"I just feel like I'm being left behind.", "TIME":0.04},
+        {"END":"END"}
+    ]
+}
