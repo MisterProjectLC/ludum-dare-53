@@ -1,13 +1,7 @@
 {
     "DATA":[
-        {"CHARACTER":"Player"},
-        {"LIVE_TEXT":"Do I...", "TIME":0.15},
-        {"APPEND_TEXT":" Do I really have to go through this?", "TIME":0.08},
-        {"LIVE_TEXT":"It seems there's no way around it...", "TIME":0.08},
-        {"LIVE_TEXT":"It does surround the entire Ministry.", "TIME":0.08},
-        {"LIVE_TEXT":"...", "TIME":0.1},
-        {"WAIT":1},
-        {"LIVE_TEXT":"Somehow, this feels man-made.", "TIME":0.1},
+        {"CHARACTER":"Protagonist"},
+        {"LIVE_TEXT":"A", "TIME":0.01},
         {"END":"END"}
     ]
 }

@@ -1,0 +1,27 @@
+TEXT: Texto normal. Escreva diálogo aqui.
+-TIME: Tempo pra cada caracter aparecer. Se não estiver presente, default é 0.05.
+
+LIVE_TEXT: Texto que não bloqueia o jogo. Diálogo durante gameplay.
+-TIME: Idem.
+
+APPEND_TEXT: Adiciona texto pra linha de diálogo atual, ao invés de começar uma nova.
+-TIME: Idem.
+
+CHARACTER: Troca o personagem que aparece na caixa. ATENÇÃO: O nome do personagem precisa ser uma imagem na pasta 'assets/characters'.
+--Exemplo: {"CHARACTER":"Benta"}
+--Imagem escolhida: assets/characters/benta.png
+
+CHOICE: Puxa o menu de escolha de item. O valor é um array com o nome dos itens que resultam em diálogo especial. Se o item escolhido não estiver nessa lista, 'wrong' é escolhido.
+Depois que uma escolha é feita, o diálogo que toca segue o seguinte exemplo:
+--Diálogo atual: planeta1.json, Itens com resposta: ["carta", "abacaxi"]
+---Item escolhido: carta -> Diálogo que toca: planeta1_carta.json
+---Item escolhido: guitarra -> Diálogo que toca: planeta1_wrong.json
+
+WAIT: Espera o tempo marcado aqui, em float.
+-REQUIRED: Se true, bloqueia o jogo até o timer acabar.
+
+ANIMATION: Toca uma animação pré-definida do jogo.
+-BACKWARDS: Se true, toca invertido.
+-REQUIRED: Se true, bloqueia o jogo até a animação terminar.
+
+END: Obrigatoriamente precisa sempre estar no final.

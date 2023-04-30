@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c31a51kble457"
-path="res://.godot/imported/portrait_hugo.png-659c9caa701853ec982c46edc86d15e6.ctex"
+uid="uid://byhtgx13r30fi"
+path="res://.godot/imported/guitar.png-d56f199ff941c1ccfef1e813cb3869fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/portrait_hugo.png"
-dest_files=["res://.godot/imported/portrait_hugo.png-659c9caa701853ec982c46edc86d15e6.ctex"]
+source_file="res://assets/items/guitar.png"
+dest_files=["res://.godot/imported/guitar.png-d56f199ff941c1ccfef1e813cb3869fe.ctex"]
 
 [params]
 

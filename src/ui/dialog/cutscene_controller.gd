@@ -6,9 +6,13 @@ class_name CutsceneController
 @onready var dialog : Dialog = $Dialog
 @onready var waitObj = $Wait
 @onready var voiceover = $VoiceoverPlayer
+@onready var Inventory = $Inventory
 
 var stored_events = []
 var stored_character = ""
+
+var waiting_choice = false
+var choice_events = []
 
 func _ready():
 	TimeController.connect("paused_game", Callable(self, "on_paused_game"))
@@ -84,8 +88,17 @@ func wait(event):
 	GlobalNode.set_in_cutscene(event.has("REQUIRED") and event["REQUIRED"])
 	waitObj.start(event["WAIT"])
 
-func save(_event):
-	run_next_event()
+
+func choice(event):
+	waiting_choice = true
+	choice_events = event["CHOICE"]
+	Inventory.show_items()
+
+
+func add_item(title):
+	var image = TextureLoader.get_tex_from_title(
+		"items/" + title.to_lower())
+	Inventory.add_item(image, title)
 
 
 func stop():
@@ -108,6 +121,9 @@ func end():
 			future_events.push_front({"LIVE_TEXT":"Uh, so what I was saying was..."})
 
 
+
+# SIGNAL RESPONSES --------------------------------
+
 func _on_Wait_timeout():
 	run_next_event()
 
@@ -122,10 +138,21 @@ func on_paused_game(paused):
 	dialog.process_mode = Node.PROCESS_MODE_PAUSABLE if paused else Node.PROCESS_MODE_ALWAYS
 	voiceover.set_stream_paused(paused)
 
+
 func _on_dialog_dialog_finished():
 	if voiceover_text:
 		voiceover_text = false
 		voiceover.stop()
 	
-	if waiting_animation == null:
+	if !waiting_choice and waiting_animation == null:
 		run_next_event()
+
+
+func _on_inventory_item_chosen(title):
+	waiting_choice = false
+	if title in choice_events:
+		load_events(current_scene + "_" + title.to_lower())
+	else:
+		load_events(current_scene + "_" + "wrong")
+	choice_events = []
+	stored_events = []

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5dw0i22vr4gq"
-path="res://.godot/imported/portrait_ghost.png-ba3d4eb3c7677251aaa8278ce8124e45.ctex"
+uid="uid://k1wg6j1u04wn"
+path="res://.godot/imported/radio.png-87b08a41785e4491390362dd69158add.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/portrait_ghost.png"
-dest_files=["res://.godot/imported/portrait_ghost.png-ba3d4eb3c7677251aaa8278ce8124e45.ctex"]
+source_file="res://assets/characters/radio.png"
+dest_files=["res://.godot/imported/radio.png-87b08a41785e4491390362dd69158add.ctex"]
 
 [params]
 

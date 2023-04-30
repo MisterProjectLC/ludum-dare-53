@@ -1,8 +1,142 @@
-[gd_scene load_steps=4 format=3 uid="uid://hfbgrdp6bmgq"]
+[gd_scene load_steps=11 format=3 uid="uid://hfbgrdp6bmgq"]
 
 [ext_resource type="Script" path="res://src/ui/dialog/cutscene_controller.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://cc15b70sewytv" path="res://src/ui/dialog/dialog.tscn" id="2"]
 [ext_resource type="Script" path="res://src/utils/audio_player.gd" id="4"]
+[ext_resource type="Script" path="res://src/ui/dialog/inventory.gd" id="4_o7rmf"]
+[ext_resource type="PackedScene" uid="uid://danu2maigu0qe" path="res://src/ui/dialog/item.tscn" id="5_lxtti"]
+
+[sub_resource type="Animation" id="Animation_ungnq"]
+resource_name = "OneItem"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Items/Item:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(340, -300), Vector2(340, 105)]
+}
+
+[sub_resource type="Animation" id="Animation_lu860"]
+resource_name = "RESET"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Items/Item:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(100, 650)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Items/Item2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(340, -300)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Items/Item3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(580, 650)]
+}
+
+[sub_resource type="Animation" id="Animation_sgyi8"]
+resource_name = "ThreeItems"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Items/Item:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(100, 650), Vector2(100, 105)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Items/Item2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(340, -300), Vector2(340, 105)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Items/Item3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(580, 650), Vector2(580, 105)]
+}
+
+[sub_resource type="Animation" id="Animation_pj31y"]
+resource_name = "TwoItems"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Items/Item:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(220, 650), Vector2(220, 105)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Items/Item2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(460, -300), Vector2(460, 105)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_py7w2"]
+_data = {
+"OneItem": SubResource("Animation_ungnq"),
+"RESET": SubResource("Animation_lu860"),
+"ThreeItems": SubResource("Animation_sgyi8"),
+"TwoItems": SubResource("Animation_pj31y")
+}
 
 [node name="CutsceneController" type="Control"]
 texture_filter = 1
@@ -14,8 +148,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1")
-voices = null
-disable_cutscenes = null
 metadata/_edit_lock_ = true
 
 [node name="Dialog" parent="." instance=ExtResource("2")]
@@ -31,5 +163,64 @@ one_shot = true
 volume_db = 15.0
 script = ExtResource("4")
 
+[node name="Inventory" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_o7rmf")
+items_path = NodePath("Items")
+metadata/_edit_lock_ = true
+
+[node name="Items" type="Control" parent="Inventory"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Item" parent="Inventory/Items" instance=ExtResource("5_lxtti")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 100.0
+offset_top = 650.0
+offset_right = 300.0
+offset_bottom = 949.999
+
+[node name="Item2" parent="Inventory/Items" instance=ExtResource("5_lxtti")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 340.0
+offset_top = -300.0
+offset_right = 540.0
+offset_bottom = 0.0
+
+[node name="Item3" parent="Inventory/Items" instance=ExtResource("5_lxtti")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 580.0
+offset_top = 650.0
+offset_right = 780.0
+offset_bottom = 950.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Inventory"]
+libraries = {
+"": SubResource("AnimationLibrary_py7w2")
+}
+
 [connection signal="dialog_finished" from="Dialog" to="." method="_on_dialog_dialog_finished"]
 [connection signal="timeout" from="Wait" to="." method="_on_Wait_timeout"]
+[connection signal="item_chosen" from="Inventory" to="." method="_on_inventory_item_chosen"]
+[connection signal="on_clicked" from="Inventory/Items/Item" to="Inventory" method="_on_item_clicked"]
+[connection signal="on_clicked" from="Inventory/Items/Item2" to="Inventory" method="_on_item_clicked"]
+[connection signal="on_clicked" from="Inventory/Items/Item3" to="Inventory" method="_on_item_clicked"]

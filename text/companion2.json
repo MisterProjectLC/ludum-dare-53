@@ -1,14 +1,15 @@
 {
     "DATA":[
         {"CHARACTER":"Hugo"},
-        {"LIVE_TEXT":"Hey dude! So... what are we doing exactly?", "TIME":0.04},
-        {"LIVE_TEXT":"Y-Yeah, sorry! I was so excited to go traveling, I forgot to actually ask, hahaha!", "TIME":0.03},
+        {"LIVE_TEXT":"La-la-la-la-la...", "TIME":0.09},
+        {"LIVE_TEXT":"Adventure here we come!", "TIME":0.02},
+        {"APPEND_TEXT":" Adventure here we come!", "TIME":0.02},
+        {"LIVE_TEXT":"La-la-la-la-la...", "TIME":0.09},
         {"LIVE_TEXT":"...", "TIME":0.12},
-        {"LIVE_TEXT":"Oohhh, I get it, I get it! So we're delivering stuff for people who can't travel around!", "TIME":0.04},
-        {"LIVE_TEXT":"But... Don't you feel alone up here? If I wasn't here, then... there would be nobody, right?", "TIME":0.03},
+        {"LIVE_TEXT":"Hehehe, sorry... Dad says sometimes I can be annoying.", "TIME":0.03},
+        {"LIVE_TEXT":"He's all like 'Bossing around the galaxy isn't easy! I can't concentrate!'", "TIME":0.03},
         {"LIVE_TEXT":"...", "TIME":0.12},
-        {"LIVE_TEXT":"The silence feels calming? Oh...", "TIME":0.03},
-        {"LIVE_TEXT":"...I think I understand.", "TIME":0.06},
+        {"LIVE_TEXT":"Am I annoying?", "TIME":0.08},
         {"END":"END"}
     ]
 }

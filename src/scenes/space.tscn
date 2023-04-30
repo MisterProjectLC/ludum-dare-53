@@ -13,9 +13,18 @@
 [ext_resource type="Script" path="res://src/scenes/tutorial_label.gd" id="10_6w66c"]
 [ext_resource type="Texture2D" uid="uid://jjjpr7k5sqn6" path="res://assets/background/stars.png" id="10_w4adj"]
 
+[sub_resource type="Animation" id="Animation_7kiu3"]
+resource_name = "HugoPopup"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gkhll"]
+_data = {
+"HugoPopup": SubResource("Animation_7kiu3")
+}
+
 [node name="Space" type="Node2D"]
 script = ExtResource("1_sb46e")
-space_dialogs = Array[String](["radio0", "companion1", "companion2", "companion3"])
+space_dialogs = Array[String](["test", "companion1", "companion2", "companion3"])
+items = Array[String](["feather", "coffee", "guitar"])
 
 [node name="DialogTimer" type="Timer" parent="."]
 wait_time = 5.0
@@ -32,7 +41,7 @@ autostart = true
 
 [node name="Planet" parent="Planets" instance=ExtResource("4_57lwj")]
 position = Vector2(42844, 22353)
-dialog_title = "planet"
+dialog_title = "planet1"
 
 [node name="Planet2" parent="Planets" instance=ExtResource("4_57lwj")]
 position = Vector2(-58428, -43506)
@@ -48,8 +57,8 @@ dialog_title = "planet"
 position = Vector2(-66060, 2515)
 
 [node name="Station" parent="." instance=ExtResource("4_57lwj")]
-position = Vector2(-40356, 31441)
-dialog_title = "planet"
+position = Vector2(-60708, 41937)
+dialog_title = "companion0w"
 active = true
 
 [node name="Spaceship" parent="." instance=ExtResource("1_16udo")]
@@ -141,8 +150,14 @@ autowrap_mode = 2
 script = ExtResource("10_6w66c")
 keyboard_text = "You can also use the Scroll Wheel to control Zoom"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gkhll")
+}
+
 [connection signal="timeout" from="DialogTimer" to="." method="_on_dialog_timer_timeout"]
 [connection signal="animation_requested" from="CanvasLayer/CutsceneController" to="." method="_on_cutscene_controller_animation_requested"]
 [connection signal="events_ended" from="CanvasLayer/CutsceneController" to="." method="_on_cutscene_controller_events_ended"]
 [connection signal="dash_updated" from="Spaceship" to="CanvasLayer/UI" method="_on_spaceship_dash_updated"]
 [connection signal="on_screen_changed" from="Spaceship" to="CameraFollower" method="_on_spaceship_on_screen_changed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
