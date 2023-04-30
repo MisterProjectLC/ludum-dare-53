@@ -20,10 +20,11 @@ func change_character(character):
 	emit_signal("dialog_finished")
 
 
-func add_text(text, time = default_char_time):
+func add_text(text, time = default_char_time, autoskip = false):
 	_switch_box(cutscene_dialog_box)
 	cutscene_dialog_box.set_font(default_font)
 	_start_text(text, time)
+	cutscene_dialog_box.autoskip = autoskip
 
 
 func add_narrator_text(text, time = default_char_time):

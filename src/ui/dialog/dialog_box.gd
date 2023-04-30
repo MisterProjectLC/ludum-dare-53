@@ -10,6 +10,8 @@ class_name DialogBox
 
 @onready var timer = $Rect/Timer
 
+var autoskip = false
+
 func appear():
 	animator.play("Appear")
 
@@ -50,6 +52,8 @@ func _on_Timer_timeout():
 	label.visible_characters += 1
 	if label.visible_characters < label.text.length():
 		timer.start(current_char_time)
+	elif autoskip:
+		emit_signal("dialog_finished")
 
 
 func is_active():

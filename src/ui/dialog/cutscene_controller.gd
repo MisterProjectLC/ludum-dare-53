@@ -33,7 +33,10 @@ func load_events(scene):
 func play_text(event):
 	GlobalNode.set_in_cutscene(true)
 	if event.has("TIME"):
-		dialog.add_text(event["TEXT"], event["TIME"])
+		if event.has("AUTOSKIP"):
+			dialog.add_text(event["TEXT"], event["TIME"], event["AUTOSKIP"])
+		else:
+			dialog.add_text(event["TEXT"], event["TIME"])
 	elif event.has("NARRATOR"):
 		dialog.add_narrator_text(event["TEXT"])
 	else:

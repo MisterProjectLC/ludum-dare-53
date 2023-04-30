@@ -18,7 +18,7 @@
         {"CHARACTER":"Hugo"},
         {"TEXT":"Um, bye-bye! Toodles! Nice to meet you!", "TIME":0.015},
         {"CHARACTER":"Alinda"},
-        {"TEXT":"You come back here!", "TIME":0.03},
+        {"TEXT":"You come back here!", "TIME":0.015},
         {"CHARACTER":"Narrator"},
         {"TEXT":"Swiftly dodging giant spears, you manage to escape inside the rocket-box, with Hugo stashed on your lap.", "NARRATOR":true},
         {"TEXT":"You rush out of there as soon as possible.", "NARRATOR":true},

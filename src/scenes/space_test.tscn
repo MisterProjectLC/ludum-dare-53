@@ -1,0 +1,164 @@
+[gd_scene load_steps=15 format=3 uid="uid://qf6wgt3ongoo"]
+
+[ext_resource type="Script" path="res://src/scenes/space.gd" id="1_0xl6g"]
+[ext_resource type="PackedScene" uid="uid://ti6aaccyf1kh" path="res://src/ui/ui.tscn" id="2_pp6a6"]
+[ext_resource type="PackedScene" uid="uid://hfbgrdp6bmgq" path="res://src/ui/dialog/cutscene_controller.tscn" id="3_an4li"]
+[ext_resource type="PackedScene" uid="uid://cfa5r1ixno5d6" path="res://src/scenes/planet.tscn" id="4_jhfi4"]
+[ext_resource type="PackedScene" uid="uid://cvem255yquq0s" path="res://src/scenes/asteroid.tscn" id="5_3du45"]
+[ext_resource type="PackedScene" uid="uid://cr3fciq260ss8" path="res://src/spaceship/spaceship.tscn" id="6_se3sy"]
+[ext_resource type="PackedScene" uid="uid://0a34ry1c2h6b" path="res://src/spaceship/camera_follower.tscn" id="7_3daj7"]
+[ext_resource type="Texture2D" uid="uid://boyifkv68apv0" path="res://assets/background/bg.png" id="8_nkdbu"]
+[ext_resource type="Texture2D" uid="uid://2u4nxymn4fki" path="res://assets/background/nebula.png" id="9_mlr61"]
+[ext_resource type="Texture2D" uid="uid://wqgvbwqiylbq" path="res://assets/background/stars.png" id="10_c62ss"]
+[ext_resource type="FontFile" uid="uid://cx6s3op6yjnhp" path="res://assets/ui/fonts/Spring Snowstorm.ttf" id="11_t8qno"]
+[ext_resource type="Script" path="res://src/scenes/tutorial_label.gd" id="12_0a4vh"]
+
+[sub_resource type="Animation" id="Animation_7kiu3"]
+resource_name = "HugoPopup"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gkhll"]
+_data = {
+"HugoPopup": SubResource("Animation_7kiu3")
+}
+
+[node name="Space" type="Node2D"]
+script = ExtResource("1_0xl6g")
+space_dialogs = Array[String](["test", "companion1", "companion2", "companion3"])
+items = Array[String](["feather", "rose", "coffee"])
+
+[node name="DialogTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("2_pp6a6")]
+
+[node name="CutsceneController" parent="CanvasLayer" instance=ExtResource("3_an4li")]
+
+[node name="Planets" type="Node2D" parent="."]
+
+[node name="Planet" parent="Planets" instance=ExtResource("4_jhfi4")]
+position = Vector2(42844, 22353)
+dialog_title = "planet1"
+
+[node name="Planet2" parent="Planets" instance=ExtResource("4_jhfi4")]
+position = Vector2(-58428, -43506)
+dialog_title = "planet"
+
+[node name="Planet3" parent="Planets" instance=ExtResource("4_jhfi4")]
+position = Vector2(58180, -40050)
+dialog_title = "planet"
+
+[node name="Asteroids" type="Node2D" parent="."]
+
+[node name="Asteroid" parent="Asteroids" instance=ExtResource("5_3du45")]
+position = Vector2(-66060, 2515)
+
+[node name="Station" parent="." instance=ExtResource("4_jhfi4")]
+position = Vector2(-5413, 4305)
+dialog_title = "planet2"
+active = true
+
+[node name="Spaceship" parent="." instance=ExtResource("6_se3sy")]
+ACCELERATION_STRENGTH = 5.0
+
+[node name="CameraFollower" parent="." instance=ExtResource("7_3daj7")]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="BG" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/BG"]
+texture_repeat = 2
+scale = Vector2(100, 100)
+texture = ExtResource("8_nkdbu")
+region_enabled = true
+region_rect = Rect2(0, 0, 200000, 200000)
+
+[node name="NebulaParallax" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.75, 0.75)
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/NebulaParallax"]
+texture_repeat = 2
+scale = Vector2(100, 100)
+texture = ExtResource("9_mlr61")
+region_enabled = true
+region_rect = Rect2(0, 0, 200000, 200000)
+
+[node name="StarsParallax" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.75, 0.75)
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/StarsParallax"]
+texture_repeat = 2
+scale = Vector2(5, 5)
+texture = ExtResource("10_c62ss")
+region_enabled = true
+region_rect = Rect2(0, 0, 200000, 200000)
+
+[node name="Accelerate" type="Label" parent="."]
+offset_left = 2725.0
+offset_top = 155.0
+offset_right = 4129.0
+offset_bottom = 595.0
+theme_override_fonts/font = ExtResource("11_t8qno")
+theme_override_font_sizes/font_size = 200
+text = "Hold the Left Mouse Button to accelerate"
+autowrap_mode = 2
+script = ExtResource("12_0a4vh")
+keyboard_text = "Hold the Left Mouse Button to accelerate"
+controller_text = "Hold X to accelerate"
+
+[node name="ZoomIn" type="Label" parent="."]
+offset_left = -1755.0
+offset_top = 292.0
+offset_right = -351.0
+offset_bottom = 732.0
+theme_override_fonts/font = ExtResource("11_t8qno")
+theme_override_font_sizes/font_size = 200
+text = "Hold A to Zoom-Out"
+autowrap_mode = 2
+script = ExtResource("12_0a4vh")
+keyboard_text = "Hold A to Zoom-Out"
+controller_text = "Hold L2 to Zoom-Out"
+
+[node name="ZoomOut" type="Label" parent="."]
+offset_left = 293.0
+offset_top = 316.0
+offset_right = 1697.0
+offset_bottom = 756.0
+theme_override_fonts/font = ExtResource("11_t8qno")
+theme_override_font_sizes/font_size = 200
+text = "Hold D to Zoom-In"
+autowrap_mode = 2
+script = ExtResource("12_0a4vh")
+keyboard_text = "Hold D to Zoom-In"
+controller_text = "Hold R2 to Zoom-In"
+
+[node name="Zoom" type="Label" parent="."]
+offset_left = -625.0
+offset_top = 2349.0
+offset_right = 779.0
+offset_bottom = 3009.0
+theme_override_fonts/font = ExtResource("11_t8qno")
+theme_override_font_sizes/font_size = 200
+text = "You can also use the Scroll Wheel to control Zoom"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("12_0a4vh")
+keyboard_text = "You can also use the Scroll Wheel to control Zoom"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gkhll")
+}
+
+[connection signal="timeout" from="DialogTimer" to="." method="_on_dialog_timer_timeout"]
+[connection signal="animation_requested" from="CanvasLayer/CutsceneController" to="." method="_on_cutscene_controller_animation_requested"]
+[connection signal="events_ended" from="CanvasLayer/CutsceneController" to="." method="_on_cutscene_controller_events_ended"]
+[connection signal="item_chosen" from="CanvasLayer/CutsceneController" to="." method="_on_cutscene_controller_item_chosen"]
+[connection signal="dash_updated" from="Spaceship" to="CanvasLayer/UI" method="_on_spaceship_dash_updated"]
+[connection signal="on_screen_changed" from="Spaceship" to="CameraFollower" method="_on_spaceship_on_screen_changed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
