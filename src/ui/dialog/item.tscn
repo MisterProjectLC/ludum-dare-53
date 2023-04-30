@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://danu2maigu0qe"]
+
+[ext_resource type="Script" path="res://src/ui/dialog/item_box.gd" id="1_bjhlw"]
+[ext_resource type="Texture2D" uid="uid://c1j7wiky7o0tw" path="res://icon.svg" id="1_oqbku"]
+[ext_resource type="FontFile" uid="uid://cx6s3op6yjnhp" path="res://assets/ui/fonts/Spring Snowstorm.ttf" id="2_3t2u7"]
+
+[node name="Item" type="ColorRect"]
+anchors_preset = -1
+anchor_right = 0.174
+anchor_bottom = 0.463
+offset_right = -0.448013
+offset_bottom = -0.0240173
+color = Color(0.560784, 0.627451, 0.858824, 1)
+script = ExtResource("1_bjhlw")
+metadata/_edit_lock_ = true
+
+[node name="Image" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = -77.5
+offset_right = 63.5
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_oqbku")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.0
+offset_top = 54.0
+offset_right = 66.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_3t2u7")
+theme_override_font_sizes/font_size = 30
+text = "LETTER CARD"
+metadata/_edit_lock_ = true
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

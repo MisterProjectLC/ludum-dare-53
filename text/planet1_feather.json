@@ -1,0 +1,31 @@
+{
+    "DATA":[
+        {"CHARACTER":"Benta"},
+        {"TEXT":"Ah... here it is.", "TIME":0.05},
+        {"TEXT":"This letter, do you see its seal? I heard it actually comes from a long line of pigeon-knights...", "TIME":0.05},
+        {"CHARACTER":"Hugo"},
+        {"TEXT":"P-Pigeon-Knights?", "TIME":0.02},
+        {"CHARACTER":"Benta"},
+        {"TEXT":"If I remember correctly, his name was Rubiao, and he worked for a king... what was his name again? Napolitan, Napoleon...", "TIME":0.05},
+        {"CHARACTER":"Hugo"},
+        {"TEXT":"Napigeon?", "TIME":0.03},
+        {"CHARACTER":"Benta"},
+        {"TEXT":"Right, Napigeon! But you see, he was the last of his kind, and in his search for the others, he also vanished himself...", "TIME":0.04},
+        {"CHARACTER":"Hugo"},
+        {"TEXT":"Oh!! So where did he go? Where can I find him?", "TIME":0.03},
+        {"CHARACTER":"Benta"},
+        {"TEXT":"Rorororo, who knows? Only someone with an observant eye could find out..."},
+        {"CHARACTER":"Hugo"},
+        {"TEXT":"Lady, do you think... Um, do you think that maybe I could find that out..?", "TIME":0.04},
+        {"CHARACTER":"Benta"},
+        {"TEXT":"That certainly sounds possible, dear child! Stories always roam around the cosmos, just like pigeons..."},
+        {"TEXT":"If you read enough of them, well... maybe one day, the answer might just come."},
+        {"CHARACTER":"Hugo"},
+        {"TEXT":"Hoo... I-I'll try to find him, Lady! I'll find Mr. Rubiao, I promise!", "TIME":0.04},
+        {"CHARACTER":"Benta"},
+        {"TEXT":"Rororo, good luck, dear child! And good travels! I'm looking forward to hearing about your journey."},
+        {"CHARACTER":"Hugo"},
+        {"TEXT":"Goodbye!!", "TIME":0.03},
+        {"END":"END"}
+    ]
+}

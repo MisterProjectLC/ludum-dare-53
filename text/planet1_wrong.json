@@ -1,0 +1,12 @@
+{
+    "DATA":[
+        {"CHARACTER":"Benta"},
+        {"TEXT":"Hmmm... I think my delivery hasn't arrived yet, then. But I appreciate the gift.", "TIME":0.05},
+        {"TEXT":"And, dear child, remember... keep an eye out for stories, alright?", "TIME":0.05},
+        {"CHARACTER":"Hugo"},
+        {"TEXT":"I... I'll try, lady! I promise!", "TIME":0.02},
+        {"CHARACTER":"Benta"},
+        {"TEXT":"Safe travels, my child.", "TIME":0.05},
+        {"END":"END"}
+    ]
+}

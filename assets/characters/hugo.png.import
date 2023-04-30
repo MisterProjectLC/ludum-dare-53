@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br0dmwli0gyuw"
-path="res://.godot/imported/portrait_radio.png-ce1a07e00c39dcb42f9c9d5ce9490b99.ctex"
+uid="uid://bebtp4hjiepw3"
+path="res://.godot/imported/hugo.png-1c8a3b683e7f6e41db28ca6c813c435c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/portrait_radio.png"
-dest_files=["res://.godot/imported/portrait_radio.png-ce1a07e00c39dcb42f9c9d5ce9490b99.ctex"]
+source_file="res://assets/characters/hugo.png"
+dest_files=["res://.godot/imported/hugo.png-1c8a3b683e7f6e41db28ca6c813c435c.ctex"]
 
 [params]
 

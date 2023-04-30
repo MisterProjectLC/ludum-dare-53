@@ -34,7 +34,7 @@ func append(text, time):
 
 func change_character(character):
 	portrait.texture = TextureLoader.get_tex_from_title(
-		"ui/portrait_" + character.to_lower())
+		"characters/" + character.to_lower())
 
 
 func _show_text(time):

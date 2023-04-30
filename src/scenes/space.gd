@@ -7,8 +7,10 @@ extends Node2D
 @onready var Camera = $CameraFollower
 @onready var CutscenePlayer = $CanvasLayer/CutsceneController
 @onready var DialogTimer = $DialogTimer
+@onready var Animator = $AnimationPlayer
 
 @export var space_dialogs : Array[String]
+@export var items : Array[String]
 
 var on_planet = false
 var planets_visited = 0
@@ -45,6 +47,7 @@ func on_spaceship_approached_station(body):
 	else:
 		for i in range(game_stage*3, (game_stage+1)*3):
 			Planets.get_child(i).set_active(true)
+			CutscenePlayer.add_item(items[i])
 	
 	Station.set_active(false)
 	on_planet = true
@@ -88,5 +91,12 @@ func _on_dialog_timer_timeout():
 	play_dialog(space_dialogs[space_dialog_index])
 
 
-func _on_cutscene_controller_animation_requested(animation, _backwards):
-	print_debug(animation)
+func _on_cutscene_controller_animation_requested(animation, backwards):
+	if backwards:
+		Animator.play_backwards(animation)
+	else:
+		Animator.play(animation)
+
+
+func _on_animation_player_animation_finished(anim_name):
+	CutscenePlayer.on_animation_finished(anim_name)

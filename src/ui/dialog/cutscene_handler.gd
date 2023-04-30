@@ -53,8 +53,8 @@ func run_event(event : Dictionary):
 		wait(event)
 	elif event.has("ANIMATION"):
 		play_animation(event)
-	elif event.has("SAVE"):
-		save(event)
+	elif event.has("CHOICE"):
+		choice(event)
 	elif event.has("END"):
 		end()
 
@@ -83,7 +83,7 @@ func play_animation(_event):
 func wait(_event):
 	run_next_event()
 
-func save(_event):
+func choice(_event):
 	run_next_event()
 
 func end():
