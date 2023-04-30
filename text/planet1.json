@@ -1,5 +1,7 @@
 {
     "DATA":[
+        {"CHARACTER":"Narrator"},
+        {"TEXT":"An old lady surrounded by pigeons appears to greet you, gently smiling at you and your small companion."},
         {"CHARACTER":"Hugo"},
         {"TEXT":"Whoa! Pigeons pigeons pigeons pigeons", "TIME":0.02},
         {"CHARACTER":"Benta"},

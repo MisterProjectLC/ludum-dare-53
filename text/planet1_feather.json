@@ -26,6 +26,8 @@
         {"TEXT":"Rororo, good luck, dear child! And good travels! I'm looking forward to hearing about your journey."},
         {"CHARACTER":"Hugo"},
         {"TEXT":"Goodbye!!", "TIME":0.03},
+        {"CHARACTER":"Narrator"},
+        {"TEXT":"The two of you depart from the planet. Hugo is still waving long after the old lady disappears from view."},
         {"END":"END"}
     ]
 }
