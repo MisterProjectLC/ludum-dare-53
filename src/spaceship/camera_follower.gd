@@ -25,6 +25,13 @@ func _process(delta):
 		Camera.change_zoom(Vector2.ONE * ZOOM_SENSITIVITY * 10 * delta)
 
 
+func set_limit(limit):
+	Camera.limit_left = -limit
+	Camera.limit_top = -limit
+	Camera.limit_right = limit
+	Camera.limit_bottom = limit
+
+
 func _on_spaceship_on_screen_changed(on_screen):
 	player_on_screen = on_screen
 	

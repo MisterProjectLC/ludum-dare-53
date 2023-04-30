@@ -1,9 +1,13 @@
 extends CharacterBody2D
 
 signal on_screen_changed(on_screen : bool)
+signal dash_updated(fuel_value)
 
 @export var ACCELERATION_STRENGTH = 25.0
 @export var MAX_SPEED = 1000.0
+@export var FUEL_TO_DASH = 4
+@export var DASH_SPEED = 200.0
+@export var limit = 150000
 
 @onready var Pointer = $%Pointer
 
@@ -11,6 +15,8 @@ var move_velocity  = Vector2.ZERO
 var look_vector = Vector2.ZERO
 var ori: Vector2
 
+var fuel = 0
+var dash_enabled = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,15 +34,42 @@ func _process(delta):
 		return
 	
 	manage_direction(delta)
+	manage_fuel(delta)
 	manager_acceleration(delta)
+
+
+func manage_fuel(delta):
+	if !dash_enabled:
+		return
+	
+	if fuel < FUEL_TO_DASH:
+		fuel += delta
+		emit_signal("dash_updated", fuel)
+	
+	if Input.is_action_just_pressed("dash"):
+		if fuel >= FUEL_TO_DASH:
+			move_velocity += look_vector*DASH_SPEED
+		fuel = 0
+		emit_signal("dash_updated", fuel)
 
 
 func manager_acceleration(delta):
 	move_and_collide(move_velocity)
+	
 	if Input.is_action_pressed("accelerate"):
 		move_velocity += look_vector*ACCELERATION_STRENGTH*delta
-		if move_velocity.length() > MAX_SPEED:
-			move_velocity = move_velocity.normalized()*MAX_SPEED
+	
+	if move_velocity.length() > MAX_SPEED:
+		move_velocity = lerp(move_velocity, move_velocity.normalized()*MAX_SPEED, 0.75)
+	
+	if global_position.x > limit:
+		global_position.x = -limit + 100
+	if global_position.y > limit:
+		global_position.y = -limit + 100
+	if global_position.x < -limit:
+		global_position.x = limit - 100
+	if global_position.y < -limit:
+		global_position.y = limit - 100
 
 
 func manage_direction(_delta):
@@ -62,6 +95,12 @@ func manage_direction_controller():
 
 func manage_direction_mouse():
 	look_vector = (get_global_mouse_position() - global_position).normalized()
+
+
+func set_dash_enabled(d):
+	dash_enabled = d
+	if !dash_enabled:
+		emit_signal("dash_updated", 0)
 
 
 func _on_visible_on_screen_notifier_2d_screen_entered():

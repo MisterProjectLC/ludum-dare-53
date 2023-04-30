@@ -8,7 +8,9 @@ extends Camera2D
 
 func change_zoom(delta):
 	set_zoom(get_zoom() + delta * sqrt(zoom.x))
-	if zoom.x <= 0.01:
-		set_zoom(Vector2.ONE * 0.01)
-	elif zoom.x > 5:
-		set_zoom(Vector2.ONE * 5)
+	if zoom.x <= 0.005:
+		set_zoom(Vector2.ONE * 0.005)
+	elif zoom.x > 8:
+		set_zoom(Vector2.ONE * 8)
+	
+	GlobalNode.set_camera_zoom(zoom.x)

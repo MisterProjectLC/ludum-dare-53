@@ -15,6 +15,7 @@ func get_dialog_title():
 
 func set_active(t):
 	active = t
+	$ZoomSprite.visible = t
 
 
 func _on_area_2d_body_entered(_body):
@@ -23,3 +24,11 @@ func _on_area_2d_body_entered(_body):
 	
 	area.set_deferred("monitoring", false)
 	emit_signal("spaceship_approached", self)
+
+
+func _on_long_range_detector_body_entered(_body):
+	$ZoomSprite.visible = true
+
+
+func _on_long_range_detector_body_exited(_body):
+	$ZoomSprite.visible = false

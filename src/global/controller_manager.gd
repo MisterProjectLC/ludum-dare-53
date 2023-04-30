@@ -1,6 +1,6 @@
 extends Node
 
-signal on_controller_changed(value)
+signal on_controller_changed(controller_active)
 
 var controller_active = false
 

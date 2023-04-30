@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dkatjtsrcspru"]
+[gd_scene load_steps=11 format=3 uid="uid://dkatjtsrcspru"]
 
 [ext_resource type="PackedScene" uid="uid://cr3fciq260ss8" path="res://src/spaceship/spaceship.tscn" id="1_16udo"]
 [ext_resource type="Script" path="res://src/scenes/space.gd" id="1_sb46e"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://ti6aaccyf1kh" path="res://src/ui/ui.tscn" id="4_ea8f2"]
 [ext_resource type="PackedScene" uid="uid://cvem255yquq0s" path="res://src/scenes/asteroid.tscn" id="5_c1ndk"]
 [ext_resource type="PackedScene" uid="uid://hfbgrdp6bmgq" path="res://src/ui/dialog/cutscene_controller.tscn" id="5_pgckx"]
+[ext_resource type="FontFile" uid="uid://cx6s3op6yjnhp" path="res://assets/ui/fonts/Spring Snowstorm.ttf" id="9_fu04u"]
+[ext_resource type="Script" path="res://src/scenes/tutorial_label.gd" id="10_6w66c"]
 
 [node name="Space" type="Node2D"]
 script = ExtResource("1_sb46e")
@@ -27,29 +29,29 @@ autostart = true
 [node name="Planets" type="Node2D" parent="."]
 
 [node name="Planet" parent="Planets" instance=ExtResource("4_57lwj")]
-position = Vector2(7772, 4305)
+position = Vector2(42844, 22353)
 dialog_title = "planet"
 
 [node name="Planet2" parent="Planets" instance=ExtResource("4_57lwj")]
-position = Vector2(-33468, -17010)
+position = Vector2(-58428, -43506)
 dialog_title = "planet"
 
 [node name="Planet3" parent="Planets" instance=ExtResource("4_57lwj")]
-position = Vector2(33476, -23026)
+position = Vector2(58180, -40050)
 dialog_title = "planet"
 
 [node name="Asteroids" type="Node2D" parent="."]
 
 [node name="Asteroid" parent="Asteroids" instance=ExtResource("5_c1ndk")]
-position = Vector2(-3084, 7379)
+position = Vector2(-66060, 2515)
 
 [node name="Station" parent="." instance=ExtResource("4_57lwj")]
-position = Vector2(-13604, 6993)
+position = Vector2(-40356, 31441)
 dialog_title = "planet"
+active = true
 
 [node name="Spaceship" parent="." instance=ExtResource("1_16udo")]
 ACCELERATION_STRENGTH = 5.0
-MAX_SPEED = 500.0
 
 [node name="CameraFollower" parent="." instance=ExtResource("2_g1kqm")]
 
@@ -59,11 +61,66 @@ MAX_SPEED = 500.0
 
 [node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2
+scale = Vector2(100, 100)
 texture = ExtResource("3_hgr57")
 region_enabled = true
-region_rect = Rect2(0, 0, 100000, 100000)
+region_rect = Rect2(0, 0, 200000, 200000)
+
+[node name="Accelerate" type="Label" parent="."]
+offset_left = 2725.0
+offset_top = 155.0
+offset_right = 4129.0
+offset_bottom = 595.0
+theme_override_fonts/font = ExtResource("9_fu04u")
+theme_override_font_sizes/font_size = 200
+text = "Hold the Left Mouse Button to accelerate"
+autowrap_mode = 2
+script = ExtResource("10_6w66c")
+keyboard_text = "Hold the Left Mouse Button to accelerate"
+controller_text = "Hold X to accelerate"
+
+[node name="ZoomIn" type="Label" parent="."]
+offset_left = -1755.0
+offset_top = 292.0
+offset_right = -351.0
+offset_bottom = 732.0
+theme_override_fonts/font = ExtResource("9_fu04u")
+theme_override_font_sizes/font_size = 200
+text = "Hold A to Zoom-Out"
+autowrap_mode = 2
+script = ExtResource("10_6w66c")
+keyboard_text = "Hold A to Zoom-Out"
+controller_text = "Hold L2 to Zoom-Out"
+
+[node name="ZoomOut" type="Label" parent="."]
+offset_left = 293.0
+offset_top = 316.0
+offset_right = 1697.0
+offset_bottom = 756.0
+theme_override_fonts/font = ExtResource("9_fu04u")
+theme_override_font_sizes/font_size = 200
+text = "Hold D to Zoom-In"
+autowrap_mode = 2
+script = ExtResource("10_6w66c")
+keyboard_text = "Hold D to Zoom-In"
+controller_text = "Hold R2 to Zoom-In"
+
+[node name="Zoom" type="Label" parent="."]
+offset_left = -625.0
+offset_top = 2349.0
+offset_right = 779.0
+offset_bottom = 3009.0
+theme_override_fonts/font = ExtResource("9_fu04u")
+theme_override_font_sizes/font_size = 200
+text = "You can also use the Scroll Wheel to control Zoom"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("10_6w66c")
+keyboard_text = "You can also use the Scroll Wheel to control Zoom"
 
 [connection signal="timeout" from="DialogTimer" to="." method="_on_dialog_timer_timeout"]
 [connection signal="animation_requested" from="CanvasLayer/CutsceneController" to="." method="_on_cutscene_controller_animation_requested"]
 [connection signal="events_ended" from="CanvasLayer/CutsceneController" to="." method="_on_cutscene_controller_events_ended"]
+[connection signal="dash_updated" from="Spaceship" to="CanvasLayer/UI" method="_on_spaceship_dash_updated"]
 [connection signal="on_screen_changed" from="Spaceship" to="CameraFollower" method="_on_spaceship_on_screen_changed"]
