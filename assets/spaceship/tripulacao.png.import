@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bd2bqblhodca"
-path="res://.godot/imported/hugo.png-1c8a3b683e7f6e41db28ca6c813c435c.ctex"
+uid="uid://du5u16rhg4u2i"
+path="res://.godot/imported/tripulacao.png-1cb282e28a774fa6c2c8e3fc5aed5e2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/hugo.png"
-dest_files=["res://.godot/imported/hugo.png-1c8a3b683e7f6e41db28ca6c813c435c.ctex"]
+source_file="res://assets/spaceship/tripulacao.png"
+dest_files=["res://.godot/imported/tripulacao.png-1cb282e28a774fa6c2c8e3fc5aed5e2e.ctex"]
 
 [params]
 
