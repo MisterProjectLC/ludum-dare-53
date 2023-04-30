@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bd2bqblhodca"
-path="res://.godot/imported/hugo.png-1c8a3b683e7f6e41db28ca6c813c435c.ctex"
+uid="uid://dco5nvyy2ofpg"
+path="res://.godot/imported/catioromapa.png-850af50e20a236536df6c0dd27d63ccb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/hugo.png"
-dest_files=["res://.godot/imported/hugo.png-1c8a3b683e7f6e41db28ca6c813c435c.ctex"]
+source_file="res://assets/characters/catioromapa.png"
+dest_files=["res://.godot/imported/catioromapa.png-850af50e20a236536df6c0dd27d63ccb.ctex"]
 
 [params]
 

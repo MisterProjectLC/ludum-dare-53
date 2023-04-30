@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bd2bqblhodca"
-path="res://.godot/imported/hugo.png-1c8a3b683e7f6e41db28ca6c813c435c.ctex"
+uid="uid://7p7pm35r0iu6"
+path="res://.godot/imported/menu_bg3.png-1a80890b379c3035b436ccdd5aabae88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/hugo.png"
-dest_files=["res://.godot/imported/hugo.png-1c8a3b683e7f6e41db28ca6c813c435c.ctex"]
+source_file="res://assets/ui/menu_bg3.png"
+dest_files=["res://.godot/imported/menu_bg3.png-1a80890b379c3035b436ccdd5aabae88.ctex"]
 
 [params]
 

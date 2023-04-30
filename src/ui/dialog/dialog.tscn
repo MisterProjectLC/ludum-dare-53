@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://cc15b70sewytv"]
+[gd_scene load_steps=12 format=3 uid="uid://cc15b70sewytv"]
 
+[ext_resource type="Texture2D" uid="uid://bmgy6te4aeuu2" path="res://assets/ui/dialog_hugo_low2.png" id="3_8g2k0"]
 [ext_resource type="Script" path="res://src/ui/dialog/dialog.gd" id="4"]
 [ext_resource type="Script" path="res://src/ui/dialog/live_dialog_box.gd" id="5"]
 [ext_resource type="FontFile" uid="uid://cx6s3op6yjnhp" path="res://assets/ui/fonts/Spring Snowstorm.ttf" id="5_xuo6c"]
@@ -149,15 +150,24 @@ script = ExtResource("6")
 metadata/_edit_lock_ = true
 
 [node name="Rect" type="ColorRect" parent="CutsceneDialogBox"]
-visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -99.0
 mouse_filter = 2
-color = Color(0, 0, 0, 0.317647)
+color = Color(0, 0, 0, 0)
 metadata/_edit_lock_ = true
+
+[node name="Background" type="TextureRect" parent="CutsceneDialogBox/Rect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = -72.0
+offset_right = 1149.0
+offset_bottom = 100.0
+texture = ExtResource("3_8g2k0")
 
 [node name="Label" type="Label" parent="CutsceneDialogBox/Rect"]
 layout_mode = 1
@@ -166,15 +176,18 @@ anchor_left = 0.155
 anchor_top = 0.1
 anchor_right = 0.975
 anchor_bottom = 0.9
-offset_left = -163.56
-offset_top = 5.29998
-offset_right = -163.28
-offset_bottom = 4.42497
+offset_left = -114.56
+offset_top = -32.9
+offset_right = -56.2001
+offset_bottom = -30.1
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 10
 theme_override_fonts/font = ExtResource("5_xuo6c")
 theme_override_font_sizes/font_size = 28
-text = "I'm flying up in the sky!"
+text = "I'm flying up in the sky!
+Teste"
 autowrap_mode = 2
 
 [node name="Portrait" type="TextureRect" parent="CutsceneDialogBox/Rect"]
@@ -218,8 +231,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -99.0
 mouse_filter = 2
-color = Color(0, 0, 0, 0.317647)
+color = Color(0, 0, 0, 0)
 metadata/_edit_lock_ = true
+
+[node name="Background" type="TextureRect" parent="LiveDialogBox/Rect"]
+modulate = Color(1, 1, 1, 0.301961)
+texture_filter = 1
+offset_left = 1.0
+offset_top = -72.0
+offset_right = 1149.0
+offset_bottom = 100.0
+texture = ExtResource("3_8g2k0")
 
 [node name="Label" type="Label" parent="LiveDialogBox/Rect"]
 layout_mode = 1
@@ -228,15 +250,19 @@ anchor_left = 0.155
 anchor_top = 0.1
 anchor_right = 0.975
 anchor_bottom = 0.9
-offset_left = -163.16
-offset_top = 4.09998
-offset_right = -163.16
-offset_bottom = 4.09998
+offset_left = -114.56
+offset_top = -32.9
+offset_right = -56.2001
+offset_bottom = -30.1
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 10
 theme_override_fonts/font = ExtResource("5_xuo6c")
 theme_override_font_sizes/font_size = 28
-text = "I'm flying up in space!"
+text = "I'm flying up in the sky!
+Teste"
+autowrap_mode = 2
 
 [node name="Portrait" type="TextureRect" parent="LiveDialogBox/Rect"]
 layout_mode = 0
