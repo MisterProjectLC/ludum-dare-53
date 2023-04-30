@@ -59,10 +59,10 @@ func on_spaceship_approached_station(body):
 
 func on_spaceship_approached_planet(body):
 	play_dialog(body.get_dialog_title())
+	planets_visited += 1
 	if planets_visited % 3 == 0:
 		activate_station()
 	
-	planets_visited += 1
 	space_dialog_index += 1
 	on_planet = true
 

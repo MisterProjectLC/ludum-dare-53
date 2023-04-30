@@ -23,7 +23,7 @@ _data = {
 
 [node name="Space" type="Node2D"]
 script = ExtResource("1_0xl6g")
-space_dialogs = Array[String](["test", "companion1", "companion2", "companion3"])
+space_dialogs = Array[String](["test", "companion1", "companion2", "companion3", "companion4", "companion5", "companion6", "companion7", "companion9"])
 items = Array[String](["feather", "rose", "coffee"])
 
 [node name="DialogTimer" type="Timer" parent="."]
@@ -40,25 +40,26 @@ autostart = true
 [node name="Planets" type="Node2D" parent="."]
 
 [node name="Planet" parent="Planets" instance=ExtResource("4_jhfi4")]
-position = Vector2(42844, 22353)
+position = Vector2(10588, 7505)
 dialog_title = "planet1"
 
 [node name="Planet2" parent="Planets" instance=ExtResource("4_jhfi4")]
-position = Vector2(-58428, -43506)
-dialog_title = "planet"
+position = Vector2(-28800, -13056)
+dialog_title = "planet2"
 
 [node name="Planet3" parent="Planets" instance=ExtResource("4_jhfi4")]
-position = Vector2(58180, -40050)
-dialog_title = "planet"
+position = Vector2(26624, -16768)
+dialog_title = "planet3"
 
 [node name="Asteroids" type="Node2D" parent="."]
 
 [node name="Asteroid" parent="Asteroids" instance=ExtResource("5_3du45")]
 position = Vector2(-66060, 2515)
+dialog_title = "comic_fan"
 
 [node name="Station" parent="." instance=ExtResource("4_jhfi4")]
 position = Vector2(-5413, 4305)
-dialog_title = "planet3"
+dialog_title = "companion0"
 active = true
 
 [node name="Spaceship" parent="." instance=ExtResource("6_se3sy")]
@@ -76,6 +77,7 @@ scale = Vector2(100, 100)
 texture = ExtResource("8_nkdbu")
 region_enabled = true
 region_rect = Rect2(0, 0, 200000, 200000)
+metadata/_edit_lock_ = true
 
 [node name="NebulaParallax" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.75, 0.75)

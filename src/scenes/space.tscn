@@ -45,11 +45,11 @@ dialog_title = "planet1"
 
 [node name="Planet2" parent="Planets" instance=ExtResource("4_57lwj")]
 position = Vector2(-58428, -43506)
-dialog_title = "planet"
+dialog_title = "planet2"
 
 [node name="Planet3" parent="Planets" instance=ExtResource("4_57lwj")]
 position = Vector2(58180, -40050)
-dialog_title = "planet"
+dialog_title = "planet3"
 
 [node name="Asteroids" type="Node2D" parent="."]
 
