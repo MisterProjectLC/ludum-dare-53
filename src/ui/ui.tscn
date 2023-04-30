@@ -119,7 +119,6 @@ autowrap_mode = 2
 metadata/_edit_lock_ = true
 
 [node name="CurrentObjective" type="Label" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -137,6 +136,7 @@ autowrap_mode = 2
 metadata/_edit_lock_ = true
 
 [node name="ItemUI" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0

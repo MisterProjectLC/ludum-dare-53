@@ -27,6 +27,9 @@ func _on_area_2d_body_entered(_body):
 
 
 func _on_long_range_detector_body_entered(_body):
+	if !active:
+		return
+	
 	$ZoomSprite.visible = true
 
 

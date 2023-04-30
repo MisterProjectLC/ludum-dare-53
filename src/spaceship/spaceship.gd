@@ -79,6 +79,7 @@ func manage_direction(_delta):
 		manage_direction_mouse()
 	
 	Pointer.rotation = atan2(-look_vector.y, -look_vector.x)
+	$Sprite.scale.x = 1 if look_vector.dot(Vector2.RIGHT) > 0 else -1
 
 
 func manage_direction_controller():
@@ -100,6 +101,7 @@ func manage_direction_mouse():
 func set_dash_enabled(d):
 	dash_enabled = d
 	if !dash_enabled:
+		fuel = 0
 		emit_signal("dash_updated", 0)
 
 
