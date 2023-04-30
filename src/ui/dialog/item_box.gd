@@ -2,17 +2,19 @@ extends ColorRect
 
 signal on_clicked(index)
 
+var item = {}
 var hovered = false
 var active = false
 var index = 0
 
-func get_title():
-	return $Label.text
+func get_item():
+	return item
 
 
-func setup(item):
-	$Image.texture = item["IMAGE"]
-	$Label.text = item["TITLE"]
+func setup(this_item):
+	item = this_item
+	$Image.texture = this_item["IMAGE"]
+	$Label.text = this_item["TITLE"].capitalize()
 
 
 func _input(event):
