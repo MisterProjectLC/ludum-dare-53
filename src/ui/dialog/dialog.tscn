@@ -143,6 +143,7 @@ mouse_filter = 2
 script = ExtResource("4")
 default_font = ExtResource("2_7apce")
 narrator_font = ExtResource("5_xuo6c")
+default_char_time = 0.04
 metadata/_edit_lock_ = true
 
 [node name="CutsceneDialogBox" type="Control" parent="."]

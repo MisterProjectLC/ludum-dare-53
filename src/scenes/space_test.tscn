@@ -58,7 +58,7 @@ position = Vector2(-66060, 2515)
 
 [node name="Station" parent="." instance=ExtResource("4_jhfi4")]
 position = Vector2(-5413, 4305)
-dialog_title = "planet2"
+dialog_title = "planet3"
 active = true
 
 [node name="Spaceship" parent="." instance=ExtResource("6_se3sy")]
