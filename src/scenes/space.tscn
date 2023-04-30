@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dkatjtsrcspru"]
+[gd_scene load_steps=15 format=3 uid="uid://dkatjtsrcspru"]
 
 [ext_resource type="PackedScene" uid="uid://cr3fciq260ss8" path="res://src/spaceship/spaceship.tscn" id="1_16udo"]
 [ext_resource type="Script" path="res://src/scenes/space.gd" id="1_sb46e"]
@@ -7,11 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://ti6aaccyf1kh" path="res://src/ui/ui.tscn" id="4_ea8f2"]
 [ext_resource type="PackedScene" uid="uid://cvem255yquq0s" path="res://src/scenes/asteroid.tscn" id="5_c1ndk"]
 [ext_resource type="PackedScene" uid="uid://hfbgrdp6bmgq" path="res://src/ui/dialog/cutscene_controller.tscn" id="5_pgckx"]
-[ext_resource type="Texture2D" uid="uid://t2ljpq0j1iag" path="res://assets/background/bg.png" id="8_6txdh"]
+[ext_resource type="Texture2D" uid="uid://boyifkv68apv0" path="res://assets/background/bg.png" id="8_6txdh"]
 [ext_resource type="FontFile" uid="uid://cx6s3op6yjnhp" path="res://assets/ui/fonts/Spring Snowstorm.ttf" id="9_fu04u"]
 [ext_resource type="Texture2D" uid="uid://2u4nxymn4fki" path="res://assets/background/nebula.png" id="9_s1de7"]
 [ext_resource type="Script" path="res://src/scenes/tutorial_label.gd" id="10_6w66c"]
-[ext_resource type="Texture2D" uid="uid://jjjpr7k5sqn6" path="res://assets/background/stars.png" id="10_w4adj"]
+[ext_resource type="Texture2D" uid="uid://wqgvbwqiylbq" path="res://assets/background/stars.png" id="10_w4adj"]
 
 [sub_resource type="Animation" id="Animation_7kiu3"]
 resource_name = "HugoPopup"
@@ -24,7 +24,7 @@ _data = {
 [node name="Space" type="Node2D"]
 script = ExtResource("1_sb46e")
 space_dialogs = Array[String](["test", "companion1", "companion2", "companion3"])
-items = Array[String](["feather", "coffee", "guitar"])
+items = Array[String](["feather", "rose", "coffee"])
 
 [node name="DialogTimer" type="Timer" parent="."]
 wait_time = 5.0
@@ -58,7 +58,7 @@ position = Vector2(-66060, 2515)
 
 [node name="Station" parent="." instance=ExtResource("4_57lwj")]
 position = Vector2(-60708, 41937)
-dialog_title = "companion0w"
+dialog_title = "companion0"
 active = true
 
 [node name="Spaceship" parent="." instance=ExtResource("1_16udo")]
@@ -158,6 +158,7 @@ libraries = {
 [connection signal="timeout" from="DialogTimer" to="." method="_on_dialog_timer_timeout"]
 [connection signal="animation_requested" from="CanvasLayer/CutsceneController" to="." method="_on_cutscene_controller_animation_requested"]
 [connection signal="events_ended" from="CanvasLayer/CutsceneController" to="." method="_on_cutscene_controller_events_ended"]
+[connection signal="item_chosen" from="CanvasLayer/CutsceneController" to="." method="_on_cutscene_controller_item_chosen"]
 [connection signal="dash_updated" from="Spaceship" to="CanvasLayer/UI" method="_on_spaceship_dash_updated"]
 [connection signal="on_screen_changed" from="Spaceship" to="CameraFollower" method="_on_spaceship_on_screen_changed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

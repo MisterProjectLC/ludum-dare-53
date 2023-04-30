@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ti6aaccyf1kh"]
+[gd_scene load_steps=10 format=3 uid="uid://ti6aaccyf1kh"]
 
 [ext_resource type="Script" path="res://src/ui/ui.gd" id="1_jclyw"]
 [ext_resource type="FontFile" uid="uid://cx6s3op6yjnhp" path="res://assets/ui/fonts/Spring Snowstorm.ttf" id="2_4hl4m"]
 [ext_resource type="Script" path="res://src/scenes/tutorial_label.gd" id="3_13csf"]
+[ext_resource type="Script" path="res://src/ui/dialog/item_box.gd" id="4_840mf"]
+[ext_resource type="Texture2D" uid="uid://c1j7wiky7o0tw" path="res://icon.svg" id="5_8c6a0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yh2yv"]
 bg_color = Color(1, 0.866667, 0.65098, 0)
@@ -16,6 +18,39 @@ bg_color = Color(1, 0.866667, 0.65098, 1)
 border_width_left = 2
 border_width_right = 2
 border_width_bottom = 2
+
+[sub_resource type="Animation" id="Animation_25cag"]
+resource_name = "Show"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bgq6h"]
+_data = {
+"Show": SubResource("Animation_25cag")
+}
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -64,3 +99,210 @@ script = ExtResource("3_13csf")
 keyboard_text = "Press Right Mouse Button to Dash"
 controller_text = "Press R1 to Dash"
 metadata/_edit_lock_ = true
+
+[node name="ObjectiveContext" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -183.0
+offset_top = 9.0
+offset_right = -18.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_4hl4m")
+theme_override_font_sizes/font_size = 25
+text = "Current Objective:"
+horizontal_alignment = 2
+vertical_alignment = 2
+autowrap_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="CurrentObjective" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -323.0
+offset_top = 40.0
+offset_right = -18.0
+offset_bottom = 115.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_4hl4m")
+theme_override_font_sizes/font_size = 25
+text = "Listen to the Radio"
+horizontal_alignment = 2
+autowrap_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="ItemUI" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -364.0
+offset_top = -153.0
+offset_right = -2.0
+offset_bottom = 161.0
+grow_horizontal = 0
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="ItemContext" type="Label" parent="ItemUI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -189.0
+offset_top = 5.0
+offset_right = -24.0
+offset_bottom = 36.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_4hl4m")
+theme_override_font_sizes/font_size = 25
+text = "Packages:"
+horizontal_alignment = 2
+vertical_alignment = 2
+autowrap_mode = 2
+
+[node name="ItemContainer" type="VBoxContainer" parent="ItemUI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -245.0
+offset_top = 45.0
+offset_right = -1.0
+offset_bottom = 271.0
+grow_horizontal = 0
+metadata/_edit_lock_ = true
+
+[node name="Item" type="ColorRect" parent="ItemUI/ItemContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+size_flags_vertical = 5
+color = Color(0.560784, 0.627451, 0.858824, 0)
+script = ExtResource("4_840mf")
+
+[node name="Image" type="TextureRect" parent="ItemUI/ItemContainer/Item"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -116.0
+offset_top = -25.0
+offset_right = 12.0
+offset_bottom = 103.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(64, 64)
+texture = ExtResource("5_8c6a0")
+
+[node name="Label" type="Label" parent="ItemUI/ItemContainer/Item"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -221.0
+offset_top = 24.0
+offset_right = -93.0
+offset_bottom = 60.0
+grow_horizontal = 0
+pivot_offset = Vector2(128, 18)
+theme_override_fonts/font = ExtResource("2_4hl4m")
+theme_override_font_sizes/font_size = 30
+text = "LETTER CARD"
+horizontal_alignment = 2
+
+[node name="Item2" type="ColorRect" parent="ItemUI/ItemContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+size_flags_vertical = 5
+color = Color(0.560784, 0.627451, 0.858824, 0)
+script = ExtResource("4_840mf")
+
+[node name="Image" type="TextureRect" parent="ItemUI/ItemContainer/Item2"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -116.0
+offset_top = -25.0
+offset_right = 12.0
+offset_bottom = 103.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(64, 64)
+texture = ExtResource("5_8c6a0")
+
+[node name="Label" type="Label" parent="ItemUI/ItemContainer/Item2"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -221.0
+offset_top = 24.0
+offset_right = -93.0
+offset_bottom = 60.0
+grow_horizontal = 0
+pivot_offset = Vector2(128, 18)
+theme_override_fonts/font = ExtResource("2_4hl4m")
+theme_override_font_sizes/font_size = 30
+text = "LETTER CARD"
+horizontal_alignment = 2
+
+[node name="Item3" type="ColorRect" parent="ItemUI/ItemContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+size_flags_vertical = 5
+color = Color(0.560784, 0.627451, 0.858824, 0)
+script = ExtResource("4_840mf")
+
+[node name="Image" type="TextureRect" parent="ItemUI/ItemContainer/Item3"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -116.0
+offset_top = -25.0
+offset_right = 12.0
+offset_bottom = 103.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(64, 64)
+texture = ExtResource("5_8c6a0")
+
+[node name="Label" type="Label" parent="ItemUI/ItemContainer/Item3"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -221.0
+offset_top = 24.0
+offset_right = -93.0
+offset_bottom = 60.0
+grow_horizontal = 0
+pivot_offset = Vector2(128, 18)
+theme_override_fonts/font = ExtResource("2_4hl4m")
+theme_override_font_sizes/font_size = 30
+text = "LETTER CARD"
+horizontal_alignment = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ItemUI"]
+libraries = {
+"": SubResource("AnimationLibrary_bgq6h")
+}
+
+[connection signal="mouse_entered" from="ItemUI/ItemContainer/Item" to="ItemUI/ItemContainer/Item" method="_on_mouse_entered" flags=18]
+[connection signal="mouse_exited" from="ItemUI/ItemContainer/Item" to="ItemUI/ItemContainer/Item" method="_on_mouse_exited" flags=18]
+[connection signal="mouse_entered" from="ItemUI/ItemContainer/Item2" to="ItemUI/ItemContainer/Item2" method="_on_mouse_entered" flags=18]
+[connection signal="mouse_exited" from="ItemUI/ItemContainer/Item2" to="ItemUI/ItemContainer/Item2" method="_on_mouse_exited" flags=18]
+[connection signal="mouse_entered" from="ItemUI/ItemContainer/Item3" to="ItemUI/ItemContainer/Item3" method="_on_mouse_entered" flags=18]
+[connection signal="mouse_exited" from="ItemUI/ItemContainer/Item3" to="ItemUI/ItemContainer/Item3" method="_on_mouse_exited" flags=18]

@@ -12,8 +12,8 @@ var items = []
 const ITEM_ANIMATIONS = ["OneItem", "TwoItems", "ThreeItems"]
 
 
-func add_item(image, title):
-	items.append({"IMAGE":image, "TITLE":title})
+func add_item(item):
+	items.append(item)
 
 
 func show_items():
@@ -22,9 +22,11 @@ func show_items():
 		items_parent.get_child(i).set_active(true)
 	Animator.play(ITEM_ANIMATIONS[len(items)-1])
 
+
 func _on_item_clicked(index):
 	for i in range(min(3, len(items))):
 		items_parent.get_child(i).set_active(false)
 	Animator.play_backwards(ITEM_ANIMATIONS[len(items)-1])
+	
 	items.remove_at(index)
-	emit_signal("item_chosen", items_parent.get_child(index).get_title())
+	emit_signal("item_chosen", items_parent.get_child(index).get_item())

@@ -22,7 +22,7 @@ func _on_area_2d_body_entered(_body):
 	if !active:
 		return
 	
-	area.set_deferred("monitoring", false)
+	set_active(false)
 	emit_signal("spaceship_approached", self)
 
 

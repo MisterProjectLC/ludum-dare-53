@@ -1,6 +1,8 @@
 extends CutsceneHandler
 class_name CutsceneController
 
+signal item_chosen(item)
+
 @export var voices : Dictionary
 
 @onready var dialog : Dialog = $Dialog
@@ -95,10 +97,8 @@ func choice(event):
 	Inventory.show_items()
 
 
-func add_item(title):
-	var image = TextureLoader.get_tex_from_title(
-		"items/" + title.to_lower())
-	Inventory.add_item(image, title)
+func add_item(item):
+	Inventory.add_item(item)
 
 
 func stop():
@@ -148,11 +148,13 @@ func _on_dialog_dialog_finished():
 		run_next_event()
 
 
-func _on_inventory_item_chosen(title):
+func _on_inventory_item_chosen(item):
 	waiting_choice = false
+	var title = item["TITLE"]
 	if title in choice_events:
 		load_events(current_scene + "_" + title.to_lower())
 	else:
 		load_events(current_scene + "_" + "wrong")
 	choice_events = []
 	stored_events = []
+	emit_signal("item_chosen", item)
