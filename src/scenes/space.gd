@@ -35,6 +35,7 @@ func _ready():
 			planet.connect("spaceship_approached", Callable(self, "on_spaceship_approached_planet"))
 	for asteroid in Asteroids.get_children():
 		asteroid.connect("spaceship_approached", Callable(self, "on_spaceship_approached_asteroid"))
+	PlanetX.connect("spaceship_approached", Callable(self, "on_spaceship_approached_planetx"))
 	
 	Station.connect("spaceship_approached", Callable(self, "on_spaceship_approached_station"))
 	Spaceship.limit = limit
@@ -75,6 +76,12 @@ func on_spaceship_approached_planet(body):
 	if planets_on_cycle_visited >= get_planet_cycle(game_stage).get_child_count():
 		activate_station()
 	
+	space_dialog_index += 1
+	on_planet = true
+
+
+func on_spaceship_approached_planetx(body):
+	play_dialog(body.get_dialog_title())
 	space_dialog_index += 1
 	on_planet = true
 

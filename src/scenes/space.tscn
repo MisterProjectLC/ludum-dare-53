@@ -88,8 +88,6 @@ autostart = true
 
 [node name="UI" parent="CanvasLayer" instance=ExtResource("4_ea8f2")]
 
-[node name="CutsceneController" parent="CanvasLayer" instance=ExtResource("5_pgckx")]
-
 [node name="BoxEnding" type="ColorRect" parent="CanvasLayer"]
 visible = false
 anchors_preset = 15
@@ -145,6 +143,8 @@ offset_bottom = 178.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_rhgmn")
+
+[node name="CutsceneController" parent="CanvasLayer" instance=ExtResource("5_pgckx")]
 
 [node name="Foreground" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15

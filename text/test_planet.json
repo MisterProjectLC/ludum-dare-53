@@ -1,0 +1,8 @@
+{
+    "DATA":[
+        {"CHARACTER":"Protagonist"},
+        {"TEXT":"A", "TIME":0.01},
+        {"CHOICE":[]},
+        {"END":"END"}
+    ]
+}

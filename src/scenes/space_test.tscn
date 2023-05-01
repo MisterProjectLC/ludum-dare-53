@@ -74,21 +74,18 @@ _data = {
 
 [node name="Space" type="Node2D"]
 script = ExtResource("1_0xl6g")
-space_dialogs = Array[String](["test", "test", "radio2", "radio1", "test", "test", "test", "test", "test", "test", "test", "test"])
+space_dialogs = Array[String](["test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test"])
 station_dialogs = Array[String](["packages", "packages", "ending"])
 items = Array[String](["feather", "rose", "coffee", "briefcase", "teddy bear", "letter", "tickets"])
 limit = 10000
 
 [node name="DialogTimer" type="Timer" parent="."]
-wait_time = 5.0
 one_shot = true
 autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="UI" parent="CanvasLayer" instance=ExtResource("2_pp6a6")]
-
-[node name="CutsceneController" parent="CanvasLayer" instance=ExtResource("3_an4li")]
 
 [node name="BoxEnding" type="ColorRect" parent="CanvasLayer"]
 visible = false
@@ -146,6 +143,8 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_sqfrl")
 
+[node name="CutsceneController" parent="CanvasLayer" instance=ExtResource("3_an4li")]
+
 [node name="Foreground" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
@@ -164,45 +163,44 @@ metadata/_edit_lock_ = true
 
 [node name="Planet" parent="Cycles/Cycle" instance=ExtResource("4_jhfi4")]
 position = Vector2(-173, 1143)
-dialog_title = "planet1"
+dialog_title = "test_planet"
 
 [node name="Planet2" parent="Cycles/Cycle" instance=ExtResource("4_jhfi4")]
-position = Vector2(-10158, 19)
-dialog_title = "planet2"
+position = Vector2(-744, 100)
+dialog_title = "test_planet"
 
 [node name="Planet3" parent="Cycles/Cycle" instance=ExtResource("4_jhfi4")]
-position = Vector2(-1241, -3924)
-dialog_title = "planet3"
+position = Vector2(997, -25)
+dialog_title = "test_planet"
 
 [node name="Cycle2" type="Node2D" parent="Cycles"]
 
 [node name="Planet4" parent="Cycles/Cycle2" instance=ExtResource("4_jhfi4")]
-position = Vector2(-6314, 8477)
-dialog_title = "planet1"
+position = Vector2(-1318, 1224)
+dialog_title = "test_planet"
 
 [node name="Planet5" parent="Cycles/Cycle2" instance=ExtResource("4_jhfi4")]
-position = Vector2(5712, 6704)
-dialog_title = "planet2"
+position = Vector2(1179, 1915)
+dialog_title = "test_planet"
 
 [node name="Planet6" parent="Cycles/Cycle2" instance=ExtResource("4_jhfi4")]
-position = Vector2(9067, -737)
-dialog_title = "planet3"
+position = Vector2(1769, 1259)
+dialog_title = "test_planet"
 
 [node name="Cycle3" type="Node2D" parent="Cycles"]
 
 [node name="Planet7" parent="Cycles/Cycle3" instance=ExtResource("4_jhfi4")]
-position = Vector2(-7228, -5156)
-dialog_title = "planet1"
+position = Vector2(1732, -314)
+dialog_title = "test_planet"
 
 [node name="PlanetX" parent="." instance=ExtResource("4_jhfi4")]
-position = Vector2(6966, -7767)
-dialog_title = "planet1"
+position = Vector2(3267, 378)
 hidden_body = true
 
 [node name="Asteroids" type="Node2D" parent="."]
 
 [node name="ComicFan" parent="Asteroids" instance=ExtResource("5_3du45")]
-position = Vector2(-8204, 2003)
+position = Vector2(1785, 2085)
 
 [node name="Emma" parent="Asteroids" instance=ExtResource("5_3du45")]
 position = Vector2(4773, 3107)
@@ -227,12 +225,15 @@ position = Vector2(-2202, 6641)
 
 [node name="Station" parent="." instance=ExtResource("4_jhfi4")]
 position = Vector2(-549, 777)
+dialog_title = "ending"
 active = true
 
 [node name="Spaceship" parent="." instance=ExtResource("6_se3sy")]
 scale = Vector2(0.1, 0.1)
-ACCELERATION_STRENGTH = 0.5
+ACCELERATION_STRENGTH = 10.0
 MAX_SPEED = 40.0
+FUEL_TO_DASH = 1
+DASH_SPEED = 5.0
 
 [node name="CameraFollower" parent="." instance=ExtResource("7_3daj7")]
 
