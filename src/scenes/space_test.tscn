@@ -14,9 +14,6 @@
 [ext_resource type="FontFile" uid="uid://cx6s3op6yjnhp" path="res://assets/ui/fonts/Spring Snowstorm.ttf" id="11_t8qno"]
 [ext_resource type="Script" path="res://src/scenes/tutorial_label.gd" id="12_0a4vh"]
 
-[sub_resource type="Animation" id="Animation_7kiu3"]
-resource_name = "HugoPopup"
-
 [sub_resource type="Animation" id="Animation_0wi1v"]
 resource_name = "FadeOut"
 length = 0.6
@@ -32,6 +29,9 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
+
+[sub_resource type="Animation" id="Animation_7kiu3"]
+resource_name = "HugoPopup"
 
 [sub_resource type="Animation" id="Animation_ujsrt"]
 resource_name = "ShowBox"

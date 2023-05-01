@@ -1,0 +1,154 @@
+[gd_scene load_steps=12 format=3 uid="uid://cg8peekvi3uyp"]
+
+[ext_resource type="Script" path="res://src/ui/main_menu.gd" id="1_87vvg"]
+[ext_resource type="Texture2D" uid="uid://d1mgxv0w31phf" path="res://assets/ui/menu_bg1.png" id="2_4cp6q"]
+[ext_resource type="Texture2D" uid="uid://dxgitim7yfg53" path="res://assets/ui/menu_bg2.png" id="2_sxa6l"]
+[ext_resource type="Texture2D" uid="uid://7p7pm35r0iu6" path="res://assets/ui/menu_bg3.png" id="4_ro6kl"]
+[ext_resource type="FontFile" uid="uid://ejg6njgqesdf" path="res://assets/ui/fonts/CoffeCake.ttf" id="5_44c5o"]
+[ext_resource type="PackedScene" uid="uid://b3rdnci654m2g" path="res://src/ui/menu_button.tscn" id="6_hbl3d"]
+[ext_resource type="PackedScene" uid="uid://cc6rckhiyshl8" path="res://src/ui/options_menu.tscn" id="7_cn34p"]
+
+[sub_resource type="Animation" id="Animation_sqqfm"]
+resource_name = "Idle"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_4cp6q"), ExtResource("2_sxa6l"), ExtResource("4_ro6kl")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pe8sv"]
+_data = {
+"Idle": SubResource("Animation_sqqfm")
+}
+
+[sub_resource type="Animation" id="Animation_fo0tf"]
+resource_name = "ShowOptions"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Buttons:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(80, 300), Vector2(-185, 300)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OptionsMenu:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-185, 300), Vector2(80, 300)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6xrrj"]
+_data = {
+"ShowOptions": SubResource("Animation_fo0tf")
+}
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_87vvg")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 768.0
+offset_bottom = 432.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_sxa6l")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background"]
+autoplay = "Idle"
+libraries = {
+"": SubResource("AnimationLibrary_pe8sv")
+}
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 67.0
+offset_right = 611.0
+offset_bottom = 154.0
+theme_override_colors/font_color = Color(1, 0.866667, 0.65098, 1)
+theme_override_fonts/font = ExtResource("5_44c5o")
+theme_override_font_sizes/font_size = 80
+text = "Courrier de Cadeau"
+autowrap_mode = 2
+
+[node name="Buttons" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 80.0
+offset_top = 300.0
+offset_right = 265.0
+offset_bottom = 494.0
+
+[node name="Start" parent="Buttons" instance=ExtResource("6_hbl3d")]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 7.0
+offset_right = 200.0
+offset_bottom = 66.0
+focus_neighbor_bottom = NodePath("../Options")
+
+[node name="Options" parent="Buttons" instance=ExtResource("6_hbl3d")]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 58.0
+offset_right = 199.0
+offset_bottom = 117.0
+focus_neighbor_top = NodePath("../Start")
+focus_neighbor_bottom = NodePath("../Quit")
+text = "Options"
+
+[node name="Quit" parent="Buttons" instance=ExtResource("6_hbl3d")]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 111.0
+offset_right = 204.0
+offset_bottom = 170.0
+focus_neighbor_top = NodePath("../Options")
+text = "Quit"
+
+[node name="OptionsMenu" parent="." instance=ExtResource("7_cn34p")]
+offset_left = -185.0
+offset_top = 300.0
+offset_right = 0.0
+offset_bottom = 515.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6xrrj")
+}
+
+[connection signal="button_up" from="Buttons/Start" to="." method="_on_start_button_up"]
+[connection signal="button_up" from="Buttons/Options" to="." method="_on_options_button_up"]
+[connection signal="button_up" from="Buttons/Quit" to="." method="_on_quit_button_up"]
+[connection signal="back_pressed" from="OptionsMenu" to="." method="_on_options_menu_back_pressed"]

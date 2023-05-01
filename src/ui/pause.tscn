@@ -1,0 +1,154 @@
+[gd_scene load_steps=11 format=3 uid="uid://ck2gcoikq0ki"]
+
+[ext_resource type="Script" path="res://src/ui/pause_menu.gd" id="1_xdyxe"]
+[ext_resource type="PackedScene" uid="uid://cc6rckhiyshl8" path="res://src/ui/options_menu.tscn" id="2_5raj1"]
+[ext_resource type="PackedScene" uid="uid://b3rdnci654m2g" path="res://src/ui/menu_button.tscn" id="2_xfqml"]
+
+[sub_resource type="Animation" id="6"]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.509804)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="7"]
+length = 0.2
+
+[sub_resource type="Animation" id="8"]
+length = 0.4
+
+[sub_resource type="Animation" id="9"]
+length = 0.2
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g5ka3"]
+_data = {
+"Blackout": SubResource("6"),
+"OptionsClose": SubResource("7"),
+"OptionsOpen": SubResource("8"),
+"OptionsOpenNormal": SubResource("9")
+}
+
+[sub_resource type="Animation" id="Animation_fo0tf"]
+resource_name = "ShowOptions"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Buttons:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(80, 300), Vector2(-185, 300)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OptionsMenu:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-185, 300), Vector2(80, 300)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6xrrj"]
+_data = {
+"ShowOptions": SubResource("Animation_fo0tf")
+}
+
+[node name="Pause" type="ColorRect"]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="PauseMenu" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_xdyxe")
+
+[node name="Buttons" type="Control" parent="PauseMenu"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 80.0
+offset_top = 300.0
+offset_right = 265.0
+offset_bottom = 494.0
+
+[node name="Back" parent="PauseMenu/Buttons" instance=ExtResource("2_xfqml")]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 7.0
+offset_right = 200.0
+offset_bottom = 66.0
+focus_neighbor_bottom = NodePath("../Options")
+text = "Back"
+
+[node name="Options" parent="PauseMenu/Buttons" instance=ExtResource("2_xfqml")]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 58.0
+offset_right = 199.0
+offset_bottom = 117.0
+focus_neighbor_top = NodePath("../Back")
+focus_neighbor_bottom = NodePath("../MainMenu")
+text = "Options"
+
+[node name="MainMenu" parent="PauseMenu/Buttons" instance=ExtResource("2_xfqml")]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 111.0
+offset_right = 204.0
+offset_bottom = 170.0
+focus_neighbor_top = NodePath("../Options")
+text = "Main Menu"
+
+[node name="OptionsMenu" parent="PauseMenu" instance=ExtResource("2_5raj1")]
+offset_left = -185.0
+offset_top = 300.0
+offset_right = 0.0
+offset_bottom = 515.0
+
+[node name="PauseAnimations" type="AnimationPlayer" parent="PauseMenu"]
+libraries = {
+"": SubResource("AnimationLibrary_g5ka3")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PauseMenu"]
+libraries = {
+"": SubResource("AnimationLibrary_6xrrj")
+}
+
+[connection signal="button_up" from="PauseMenu/Buttons/Back" to="PauseMenu" method="_on_back_button_up"]
+[connection signal="button_up" from="PauseMenu/Buttons/Options" to="PauseMenu" method="_on_options_button_up"]
+[connection signal="button_up" from="PauseMenu/Buttons/MainMenu" to="PauseMenu" method="_on_main_menu_button_up"]
+[connection signal="back_pressed" from="PauseMenu/OptionsMenu" to="PauseMenu" method="_on_options_menu_back_pressed"]

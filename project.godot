@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Projet Cadeau"
-run/main_scene="res://src/scenes/space.tscn"
+run/main_scene="res://src/ui/main_menu.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 ControllerManager="*res://src/global/controller_manager.tscn"
 TimeController="*res://src/global/time_controller.tscn"
 GlobalNode="*res://src/global/global.tscn"
+Transitions="*res://src/ui/transitions.tscn"
 
 [input]
 
