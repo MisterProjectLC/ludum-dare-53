@@ -1,7 +1,7 @@
 extends CutsceneHandler
 class_name CutsceneController
 
-signal item_chosen(item)
+signal item_chosen(item, was_correct)
 
 @export var voices : Dictionary
 
@@ -156,10 +156,12 @@ func _on_dialog_dialog_finished():
 func _on_inventory_item_chosen(item):
 	waiting_choice = false
 	var title = item["TITLE"]
-	if title in choice_events:
+	
+	var correct = (title in choice_events)
+	if correct:
 		load_events(current_scene + "_" + title.to_lower())
 	else:
 		load_events(current_scene + "_" + "wrong")
 	choice_events = []
 	stored_events = []
-	emit_signal("item_chosen", item)
+	emit_signal("item_chosen", item, correct)

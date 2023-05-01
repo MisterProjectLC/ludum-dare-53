@@ -4,6 +4,7 @@ extends Node2D
 @onready var Asteroids = $Asteroids
 @onready var Station = $Station
 @onready var Spaceship = $Spaceship
+@onready var PlanetX = $PlanetX
 @onready var Camera = $CameraFollower
 @onready var CutscenePlayer = $CanvasLayer/CutsceneController
 @onready var DialogTimer = $DialogTimer
@@ -18,8 +19,11 @@ var inventory = []
 
 var on_planet = false
 var planets_visited = 0
+var planets_on_cycle_visited = 0
 var space_dialog_index = 0
 var game_stage = -1
+enum STAGE {PREGAME = -1, CYCLE1, CYCLE2, CYCLE3, ENDING}
+
 
 @export var limit = 100000
 
@@ -46,9 +50,15 @@ func on_spaceship_approached_station(body):
 	
 	space_dialog_index += 1
 	game_stage += 1
-	if game_stage == 0:
-		for asteroid in Asteroids.get_children():
-			asteroid.set_active(true)
+	planets_on_cycle_visited = 0
+	
+	match(game_stage):
+		STAGE.CYCLE1:
+			for asteroid in Asteroids.get_children():
+				asteroid.set_active(true)
+		STAGE.CYCLE2:
+			PlanetX.set_active(true)
+	
 	
 	if (game_stage+1) <= Cycles.get_child_count():
 		activate_planets()
@@ -60,7 +70,9 @@ func on_spaceship_approached_station(body):
 func on_spaceship_approached_planet(body):
 	play_dialog(body.get_dialog_title())
 	planets_visited += 1
-	if planets_visited % 3 == 0:
+	
+	planets_on_cycle_visited += 1
+	if planets_on_cycle_visited >= get_planet_cycle(game_stage).get_child_count():
 		activate_station()
 	
 	space_dialog_index += 1
@@ -71,23 +83,28 @@ func on_spaceship_approached_asteroid(body):
 	play_dialog(body.get_dialog_title())
 
 
-func play_dialog(events):
-	CutscenePlayer.load_events(events)
+func _on_cutscene_controller_item_chosen(item, correct):
+	inventory.erase(item)
+	UI.set_items(inventory)
+	if correct:
+		if item["TITLE"].to_lower() == "feather":
+			space_dialogs[space_dialogs.find("radio2")] = "radio2_right"
 
 
-func _on_cutscene_controller_events_ended():
-	if game_stage == 3:
-		#get_tree().change_scene_to_file()
-		return
-	elif on_planet:
-		on_planet = false
-		DialogTimer.start()
-		Spaceship.set_dash_enabled(false)
-	
-	else:
-		Spaceship.set_dash_enabled(true)
-		if game_stage == -1:
-			activate_station()
+func end_game():
+	get_tree().change_scene_to_file("res://src/ui/main_menu.tscn")
+
+
+func leave_planet():
+	on_planet = false
+	DialogTimer.start()
+	Spaceship.set_dash_enabled(false)
+
+
+func ended_space_dialog():
+	Spaceship.set_dash_enabled(true)
+	if game_stage == -1:
+		activate_station()
 
 
 func activate_planets():
@@ -111,8 +128,28 @@ func activate_station():
 	Station.set_active(true)
 
 
+# HELPERS AND REACTIONS -----------------------
+
+func get_planet_cycle(i):
+	return Cycles.get_child(i)
+
+func play_dialog(events):
+	CutscenePlayer.load_events(events)
+
+
 func _on_dialog_timer_timeout():
 	play_dialog(space_dialogs[space_dialog_index])
+
+
+func _on_cutscene_controller_events_ended():
+	if game_stage == 3: # end game
+		end_game()
+	
+	elif on_planet: # Finished planet
+		leave_planet()
+	
+	else:
+		ended_space_dialog()
 
 
 func _on_cutscene_controller_animation_requested(animation, backwards):
@@ -124,8 +161,3 @@ func _on_cutscene_controller_animation_requested(animation, backwards):
 
 func _on_animation_player_animation_finished(anim_name):
 	CutscenePlayer.on_animation_finished(anim_name)
-
-
-func _on_cutscene_controller_item_chosen(item):
-	inventory.erase(item)
-	UI.set_items(inventory)

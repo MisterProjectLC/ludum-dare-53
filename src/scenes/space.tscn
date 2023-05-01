@@ -74,9 +74,9 @@ _data = {
 
 [node name="Space" type="Node2D"]
 script = ExtResource("1_sb46e")
-space_dialogs = Array[String](["test", "companion1", "companion2", "radio1", "companion3", "radio2", "companion4", "companion5", "companion6"])
+space_dialogs = Array[String](["radio0", "companion1", "companion2", "radio1", "companion3", "radio2", "companion4", "companion5", "companion6", "companion7", "companion8", "companion9"])
 station_dialogs = Array[String](["packages", "packages", "ending"])
-items = Array[String](["feather", "rose", "coffee", "briefcase"])
+items = Array[String](["feather", "rose", "coffee", "briefcase", "teddy bear", "letter", "tickets"])
 limit = 10000
 
 [node name="DialogTimer" type="Timer" parent="."]
@@ -196,7 +196,7 @@ dialog_title = "planet1"
 
 [node name="PlanetX" parent="." instance=ExtResource("4_57lwj")]
 position = Vector2(6966, -7767)
-dialog_title = "planet3"
+dialog_title = "planet1"
 hidden_body = true
 
 [node name="Asteroids" type="Node2D" parent="."]
