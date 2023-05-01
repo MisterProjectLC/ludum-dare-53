@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://qf6wgt3ongoo"]
+[gd_scene load_steps=18 format=3 uid="uid://qf6wgt3ongoo"]
 
 [ext_resource type="Script" path="res://src/scenes/space.gd" id="1_0xl6g"]
 [ext_resource type="PackedScene" uid="uid://ti6aaccyf1kh" path="res://src/ui/ui.tscn" id="2_pp6a6"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cfa5r1ixno5d6" path="res://src/scenes/planet.tscn" id="4_jhfi4"]
 [ext_resource type="PackedScene" uid="uid://cvem255yquq0s" path="res://src/scenes/asteroid.tscn" id="5_3du45"]
 [ext_resource type="PackedScene" uid="uid://cr3fciq260ss8" path="res://src/spaceship/spaceship.tscn" id="6_se3sy"]
+[ext_resource type="Texture2D" uid="uid://bfdo0oq0rm5aw" path="res://assets/spaceship/foguete_v2.png" id="6_sqfrl"]
 [ext_resource type="PackedScene" uid="uid://0a34ry1c2h6b" path="res://src/spaceship/camera_follower.tscn" id="7_3daj7"]
 [ext_resource type="Texture2D" uid="uid://boyifkv68apv0" path="res://assets/background/bg.png" id="8_nkdbu"]
 [ext_resource type="Texture2D" uid="uid://2u4nxymn4fki" path="res://assets/background/nebula.png" id="9_mlr61"]
@@ -16,14 +17,49 @@
 [sub_resource type="Animation" id="Animation_7kiu3"]
 resource_name = "HugoPopup"
 
+[sub_resource type="Animation" id="Animation_0wi1v"]
+resource_name = "FadeOut"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Foreground:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ujsrt"]
+resource_name = "ShowBox"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/BoxEnding:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gkhll"]
 _data = {
-"HugoPopup": SubResource("Animation_7kiu3")
+"FadeOut": SubResource("Animation_0wi1v"),
+"HugoPopup": SubResource("Animation_7kiu3"),
+"ShowBox": SubResource("Animation_ujsrt")
 }
 
 [node name="Space" type="Node2D"]
 script = ExtResource("1_0xl6g")
 space_dialogs = Array[String](["test", "companion1", "companion2", "companion3", "companion4", "companion5", "companion6", "companion7", "companion9"])
+station_dialogs = Array[String](["packages", "packages", "ending"])
 items = Array[String](["feather", "rose", "coffee"])
 
 [node name="DialogTimer" type="Timer" parent="."]
@@ -35,7 +71,73 @@ autostart = true
 
 [node name="UI" parent="CanvasLayer" instance=ExtResource("2_pp6a6")]
 
+[node name="BoxEnding" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0352941, 0.0156863, 0.203922, 1)
+metadata/_edit_lock_ = true
+
+[node name="BG" type="TextureRect" parent="CanvasLayer/BoxEnding"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -237.0
+offset_top = -210.0
+offset_right = 259.0
+offset_bottom = 178.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_nkdbu")
+
+[node name="BGNebula" type="TextureRect" parent="CanvasLayer/BoxEnding"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -237.0
+offset_top = -210.0
+offset_right = 259.0
+offset_bottom = 178.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_mlr61")
+
+[node name="Box" type="TextureRect" parent="CanvasLayer/BoxEnding"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -237.0
+offset_top = -210.0
+offset_right = 259.0
+offset_bottom = 178.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_sqfrl")
+
 [node name="CutsceneController" parent="CanvasLayer" instance=ExtResource("3_an4li")]
+
+[node name="Foreground" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_lock_ = true
 
 [node name="Planets" type="Node2D" parent="."]
 
