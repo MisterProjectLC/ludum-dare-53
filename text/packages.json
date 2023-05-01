@@ -1,9 +1,9 @@
 {
-    "DATA":[
-        {"CHARACTER":"Protagonist"},
-        {"TEXT":"...", "TIME":0.12},
-        {"CHARACTER":"Hugo"},
-        {"TEXT":"Hmmm... I wonder what packages we have this time?", "TIME":0.02},
-        {"END":"END"}
-    ]
+	"DATA":[
+		{"CHARACTER":"Protagonist"},
+		{"TEXT":"...", "TIME":0.12},
+		{"CHARACTER":"Hugo"},
+		{"TEXT":"Hmmm... I wonder what packages we have this time?", "TIME":0.02},
+		{"END":"END"}
+	]
 }

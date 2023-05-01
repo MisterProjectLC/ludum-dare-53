@@ -1,18 +1,18 @@
 {
-    "DATA":[
-        {"CHARACTER":"Music"},	
-        {"TEXT":"...Can't move fast without breaking!"},
-        {"CHARACTER":"Music"},	
-        {"TEXT":" ...Can't hold on or life won't change!"},
-        {"CHARACTER":"Hugo"},	
-        {"TEXT":"H-Hey, lady! What are you..."," TIME": 0.03},
-        {"CHARACTER":"Music"},	
-        {"TEXT":"-Took the mask off to feel free! Fought it on the debris!"},
-        {"CHARACTER":"Music"},	
-        {"TEXT":" NOW WE KNOW THAT LIFE WILL CHANGE, YEAH!!"},
-        {"CHARACTER":"Hugo"},	
-        {"LIVE_TEXT":"I don't think she's listening...", "TIME": 0.03},
-        {"END":"END"}
-    ]
+	"DATA":[
+		{"CHARACTER":"Music"},	
+		{"TEXT":"...Can't move fast without breaking!"},
+		{"CHARACTER":"Music"},	
+		{"TEXT":" ...Can't hold on or life won't change!"},
+		{"CHARACTER":"Hugo"},	
+		{"TEXT":"H-Hey, lady! What are you..."," TIME": 0.03},
+		{"CHARACTER":"Music"},	
+		{"TEXT":"-Took the mask off to feel free! Fought it on the debris!"},
+		{"CHARACTER":"Music"},	
+		{"TEXT":" NOW WE KNOW THAT LIFE WILL CHANGE, YEAH!!"},
+		{"CHARACTER":"hugo_huh"},	
+		{"LIVE_TEXT":"I don't think she's listening...", "TIME": 0.03},
+		{"END":"END"}
+	]
 }
 
