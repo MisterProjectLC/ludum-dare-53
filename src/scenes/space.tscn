@@ -275,24 +275,24 @@ image = ExtResource("11_76wlb")
 
 [node name="Planet4" parent="Cycles/Cycle2" instance=ExtResource("4_57lwj")]
 position = Vector2(-6314, 8477)
-dialog_title = "planet1"
+dialog_title = "planet4"
 image = ExtResource("12_1uux8")
 
 [node name="Planet5" parent="Cycles/Cycle2" instance=ExtResource("4_57lwj")]
 position = Vector2(5712, 6704)
-dialog_title = "planet2"
+dialog_title = "planet5"
 image = ExtResource("13_6pp5n")
 
 [node name="Planet6" parent="Cycles/Cycle2" instance=ExtResource("4_57lwj")]
 position = Vector2(9067, -737)
-dialog_title = "planet3"
+dialog_title = "planet6"
 image = ExtResource("14_vpioa")
 
 [node name="Cycle3" type="Node2D" parent="Cycles"]
 
 [node name="Planet7" parent="Cycles/Cycle3" instance=ExtResource("4_57lwj")]
 position = Vector2(-7228, -5156)
-dialog_title = "planet1"
+dialog_title = "planet7"
 image = ExtResource("15_0m83r")
 
 [node name="PlanetX" parent="." instance=ExtResource("4_57lwj")]
