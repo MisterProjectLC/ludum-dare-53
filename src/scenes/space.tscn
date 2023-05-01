@@ -160,6 +160,7 @@ dialog_title = "planet3"
 
 [node name="Asteroid" parent="Asteroids" instance=ExtResource("5_c1ndk")]
 position = Vector2(-66060, 2515)
+dialog_title = "comic_fan"
 
 [node name="Station" parent="." instance=ExtResource("4_57lwj")]
 position = Vector2(-60708, 41937)

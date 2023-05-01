@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csfyerxc55ph5"
-path="res://.godot/imported/hugobrabo.png-19afd23d036b6f6a2833ce61c723b915.ctex"
+uid="uid://bnqn0sba6c48i"
+path="res://.godot/imported/madeleine_sad.png-6f752d63527c664a2b3e62363c237161.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/hugobrabo.png"
-dest_files=["res://.godot/imported/hugobrabo.png-19afd23d036b6f6a2833ce61c723b915.ctex"]
+source_file="res://assets/characters/madeleine_sad.png"
+dest_files=["res://.godot/imported/madeleine_sad.png-6f752d63527c664a2b3e62363c237161.ctex"]
 
 [params]
 

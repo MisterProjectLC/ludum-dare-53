@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjrg443ikvft3"
-path="res://.godot/imported/hugoempolgado.png-e4593a4d387a2b01221dab70b1d97667.ctex"
+uid="uid://b1lb33v5x84c0"
+path="res://.godot/imported/madeleine.png-665b5efe0d9a395c6964f720648412dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/hugoempolgado.png"
-dest_files=["res://.godot/imported/hugoempolgado.png-e4593a4d387a2b01221dab70b1d97667.ctex"]
+source_file="res://assets/characters/madeleine.png"
+dest_files=["res://.godot/imported/madeleine.png-665b5efe0d9a395c6964f720648412dd.ctex"]
 
 [params]
 

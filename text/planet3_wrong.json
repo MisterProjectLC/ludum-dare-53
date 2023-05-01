@@ -2,7 +2,7 @@
     "DATA":[
         {"CHARACTER":"Narrator"},
         {"TEXT":"The girl opens up the package... her hands slightly trembling.", "NARRATOR":true},
-        {"CHARACTER":"Madeleine"},
+        {"CHARACTER":"Madeleine_phone"},
         {"TEXT":"I... S-Sorry, I don't recognize this."},
         {"TEXT":"..."},
         {"TEXT":"I think it's better if I go back home and sleep through the rest of the carnival..."},

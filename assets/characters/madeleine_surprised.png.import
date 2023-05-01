@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7ftauchg7ny6"
-path="res://.godot/imported/hugo.png-1c8a3b683e7f6e41db28ca6c813c435c.ctex"
+uid="uid://c8jmghw0y7ldb"
+path="res://.godot/imported/madeleine_surprised.png-28f6d6ebfb5f61b0448edb3429e23e48.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/hugo.png"
-dest_files=["res://.godot/imported/hugo.png-1c8a3b683e7f6e41db28ca6c813c435c.ctex"]
+source_file="res://assets/characters/madeleine_surprised.png"
+dest_files=["res://.godot/imported/madeleine_surprised.png-28f6d6ebfb5f61b0448edb3429e23e48.ctex"]
 
 [params]
 
