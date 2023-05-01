@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://hfbgrdp6bmgq"]
+[gd_scene load_steps=12 format=3 uid="uid://hfbgrdp6bmgq"]
 
 [ext_resource type="Script" path="res://src/ui/dialog/cutscene_controller.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://cc15b70sewytv" path="res://src/ui/dialog/dialog.tscn" id="2"]
 [ext_resource type="Script" path="res://src/utils/audio_player.gd" id="4"]
 [ext_resource type="Script" path="res://src/ui/dialog/inventory.gd" id="4_o7rmf"]
 [ext_resource type="PackedScene" uid="uid://danu2maigu0qe" path="res://src/ui/dialog/item.tscn" id="5_lxtti"]
+[ext_resource type="AudioStream" uid="uid://dc8j50dxw2yl4" path="res://assets/audio/sfx/select2.wav" id="6_rw1pk"]
 
 [sub_resource type="Animation" id="Animation_ungnq"]
 resource_name = "OneItem"
@@ -217,6 +218,10 @@ offset_bottom = 950.0
 libraries = {
 "": SubResource("AnimationLibrary_py7w2")
 }
+
+[node name="SelectSound" type="AudioStreamPlayer" parent="Inventory"]
+stream = ExtResource("6_rw1pk")
+bus = &"SFX"
 
 [connection signal="dialog_finished" from="Dialog" to="." method="_on_dialog_dialog_finished"]
 [connection signal="timeout" from="Wait" to="." method="_on_Wait_timeout"]

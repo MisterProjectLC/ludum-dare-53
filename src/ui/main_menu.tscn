@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cg8peekvi3uyp"]
+[gd_scene load_steps=13 format=3 uid="uid://cg8peekvi3uyp"]
 
 [ext_resource type="Script" path="res://src/ui/main_menu.gd" id="1_87vvg"]
 [ext_resource type="Texture2D" uid="uid://d1mgxv0w31phf" path="res://assets/ui/menu_bg1.png" id="2_4cp6q"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://ejg6njgqesdf" path="res://assets/ui/fonts/CoffeCake.ttf" id="5_44c5o"]
 [ext_resource type="PackedScene" uid="uid://b3rdnci654m2g" path="res://src/ui/menu_button.tscn" id="6_hbl3d"]
 [ext_resource type="PackedScene" uid="uid://cc6rckhiyshl8" path="res://src/ui/options_menu.tscn" id="7_cn34p"]
+[ext_resource type="AudioStream" uid="uid://cif0gokf3qqa0" path="res://assets/audio/bgm/Into_The_Unknown.mp3" id="8_51mj0"]
 
 [sub_resource type="Animation" id="Animation_sqqfm"]
 resource_name = "Idle"
@@ -148,6 +149,11 @@ offset_bottom = 515.0
 libraries = {
 "": SubResource("AnimationLibrary_6xrrj")
 }
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_51mj0")
+autoplay = true
+bus = &"BGM"
 
 [connection signal="button_up" from="Buttons/Start" to="." method="_on_start_button_up"]
 [connection signal="button_up" from="Buttons/Options" to="." method="_on_options_button_up"]

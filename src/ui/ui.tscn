@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://cx6s3op6yjnhp" path="res://assets/ui/fonts/Spring Snowstorm.ttf" id="2_4hl4m"]
 [ext_resource type="Script" path="res://src/scenes/tutorial_label.gd" id="3_13csf"]
 [ext_resource type="Script" path="res://src/ui/dialog/item_box.gd" id="4_840mf"]
-[ext_resource type="Texture2D" uid="uid://c1j7wiky7o0tw" path="res://icon.svg" id="5_8c6a0"]
+[ext_resource type="Texture2D" uid="uid://08w2qspj02xt" path="res://assets/items/briefcase.png" id="5_kcnen"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yh2yv"]
 bg_color = Color(1, 0.866667, 0.65098, 0)
@@ -193,14 +193,14 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -116.0
-offset_top = -25.0
-offset_right = 12.0
-offset_bottom = 103.0
+offset_left = -196.0
+offset_top = -46.0
+offset_right = 580.0
+offset_bottom = 463.0
 grow_horizontal = 0
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.25, 0.25)
 pivot_offset = Vector2(64, 64)
-texture = ExtResource("5_8c6a0")
+texture = ExtResource("5_kcnen")
 
 [node name="Label" type="Label" parent="ItemUI/ItemContainer/Item"]
 layout_mode = 1
@@ -225,21 +225,6 @@ size_flags_vertical = 5
 color = Color(0.560784, 0.627451, 0.858824, 0)
 script = ExtResource("4_840mf")
 
-[node name="Image" type="TextureRect" parent="ItemUI/ItemContainer/Item2"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -116.0
-offset_top = -25.0
-offset_right = 12.0
-offset_bottom = 103.0
-grow_horizontal = 0
-scale = Vector2(0.5, 0.5)
-pivot_offset = Vector2(64, 64)
-texture = ExtResource("5_8c6a0")
-
 [node name="Label" type="Label" parent="ItemUI/ItemContainer/Item2"]
 layout_mode = 1
 anchors_preset = 1
@@ -256,27 +241,27 @@ theme_override_font_sizes/font_size = 30
 text = "LETTER CARD"
 horizontal_alignment = 2
 
+[node name="Image" type="TextureRect" parent="ItemUI/ItemContainer/Item2"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -196.0
+offset_top = -46.0
+offset_right = 580.0
+offset_bottom = 463.0
+grow_horizontal = 0
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(64, 64)
+texture = ExtResource("5_kcnen")
+
 [node name="Item3" type="ColorRect" parent="ItemUI/ItemContainer"]
 custom_minimum_size = Vector2(0, 75)
 layout_mode = 2
 size_flags_vertical = 5
 color = Color(0.560784, 0.627451, 0.858824, 0)
 script = ExtResource("4_840mf")
-
-[node name="Image" type="TextureRect" parent="ItemUI/ItemContainer/Item3"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -116.0
-offset_top = -25.0
-offset_right = 12.0
-offset_bottom = 103.0
-grow_horizontal = 0
-scale = Vector2(0.5, 0.5)
-pivot_offset = Vector2(64, 64)
-texture = ExtResource("5_8c6a0")
 
 [node name="Label" type="Label" parent="ItemUI/ItemContainer/Item3"]
 layout_mode = 1
@@ -293,6 +278,21 @@ theme_override_fonts/font = ExtResource("2_4hl4m")
 theme_override_font_sizes/font_size = 30
 text = "LETTER CARD"
 horizontal_alignment = 2
+
+[node name="Image" type="TextureRect" parent="ItemUI/ItemContainer/Item3"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -196.0
+offset_top = -46.0
+offset_right = 580.0
+offset_bottom = 463.0
+grow_horizontal = 0
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(64, 64)
+texture = ExtResource("5_kcnen")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ItemUI"]
 libraries = {

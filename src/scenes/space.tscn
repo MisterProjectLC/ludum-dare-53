@@ -1,25 +1,34 @@
-[gd_scene load_steps=27 format=3 uid="uid://dkatjtsrcspru"]
+[gd_scene load_steps=36 format=3 uid="uid://dkatjtsrcspru"]
 
 [ext_resource type="PackedScene" uid="uid://cr3fciq260ss8" path="res://src/spaceship/spaceship.tscn" id="1_16udo"]
 [ext_resource type="Script" path="res://src/scenes/space.gd" id="1_sb46e"]
 [ext_resource type="PackedScene" uid="uid://0a34ry1c2h6b" path="res://src/spaceship/camera_follower.tscn" id="2_g1kqm"]
+[ext_resource type="AudioStream" uid="uid://bu8udhcpnogbj" path="res://assets/audio/bgm/Adventure_Awaits.mp3" id="2_oj57i"]
+[ext_resource type="AudioStream" uid="uid://ibkief2kjb35" path="res://assets/audio/bgm/Your_package_is_here.mp3" id="3_38vu4"]
 [ext_resource type="PackedScene" uid="uid://cfa5r1ixno5d6" path="res://src/scenes/planet.tscn" id="4_57lwj"]
 [ext_resource type="PackedScene" uid="uid://ti6aaccyf1kh" path="res://src/ui/ui.tscn" id="4_ea8f2"]
 [ext_resource type="Texture2D" uid="uid://bfdo0oq0rm5aw" path="res://assets/spaceship/foguete_v2.png" id="4_rhgmn"]
 [ext_resource type="PackedScene" uid="uid://cvem255yquq0s" path="res://src/scenes/asteroid.tscn" id="5_c1ndk"]
 [ext_resource type="PackedScene" uid="uid://hfbgrdp6bmgq" path="res://src/ui/dialog/cutscene_controller.tscn" id="5_pgckx"]
 [ext_resource type="PackedScene" uid="uid://ck2gcoikq0ki" path="res://src/ui/pause.tscn" id="7_m8k4q"]
+[ext_resource type="Texture2D" uid="uid://buxmf34pw5k6c" path="res://assets/spaceship/pegue o pombo.png" id="8_6do3v"]
 [ext_resource type="Texture2D" uid="uid://boyifkv68apv0" path="res://assets/background/bg.png" id="8_6txdh"]
+[ext_resource type="Texture2D" uid="uid://ru8s7wlxs8kc" path="res://assets/spaceship/cafezinho.png" id="8_mr206"]
 [ext_resource type="Texture2D" uid="uid://bb0gqhflu0exl" path="res://assets/planets/Planeta dos Pombos.png" id="9_6gdby"]
 [ext_resource type="FontFile" uid="uid://cx6s3op6yjnhp" path="res://assets/ui/fonts/Spring Snowstorm.ttf" id="9_fu04u"]
 [ext_resource type="Texture2D" uid="uid://2u4nxymn4fki" path="res://assets/background/nebula.png" id="9_s1de7"]
 [ext_resource type="Script" path="res://src/scenes/tutorial_label.gd" id="10_6w66c"]
+[ext_resource type="Texture2D" uid="uid://dpec0si3ri6da" path="res://assets/spaceship/coracao.png" id="10_cblqe"]
 [ext_resource type="Texture2D" uid="uid://c2tfyixmk7yo" path="res://assets/planets/Planeta do Café.png" id="10_hffeq"]
 [ext_resource type="Texture2D" uid="uid://wqgvbwqiylbq" path="res://assets/background/stars.png" id="10_w4adj"]
 [ext_resource type="Texture2D" uid="uid://nw6gpcbyulo3" path="res://assets/planets/Planeta das Flores.png" id="11_76wlb"]
+[ext_resource type="Texture2D" uid="uid://bg2s7l0in50mm" path="res://assets/spaceship/banananaa nft.png" id="11_bcevy"]
 [ext_resource type="Texture2D" uid="uid://dbgk0aw7m11is" path="res://assets/planets/Planeta dos Macacos.png" id="12_1uux8"]
+[ext_resource type="Texture2D" uid="uid://cqtiymw1umb6g" path="res://assets/spaceship/escultura.png" id="12_6raxj"]
 [ext_resource type="Texture2D" uid="uid://b0yyayphb0qxe" path="res://assets/planets/Planeta do Artista.png" id="13_6pp5n"]
+[ext_resource type="Texture2D" uid="uid://d33fr6yo60cio" path="res://assets/spaceship/cachecol.png" id="13_7neoq"]
 [ext_resource type="Texture2D" uid="uid://cdx7oh4gmm28a" path="res://assets/planets/Planeta Marte.png" id="14_vpioa"]
+[ext_resource type="Texture2D" uid="uid://do8hrk1w4k4tc" path="res://assets/spaceship/polvo.png" id="14_wmhhl"]
 [ext_resource type="Texture2D" uid="uid://dinfethmjt6sj" path="res://assets/planets/Planeta Suiça-Hospital.png" id="15_0m83r"]
 [ext_resource type="Texture2D" uid="uid://blpgi1p1pdfic" path="res://assets/planets/Planeta da Mãe.png" id="16_6a451"]
 
@@ -84,8 +93,15 @@ _data = {
 script = ExtResource("1_sb46e")
 space_dialogs = Array[String](["radio0", "companion1", "companion2", "radio1", "companion3", "radio2", "companion4", "companion5", "companion6", "companion7", "companion8", "companion9"])
 station_dialogs = Array[String](["packages", "packages", "ending"])
-items = Array[String](["feather", "rose", "coffee", "briefcase", "teddy bear", "letter", "tickets"])
+items = Array[String](["feather", "rose", "coffee", "briefcase", "teddy bear", "royal letter", "tickets"])
+space_music = ExtResource("2_oj57i")
+dialog_music = ExtResource("3_38vu4")
 limit = 10000
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_oj57i")
+autoplay = true
+bus = &"BGM"
 
 [node name="DialogTimer" type="Timer" parent="."]
 wait_time = 5.0
@@ -137,20 +153,88 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_s1de7")
 
-[node name="Box" type="TextureRect" parent="CanvasLayer/BoxEnding"]
+[node name="Box2" type="TextureRect" parent="CanvasLayer/BoxEnding"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -237.0
-offset_top = -210.0
-offset_right = 259.0
-offset_bottom = 178.0
+offset_left = -233.0
+offset_top = -182.0
+offset_right = 263.0
+offset_bottom = 206.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_rhgmn")
+
+[node name="Stickers" type="Control" parent="CanvasLayer/BoxEnding"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/BoxEnding/Stickers"]
+visible = false
+layout_mode = 0
+offset_left = 199.0
+offset_top = 51.0
+offset_right = 975.0
+offset_bottom = 560.0
+texture = ExtResource("8_6do3v")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/BoxEnding/Stickers"]
+visible = false
+layout_mode = 0
+offset_left = 199.0
+offset_top = 51.0
+offset_right = 975.0
+offset_bottom = 560.0
+texture = ExtResource("8_mr206")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/BoxEnding/Stickers"]
+visible = false
+layout_mode = 0
+offset_left = 199.0
+offset_top = 51.0
+offset_right = 975.0
+offset_bottom = 560.0
+texture = ExtResource("10_cblqe")
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/BoxEnding/Stickers"]
+visible = false
+layout_mode = 0
+offset_left = 199.0
+offset_top = 51.0
+offset_right = 975.0
+offset_bottom = 560.0
+texture = ExtResource("11_bcevy")
+
+[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/BoxEnding/Stickers"]
+visible = false
+layout_mode = 0
+offset_left = 199.0
+offset_top = 51.0
+offset_right = 975.0
+offset_bottom = 560.0
+texture = ExtResource("12_6raxj")
+
+[node name="TextureRect6" type="TextureRect" parent="CanvasLayer/BoxEnding/Stickers"]
+visible = false
+layout_mode = 0
+offset_left = 199.0
+offset_top = 51.0
+offset_right = 975.0
+offset_bottom = 560.0
+texture = ExtResource("13_7neoq")
+
+[node name="TextureRect7" type="TextureRect" parent="CanvasLayer/BoxEnding/Stickers"]
+visible = false
+layout_mode = 0
+offset_left = 199.0
+offset_top = 51.0
+offset_right = 975.0
+offset_bottom = 560.0
+texture = ExtResource("14_wmhhl")
 
 [node name="CutsceneController" parent="CanvasLayer" instance=ExtResource("5_pgckx")]
 
@@ -219,27 +303,45 @@ image = ExtResource("16_6a451")
 
 [node name="ComicFan" parent="Asteroids" instance=ExtResource("5_c1ndk")]
 position = Vector2(-8204, 2003)
+active = true
 
 [node name="Emma" parent="Asteroids" instance=ExtResource("5_c1ndk")]
 position = Vector2(4773, 3107)
+dialog_title = "Emma"
+active = true
 
 [node name="Soldier" parent="Asteroids" instance=ExtResource("5_c1ndk")]
 position = Vector2(-4627, -4923)
+dialog_title = "Soldier"
+active = true
 
 [node name="GirlMusic" parent="Asteroids" instance=ExtResource("5_c1ndk")]
 position = Vector2(3327, -1841)
+dialog_title = "Girl"
+active = true
 
 [node name="ManCorner" parent="Asteroids" instance=ExtResource("5_c1ndk")]
 position = Vector2(10595, 7293)
+dialog_title = "TMCG"
+active = true
 
 [node name="BoyArco" parent="Asteroids" instance=ExtResource("5_c1ndk")]
 position = Vector2(3712, -5463)
 
 [node name="Traveler" parent="Asteroids" instance=ExtResource("5_c1ndk")]
 position = Vector2(-3035, -1286)
+dialog_title = "Traveler"
+active = true
 
 [node name="Astronomer" parent="Asteroids" instance=ExtResource("5_c1ndk")]
 position = Vector2(-2202, 6641)
+dialog_title = "Astronomer"
+active = true
+
+[node name="Loner" parent="Asteroids" instance=ExtResource("5_c1ndk")]
+position = Vector2(-1454, -7042)
+dialog_title = "Loner"
+active = true
 
 [node name="Station" parent="." instance=ExtResource("4_57lwj")]
 position = Vector2(-2392, 2795)
