@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cajqjb1itpodq"
-path="res://.godot/imported/hugohuh.png-d39c1f943cbf978d057e086baa8f27cc.ctex"
+uid="uid://dkvfue5y2rwba"
+path="res://.godot/imported/madeleine_emotional.png-d91df89437a1a73f2143dcd4494be515.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/hugohuh.png"
-dest_files=["res://.godot/imported/hugohuh.png-d39c1f943cbf978d057e086baa8f27cc.ctex"]
+source_file="res://assets/characters/madeleine_emotional.png"
+dest_files=["res://.godot/imported/madeleine_emotional.png-d91df89437a1a73f2143dcd4494be515.ctex"]
 
 [params]
 
