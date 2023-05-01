@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dkatjtsrcspru"]
+[gd_scene load_steps=19 format=3 uid="uid://dkatjtsrcspru"]
 
 [ext_resource type="PackedScene" uid="uid://cr3fciq260ss8" path="res://src/spaceship/spaceship.tscn" id="1_16udo"]
 [ext_resource type="Script" path="res://src/scenes/space.gd" id="1_sb46e"]
@@ -8,14 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://bfdo0oq0rm5aw" path="res://assets/spaceship/foguete_v2.png" id="4_rhgmn"]
 [ext_resource type="PackedScene" uid="uid://cvem255yquq0s" path="res://src/scenes/asteroid.tscn" id="5_c1ndk"]
 [ext_resource type="PackedScene" uid="uid://hfbgrdp6bmgq" path="res://src/ui/dialog/cutscene_controller.tscn" id="5_pgckx"]
+[ext_resource type="PackedScene" uid="uid://ck2gcoikq0ki" path="res://src/ui/pause.tscn" id="7_m8k4q"]
 [ext_resource type="Texture2D" uid="uid://boyifkv68apv0" path="res://assets/background/bg.png" id="8_6txdh"]
 [ext_resource type="FontFile" uid="uid://cx6s3op6yjnhp" path="res://assets/ui/fonts/Spring Snowstorm.ttf" id="9_fu04u"]
 [ext_resource type="Texture2D" uid="uid://2u4nxymn4fki" path="res://assets/background/nebula.png" id="9_s1de7"]
 [ext_resource type="Script" path="res://src/scenes/tutorial_label.gd" id="10_6w66c"]
 [ext_resource type="Texture2D" uid="uid://wqgvbwqiylbq" path="res://assets/background/stars.png" id="10_w4adj"]
-
-[sub_resource type="Animation" id="Animation_7kiu3"]
-resource_name = "HugoPopup"
 
 [sub_resource type="Animation" id="Animation_0wi1v"]
 resource_name = "FadeOut"
@@ -32,6 +30,9 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
+
+[sub_resource type="Animation" id="Animation_7kiu3"]
+resource_name = "HugoPopup"
 
 [sub_resource type="Animation" id="Animation_ujsrt"]
 resource_name = "ShowBox"
@@ -138,6 +139,8 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 metadata/_edit_lock_ = true
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("7_m8k4q")]
 
 [node name="Planets" type="Node2D" parent="."]
 

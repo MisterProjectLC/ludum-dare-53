@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3rdnci654m2g"]
+
+[ext_resource type="FontFile" uid="uid://c2e5qqn1a5qu7" path="res://assets/ui/fonts/Coffee and Crafts.ttf" id="1_1xddm"]
+[ext_resource type="Script" path="res://src/ui/menu_button.gd" id="2_ilrwe"]
+[ext_resource type="Texture2D" uid="uid://d3emo008ljh8b" path="res://assets/ui/star.png" id="3_h8ha1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5a4k1"]
+
+[node name="Button" type="Button"]
+offset_left = 91.0
+offset_top = 319.0
+offset_right = 287.0
+offset_bottom = 378.0
+theme_override_colors/font_color = Color(0.584314, 0.411765, 0.203922, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.866667, 0.65098, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_1xddm")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5a4k1")
+action_mode = 0
+text = "Start"
+flat = true
+alignment = 0
+script = ExtResource("2_ilrwe")
+
+[node name="Star" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -37.0
+offset_top = 16.0
+offset_right = 22.0
+offset_bottom = 70.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_h8ha1")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
