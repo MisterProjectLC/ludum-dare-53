@@ -1,0 +1,12 @@
+{
+    "DATA":[
+        {"CHARACTER":"Hugo"},
+        {"LIVE_TEXT":"Hey dude! So, sometimes I think, you know...", "TIME":0.03},
+        {"LIVE_TEXT":"Why don't the bad guys realize they're bad?", "TIME":0.03},
+        {"LIVE_TEXT":"I mean, like, we're in war because we have to stop the bad guys, right?", "TIME":0.03},
+        {"LIVE_TEXT":"But why don't they just stop being bad themselves? Do they just like being bad?", "TIME":0.03},
+        {"LIVE_TEXT":"...", "TIME":0.05},
+        {"LIVE_TEXT":"W-What if we're the ones who are bad? But... Hmm...", "TIME":0.04},
+        {"END":"END"}
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "DATA":[
+        {"CHARACTER":"Narrator"},
+        {"TEXT":"A strong aroma of coffee suddenly invades your nostrils as you touch down on this planet.", "NARRATOR":true},
+        {"CHARACTER":"Alinda"},
+        {"TEXT":"Welcome to Planet Café! Please, feel right at home."},
+        {"CHARACTER":"Hugo"},
+        {"TEXT":"Ooh, this place smells so good!", "TIME":0.03},
+        {"CHARACTER":"Alinda"},
+        {"TEXT":"Hahaha, I'm glad you like it! My name is Alinda, and I run the place. You know, it took a lot of effort to aromatize the entire planet."},
+        {"TEXT":"Have you come to try one of our exclusive beverages?"},
+        {"CHARACTER":"Hugo"},
+        {"TEXT":"Hey, my name is Hugo! A-Actually, we're here to deliver something...", "TIME":0.04},
+        {"CHARACTER":"Alinda"},
+        {"TEXT":"Ah, I see! You're here to bring my rocket-beans, is it not? Come on, show me, show me!", "TIME":0.03},
+        {"CHOICE":["coffee"]},
+        {"END":"END"}
+    ]
+}

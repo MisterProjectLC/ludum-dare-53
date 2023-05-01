@@ -9,6 +9,10 @@ extends Node2D
 signal spaceship_approached(planet)
 
 
+func set_dialog_title(t):
+	dialog_title = t
+
+
 func get_dialog_title():
 	return dialog_title
 

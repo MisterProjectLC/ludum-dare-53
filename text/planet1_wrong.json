@@ -7,6 +7,8 @@
         {"TEXT":"I... I'll try, lady! I promise!", "TIME":0.02},
         {"CHARACTER":"Benta"},
         {"TEXT":"Safe travels, my child.", "TIME":0.05},
+        {"CHARACTER":"Narrator"},
+        {"TEXT":"The two of you depart from the planet. Hugo is still waving long after the old lady disappears from view."},
         {"END":"END"}
     ]
 }

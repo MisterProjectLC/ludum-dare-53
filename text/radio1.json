@@ -1,0 +1,14 @@
+{
+    "DATA":[
+        {"CHARACTER":"Radio"},
+        {"LIVE_TEXT":"Bzzz, bzzz...", "TIME":0.15},
+        {"LIVE_TEXT":"This just in! The new work of Terence Tello, three-time winner of the Galaxy's Best Sculpture Award, shall be unveiled today!", "TIME":0.025},
+        {"LIVE_TEXT":"According to Tello, the date was chosen in celebration of Pudding Day, and all the glory from this delicious dish!", "TIME":0.025},
+        {"LIVE_TEXT":"Rumors are already circulating among critics that this shall be the biggest sculpture from him yet...", "TIME":0.025},
+        {"LIVE_TEXT":"...and the great artist himself seems to suggest something similar!", "TIME":0.025},
+        {"LIVE_TEXT":"'Y-Yeah, it's pretty big.'", "TIME":0.025},
+        {"LIVE_TEXT":"Stay tuned for more news on the art world!", "TIME":0.025},
+        {"LIVE_TEXT":"Bzz!", "TIME":0.01},
+        {"END":"END"}
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "DATA":[
+        {"CHARACTER":"Narrator"},
+        {"TEXT":"Oy, this comic is awesome! The Baron's such a freaking badass!"},
+        {"CHARACTER":"Hugo"},
+        {"TEXT":"Ooh, the Baron vs the Gauntlet! I think it was my mom who wrote that story..."},
+        {"CHARACTER":"Narrator"},
+        {"TEXT":"Wait, your mom is Ruth Hulu? I saw her at a local convention recently, up on the upper-east quadrant! She seemed sooo nice!"},
+        {"CHARACTER":"Hugo"},
+        {"TEXT":"Y-Yeah, she is! Um... Upper-east quadrant, right?"},
+        {"CHARACTER":"Narrator"},
+        {"LIVE_TEXT":"Yep! On the Lola System."},
+        {"END":"END"}
+    ]
+}

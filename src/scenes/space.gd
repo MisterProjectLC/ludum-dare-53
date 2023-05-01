@@ -12,6 +12,7 @@ extends Node2D
 @onready var Stars = $ParallaxBackground/StarsParallax
 
 @export var space_dialogs : Array[String]
+@export var station_dialogs : Array[String]
 @export var items : Array[String]
 var inventory = []
 
@@ -48,9 +49,7 @@ func on_spaceship_approached_station(body):
 		for asteroid in Asteroids.get_children():
 			asteroid.set_active(true)
 	
-	if (game_stage+1)*3 > Planets.get_child_count():
-		end_game()
-	else:
+	if (game_stage+1)*3 <= Planets.get_child_count():
 		activate_planets()
 	
 	Station.set_active(false)
@@ -59,10 +58,10 @@ func on_spaceship_approached_station(body):
 
 func on_spaceship_approached_planet(body):
 	play_dialog(body.get_dialog_title())
+	planets_visited += 1
 	if planets_visited % 3 == 0:
 		activate_station()
 	
-	planets_visited += 1
 	space_dialog_index += 1
 	on_planet = true
 
@@ -75,12 +74,11 @@ func play_dialog(events):
 	CutscenePlayer.load_events(events)
 
 
-func end_game():
-	pass
-
-
 func _on_cutscene_controller_events_ended():
-	if on_planet:
+	if game_stage == 3:
+		#get_tree().change_scene_to_file()
+		return
+	elif on_planet:
 		on_planet = false
 		DialogTimer.start()
 		Spaceship.set_dash_enabled(false)
@@ -104,6 +102,8 @@ func activate_planets():
 
 func activate_station():
 	UI.set_objective("Fly to the Post Office Station")
+	if game_stage != -1:
+		Station.set_dialog_title(station_dialogs[game_stage])
 	Station.set_active(true)
 
 

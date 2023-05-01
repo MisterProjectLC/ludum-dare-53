@@ -10,6 +10,8 @@ class_name DialogBox
 
 @onready var timer = $Rect/Timer
 
+var autoskip = false
+
 func appear():
 	animator.play("Appear")
 
@@ -37,6 +39,10 @@ func change_character(character):
 		"characters/" + character.to_lower())
 
 
+func set_font(font):
+	label.set("theme_override_fonts/font", font)
+
+
 func _show_text(time):
 	current_char_time = time
 	timer.start(time)
@@ -46,6 +52,8 @@ func _on_Timer_timeout():
 	label.visible_characters += 1
 	if label.visible_characters < label.text.length():
 		timer.start(current_char_time)
+	elif autoskip:
+		emit_signal("dialog_finished")
 
 
 func is_active():

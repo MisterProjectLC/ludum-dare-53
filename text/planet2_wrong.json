@@ -1,0 +1,29 @@
+{
+    "DATA":[
+        {"CHARACTER":"Alinda"},
+        {"TEXT":"Hmm, wait... These aren't my beans..."},
+        {"CHARACTER":"Hugo"},
+        {"TEXT":"Um... Mr. Mailman, did we make the wrong delivery?", "TIME":0.03},
+        {"CHARACTER":"Alinda"},
+        {"TEXT":"I spent so much money on that..."},
+        {"TEXT":"...Hmpf, alright."},
+        {"CHARACTER":"Hugo"},
+        {"TEXT":"H-Hey, lady, where did you get that spear...?", "TIME":0.04},
+        {"CHARACTER":"Alinda"},
+        {"TEXT":"Well, I hope you really enjoy coffee to compensate my loss... You better start buying my stuff, pronto!"},
+        {"CHARACTER":"Hugo"},
+        {"TEXT":"M-Mr. Mailman, do you have money with you?", "TIME":0.03},
+        {"CHARACTER":"Protagonist"},
+        {"TEXT":"...", "TIME":0.15},
+        {"CHARACTER":"Hugo"},
+        {"TEXT":"Um, bye-bye! Toodles! Nice to meet you!", "TIME":0.015},
+        {"CHARACTER":"Alinda"},
+        {"TEXT":"You come back here!", "TIME":0.015},
+        {"CHARACTER":"Narrator"},
+        {"TEXT":"Swiftly dodging giant spears, you manage to escape inside the rocket-box, with Hugo stashed on your lap.", "NARRATOR":true},
+        {"TEXT":"You rush out of there as soon as possible.", "NARRATOR":true},
+        {"CHARACTER":"Hugo"},
+        {"LIVE_TEXT":"Byeeee!", "TIME":0.03},
+        {"END":"END"}
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "DATA":[
+        {"CHARACTER":"Hugo"},
+        {"TEXT":"Aww... We're here...", "TIME":0.04},
+        {"TEXT":"So... I-I think we have to say goodbye, right?", "TIME":0.03},
+        {"TEXT":"At least for now!", "TIME":0.02},
+        {"TEXT":"One day, I'll come back, and we can fly all over the galaxy again!", "TIME":0.03},
+        {"TEXT":"Hehehe, that would be fun...", "TIME":0.04},
+        {"TEXT":"...", "TIME":0.05},
+        {"TEXT":"Hey, little dude... Thanks for taking me with you. It was a really special day.", "TIME":0.04},
+        {"TEXT":"O-Okay, I need to get going now, but... we'll see each other again! I promise!!", "TIME":0.04},
+        {"CLOSE_TEXT":"CLOSE_TEXT"},
+        {"ANIMATION":"FadeOut", "REQUIRED":true},
+        {"ANIMATION":"ShowBox", "REQUIRED":true},
+        {"WAIT":5},
+        {"ANIMATION":"FadeOut", "BACKWARDS":true, "REQUIRED":true},
+        {"WAIT":4},
+        {"CHARACTER":"Protagonist"},
+        {"TEXT":"Goodbye, Hugo.", "TIME":0.06},
+        {"APPEND_TEXT":" Until then.", "TIME":0.06},
+        {"WAIT":6},
+        {"ANIMATION":"FadeOut", "REQUIRED":true},
+        {"END":"END"}
+    ]
+}
