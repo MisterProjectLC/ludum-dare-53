@@ -1,7 +1,7 @@
 {
     "DATA":[
         {"ANIMATION":"HugoPopup", "REQUIRED":true},
-        {"CHARACTER":"Hugo"},
+        {"CHARACTER":"Hugo_yay"},
         {"TEXT":"Hiya little dude!", "TIME":0.02},
         {"CHARACTER":"Narrator"},
         {"TEXT":"A curious-looking octopus pops up from your rocket-box, excitedly messing with its controls.", "NARRATOR":true},
@@ -21,6 +21,7 @@
         {"TEXT":". . .", "TIME":0.12},
         {"CHARACTER":"Hugo"},
         {"TEXT":"Thanks, little dude!! You pinky-promise you won't tell dad, right?", "TIME":0.02},
+        {"CHARACTER":"Hugo_yay"},
         {"TEXT":"Cool! Alright, space, here we go!!", "TIME":0.02},
         {"END":"END"}
     ]
