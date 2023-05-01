@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://cr3fciq260ss8"]
 
 [ext_resource type="Script" path="res://src/spaceship/spaceship.gd" id="1_2sslo"]
-[ext_resource type="Texture2D" uid="uid://bfdo0oq0rm5aw" path="res://assets/spaceship/foguete_v2.png" id="2_8wxfa"]
 [ext_resource type="Texture2D" uid="uid://du5u16rhg4u2i" path="res://assets/spaceship/tripulacao.png" id="2_cvoyj"]
 [ext_resource type="Texture2D" uid="uid://q3x7sv0rnvm3" path="res://assets/spaceship/catioro e nave sem cachecol.png" id="3_1cq7r"]
 [ext_resource type="Texture2D" uid="uid://bhc03rcrnnc17" path="res://assets/spaceship/pointer.png" id="3_4qkpf"]
+[ext_resource type="Texture2D" uid="uid://1222s0rp3xmg" path="res://assets/spaceship/catioro e nave.png" id="4_oa4pf"]
 [ext_resource type="Texture2D" uid="uid://dco5nvyy2ofpg" path="res://assets/characters/catioromapa.png" id="4_qheor"]
 [ext_resource type="Script" path="res://src/spaceship/zoom_agnostic_sprite.gd" id="4_tmfj7"]
 [ext_resource type="Texture2D" uid="uid://bq2w4qql7vm7t" path="res://assets/misc/smoke.png" id="7_yieva"]
@@ -56,7 +56,7 @@ without_scarf_sprite = ExtResource("3_1cq7r")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_8wxfa")
+texture = ExtResource("4_oa4pf")
 
 [node name="SmokeCloud" type="Sprite2D" parent="Sprite"]
 position = Vector2(-282, 35)

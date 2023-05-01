@@ -4,11 +4,15 @@ class_name AstralBody
 @export var dialog_title = ""
 @export var active = false
 @export var hidden_body = false
+@export var image : Texture2D
 
 @onready var area = $Area2D
 
 signal spaceship_approached(planet)
 
+
+func _ready():
+	$Sprite.texture = image
 
 func set_dialog_title(t):
 	dialog_title = t
