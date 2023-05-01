@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dkatjtsrcspru"]
+[gd_scene load_steps=38 format=3 uid="uid://dkatjtsrcspru"]
 
 [ext_resource type="PackedScene" uid="uid://cr3fciq260ss8" path="res://src/spaceship/spaceship.tscn" id="1_16udo"]
 [ext_resource type="Script" path="res://src/scenes/space.gd" id="1_sb46e"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://do8hrk1w4k4tc" path="res://assets/spaceship/polvo.png" id="14_wmhhl"]
 [ext_resource type="Texture2D" uid="uid://dinfethmjt6sj" path="res://assets/planets/Planeta Suiça-Hospital.png" id="15_0m83r"]
 [ext_resource type="Texture2D" uid="uid://blpgi1p1pdfic" path="res://assets/planets/Planeta da Mãe.png" id="16_6a451"]
+[ext_resource type="Texture2D" uid="uid://dq6cdfvdcvxyh" path="res://assets/asteroids/Asteroide 2.png" id="27_81jnl"]
 [ext_resource type="Texture2D" uid="uid://bh67mkkpc7yqc" path="res://assets/planets/Correio.png" id="27_d45o7"]
 
 [sub_resource type="Animation" id="Animation_0wi1v"]
@@ -310,6 +311,7 @@ active = true
 position = Vector2(4773, 3107)
 dialog_title = "Emma"
 active = true
+image = ExtResource("27_81jnl")
 
 [node name="Soldier" parent="Asteroids" instance=ExtResource("5_c1ndk")]
 position = Vector2(-4627, -4923)
@@ -320,6 +322,7 @@ active = true
 position = Vector2(3327, -1841)
 dialog_title = "Girl"
 active = true
+image = ExtResource("27_81jnl")
 
 [node name="ManCorner" parent="Asteroids" instance=ExtResource("5_c1ndk")]
 position = Vector2(10595, 7293)
@@ -340,6 +343,7 @@ active = true
 position = Vector2(-2202, 6641)
 dialog_title = "Astronomer"
 active = true
+image = ExtResource("27_81jnl")
 
 [node name="Loner" parent="Asteroids" instance=ExtResource("5_c1ndk")]
 position = Vector2(-1454, -7042)
