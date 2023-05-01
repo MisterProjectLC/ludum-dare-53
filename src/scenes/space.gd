@@ -15,6 +15,8 @@ extends Node2D
 @export var space_dialogs : Array[String]
 @export var station_dialogs : Array[String]
 @export var items : Array[String]
+@export var space_music : AudioStream
+@export var dialog_music : AudioStream
 var inventory = []
 
 var on_planet = false
@@ -69,6 +71,8 @@ func on_spaceship_approached_station(body):
 
 
 func on_spaceship_approached_planet(body):
+	$BGM.stream = dialog_music
+	$BGM.play()
 	play_dialog(body.get_dialog_title())
 	planets_visited += 1
 	
@@ -81,6 +85,8 @@ func on_spaceship_approached_planet(body):
 
 
 func on_spaceship_approached_planetx(body):
+	$BGM.stream = dialog_music
+	$BGM.play()
 	play_dialog(body.get_dialog_title())
 	space_dialog_index += 1
 	on_planet = true
@@ -103,6 +109,8 @@ func end_game():
 
 
 func leave_planet(current_scene):
+	$BGM.stream = space_music
+	$BGM.play()
 	on_planet = false
 	DialogTimer.start()
 	Spaceship.set_dash_enabled(false)

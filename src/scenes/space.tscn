@@ -1,8 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://dkatjtsrcspru"]
+[gd_scene load_steps=29 format=3 uid="uid://dkatjtsrcspru"]
 
 [ext_resource type="PackedScene" uid="uid://cr3fciq260ss8" path="res://src/spaceship/spaceship.tscn" id="1_16udo"]
 [ext_resource type="Script" path="res://src/scenes/space.gd" id="1_sb46e"]
 [ext_resource type="PackedScene" uid="uid://0a34ry1c2h6b" path="res://src/spaceship/camera_follower.tscn" id="2_g1kqm"]
+[ext_resource type="AudioStream" uid="uid://bu8udhcpnogbj" path="res://assets/audio/bgm/Adventure_Awaits.mp3" id="2_oj57i"]
+[ext_resource type="AudioStream" uid="uid://ibkief2kjb35" path="res://assets/audio/bgm/Your_package_is_here.mp3" id="3_38vu4"]
 [ext_resource type="PackedScene" uid="uid://cfa5r1ixno5d6" path="res://src/scenes/planet.tscn" id="4_57lwj"]
 [ext_resource type="PackedScene" uid="uid://ti6aaccyf1kh" path="res://src/ui/ui.tscn" id="4_ea8f2"]
 [ext_resource type="Texture2D" uid="uid://bfdo0oq0rm5aw" path="res://assets/spaceship/foguete_v2.png" id="4_rhgmn"]
@@ -85,7 +87,14 @@ script = ExtResource("1_sb46e")
 space_dialogs = Array[String](["radio0", "companion1", "companion2", "radio1", "companion3", "radio2", "companion4", "companion5", "companion6", "companion7", "companion8", "companion9"])
 station_dialogs = Array[String](["packages", "packages", "ending"])
 items = Array[String](["feather", "rose", "coffee", "briefcase", "teddy bear", "letter", "tickets"])
+space_music = ExtResource("2_oj57i")
+dialog_music = ExtResource("3_38vu4")
 limit = 10000
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_oj57i")
+autoplay = true
+bus = &"BGM"
 
 [node name="DialogTimer" type="Timer" parent="."]
 wait_time = 5.0

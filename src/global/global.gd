@@ -2,6 +2,9 @@ extends Node
 
 signal on_cutscene_changed(in_cutscene)
 
+var music_volume = 0.5
+var sound_volume = 0.5
+
 var _in_cutscene = false
 func set_in_cutscene(value):
 	_in_cutscene = value
