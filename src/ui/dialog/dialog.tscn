@@ -155,7 +155,7 @@ script = ExtResource("6")
 metadata/_edit_lock_ = true
 
 [node name="Rect" type="ColorRect" parent="CutsceneDialogBox"]
-modulate = Color(1, 1, 1, 0)
+visible = false
 layout_mode = 0
 anchor_top = 1.0
 anchor_right = 1.0

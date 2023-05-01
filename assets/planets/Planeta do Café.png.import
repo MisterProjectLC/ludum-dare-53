@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brfh8vy2b2jcg"
-path="res://.godot/imported/protagonist.png-ab2b236fa94dc12e275694a8b8722125.ctex"
+uid="uid://c2tfyixmk7yo"
+path="res://.godot/imported/Planeta do Café.png-5c2b68d60b3d6a4c85d44655616cbb50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/protagonist.png"
-dest_files=["res://.godot/imported/protagonist.png-ab2b236fa94dc12e275694a8b8722125.ctex"]
+source_file="res://assets/planets/Planeta do Café.png"
+dest_files=["res://.godot/imported/Planeta do Café.png-5c2b68d60b3d6a4c85d44655616cbb50.ctex"]
 
 [params]
 

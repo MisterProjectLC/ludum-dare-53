@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brfh8vy2b2jcg"
-path="res://.godot/imported/protagonist.png-ab2b236fa94dc12e275694a8b8722125.ctex"
+uid="uid://dinfethmjt6sj"
+path="res://.godot/imported/Planeta Suiça-Hospital.png-124156ba3b0d3da7cd43e27e10b5d72c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/protagonist.png"
-dest_files=["res://.godot/imported/protagonist.png-ab2b236fa94dc12e275694a8b8722125.ctex"]
+source_file="res://assets/planets/Planeta Suiça-Hospital.png"
+dest_files=["res://.godot/imported/Planeta Suiça-Hospital.png-124156ba3b0d3da7cd43e27e10b5d72c.ctex"]
 
 [params]
 

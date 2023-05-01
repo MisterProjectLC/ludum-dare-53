@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dkatjtsrcspru"]
+[gd_scene load_steps=27 format=3 uid="uid://dkatjtsrcspru"]
 
 [ext_resource type="PackedScene" uid="uid://cr3fciq260ss8" path="res://src/spaceship/spaceship.tscn" id="1_16udo"]
 [ext_resource type="Script" path="res://src/scenes/space.gd" id="1_sb46e"]
@@ -10,10 +10,18 @@
 [ext_resource type="PackedScene" uid="uid://hfbgrdp6bmgq" path="res://src/ui/dialog/cutscene_controller.tscn" id="5_pgckx"]
 [ext_resource type="PackedScene" uid="uid://ck2gcoikq0ki" path="res://src/ui/pause.tscn" id="7_m8k4q"]
 [ext_resource type="Texture2D" uid="uid://boyifkv68apv0" path="res://assets/background/bg.png" id="8_6txdh"]
+[ext_resource type="Texture2D" uid="uid://bb0gqhflu0exl" path="res://assets/planets/Planeta dos Pombos.png" id="9_6gdby"]
 [ext_resource type="FontFile" uid="uid://cx6s3op6yjnhp" path="res://assets/ui/fonts/Spring Snowstorm.ttf" id="9_fu04u"]
 [ext_resource type="Texture2D" uid="uid://2u4nxymn4fki" path="res://assets/background/nebula.png" id="9_s1de7"]
 [ext_resource type="Script" path="res://src/scenes/tutorial_label.gd" id="10_6w66c"]
+[ext_resource type="Texture2D" uid="uid://c2tfyixmk7yo" path="res://assets/planets/Planeta do Café.png" id="10_hffeq"]
 [ext_resource type="Texture2D" uid="uid://wqgvbwqiylbq" path="res://assets/background/stars.png" id="10_w4adj"]
+[ext_resource type="Texture2D" uid="uid://nw6gpcbyulo3" path="res://assets/planets/Planeta das Flores.png" id="11_76wlb"]
+[ext_resource type="Texture2D" uid="uid://dbgk0aw7m11is" path="res://assets/planets/Planeta dos Macacos.png" id="12_1uux8"]
+[ext_resource type="Texture2D" uid="uid://b0yyayphb0qxe" path="res://assets/planets/Planeta do Artista.png" id="13_6pp5n"]
+[ext_resource type="Texture2D" uid="uid://cdx7oh4gmm28a" path="res://assets/planets/Planeta Marte.png" id="14_vpioa"]
+[ext_resource type="Texture2D" uid="uid://dinfethmjt6sj" path="res://assets/planets/Planeta Suiça-Hospital.png" id="15_0m83r"]
+[ext_resource type="Texture2D" uid="uid://blpgi1p1pdfic" path="res://assets/planets/Planeta da Mãe.png" id="16_6a451"]
 
 [sub_resource type="Animation" id="Animation_0wi1v"]
 resource_name = "FadeOut"
@@ -165,39 +173,47 @@ metadata/_edit_lock_ = true
 [node name="Planet" parent="Cycles/Cycle" instance=ExtResource("4_57lwj")]
 position = Vector2(2943, 1583)
 dialog_title = "planet1"
+image = ExtResource("9_6gdby")
 
 [node name="Planet2" parent="Cycles/Cycle" instance=ExtResource("4_57lwj")]
 position = Vector2(-10158, 19)
 dialog_title = "planet2"
+image = ExtResource("10_hffeq")
 
 [node name="Planet3" parent="Cycles/Cycle" instance=ExtResource("4_57lwj")]
 position = Vector2(-1241, -3924)
 dialog_title = "planet3"
+image = ExtResource("11_76wlb")
 
 [node name="Cycle2" type="Node2D" parent="Cycles"]
 
 [node name="Planet4" parent="Cycles/Cycle2" instance=ExtResource("4_57lwj")]
 position = Vector2(-6314, 8477)
 dialog_title = "planet1"
+image = ExtResource("12_1uux8")
 
 [node name="Planet5" parent="Cycles/Cycle2" instance=ExtResource("4_57lwj")]
 position = Vector2(5712, 6704)
 dialog_title = "planet2"
+image = ExtResource("13_6pp5n")
 
 [node name="Planet6" parent="Cycles/Cycle2" instance=ExtResource("4_57lwj")]
 position = Vector2(9067, -737)
 dialog_title = "planet3"
+image = ExtResource("14_vpioa")
 
 [node name="Cycle3" type="Node2D" parent="Cycles"]
 
 [node name="Planet7" parent="Cycles/Cycle3" instance=ExtResource("4_57lwj")]
 position = Vector2(-7228, -5156)
 dialog_title = "planet1"
+image = ExtResource("15_0m83r")
 
 [node name="PlanetX" parent="." instance=ExtResource("4_57lwj")]
 position = Vector2(6966, -7767)
 dialog_title = "planet1"
 hidden_body = true
+image = ExtResource("16_6a451")
 
 [node name="Asteroids" type="Node2D" parent="."]
 
