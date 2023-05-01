@@ -51,7 +51,7 @@
         {"TEXT":"T-Thanks, little squid. Thanks, mailman!"},
         {"CHARACTER":"Narrator"},
         {"TEXT":"The girl runs towards the carnival again, excitedly calling her phone. You two go back to your rocket-box.", "NARRATOR":true},
-        {"CHARACTER":"Hugo"},
+        {"CHARACTER":"Hugo_yay"},
         {"LIVE_TEXT":"Good luck, Madeleine!", "TIME":0.03},
         {"END":"END"}
     ]
