@@ -243,6 +243,8 @@ active = true
 
 [node name="BoyArco" parent="Asteroids" instance=ExtResource("5_c1ndk")]
 position = Vector2(3712, -5463)
+dialog_title = "boy"
+active = true
 
 [node name="Traveler" parent="Asteroids" instance=ExtResource("5_c1ndk")]
 position = Vector2(-3035, -1286)

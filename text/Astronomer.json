@@ -1,17 +1,17 @@
 {
-    "DATA":[
-        {"CHARACTER":"Astronomer"},	
-        {"TEXT":"Lola... what a beautiful star!."},
-        {"CHARACTER":"Hugo"},	
-        {"TEXT":"Hey, little dude! What are you looking at?", "TIME": 0.03},
-        {"CHARACTER":"Astronomer"},	
-        {"TEXT":"The stars from the upper-east quadrant! Strod, Hakita, and of course, the most beautiful of all - Lola!"},
-        {"CHARACTER":"Hugo"},	
-        {"TEXT":"Lola..? Hey, I think I've heard that name before! It's Arco's Sun, right?", "TIME": 0.03},
-        {"CHARACTER":"Astronomer"},	
-        {"TEXT":"Yes! Oh, how good it is to see the youth interested in the cosmos..."},
-        {"CHARACTER":"Hugo"},	
-        {"LIVE_TEXT":"Thanks, little dude!", "TIME": 0.03},
-        {"END":"END"}
-    ]
+	"DATA":[
+		{"CHARACTER":"Astronomer"},	
+		{"TEXT":"Lola... what a beautiful star!."},
+		{"CHARACTER":"hugo"},	
+		{"TEXT":"Hey, little dude! What are you looking at?", "TIME": 0.03},
+		{"CHARACTER":"Astronomer"},	
+		{"TEXT":"The stars from the upper-east quadrant! Strod, Hakita, and of course, the most beautiful of all - Lola!"},
+		{"CHARACTER":"hugo_huh"},	
+		{"TEXT":"Lola..? Hey, I think I've heard that name before! It's Arco's Sun, right?", "TIME": 0.03},
+		{"CHARACTER":"Astronomer"},	
+		{"TEXT":"Yes! Oh, how good it is to see the youth interested in the cosmos..."},
+		{"CHARACTER":"hugo_yay"},	
+		{"LIVE_TEXT":"Thanks, little dude!", "TIME": 0.03},
+		{"END":"END"}
+	]
 }
