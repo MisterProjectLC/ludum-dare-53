@@ -1,11 +1,11 @@
 {
-    "DATA":[
-        {"CHARACTER":"Radio"},
-        {"LIVE_TEXT":"Bzzz, bzzz...", "TIME":0.15},
-        {"LIVE_TEXT":"This just in! Renowned author Benta Encerrabodes just announced her next book - 'The Pigeon who didn't fly!'", "TIME":0.025},
-        {"LIVE_TEXT":"'Thanks to two very amiable mailmen, I was able to complete my manuscript in time! Oh, the kindness of strangers...'", "TIME":0.025},
-        {"LIVE_TEXT":"The new book is expected to be released next month, so stay tuned!", "TIME":0.025},
-        {"LIVE_TEXT":"Bzz!", "TIME":0.01},
-        {"END":"END"}
-    ]
+	"DATA":[
+		{"CHARACTER":"Radio"},
+		{"LIVE_TEXT":"Bzzz, bzzz...", "TIME":0.15},
+		{"LIVE_TEXT":"This just in! Renowned author Benta Encerrabodes just announced her next book - 'The Pigeon who didn't fly!'", "TIME":0.025},
+		{"LIVE_TEXT":"'Thanks to two very amiable mailmen, I was able to complete my manuscript in time! Oh, the kindness of strangers...'", "TIME":0.025},
+		{"LIVE_TEXT":"The new book is expected to be released next month, so stay tuned!", "TIME":0.025},
+		{"LIVE_TEXT":"Bzz!", "TIME":0.01},
+		{"END":"END"}
+	]
 }

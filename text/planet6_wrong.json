@@ -1,0 +1,15 @@
+{
+    "DATA":[
+        {"CHARACTER":"Joel_think"},
+        {"TEXT":"Hm, what is this...? A briefcase full of numbers? Is this some kind of intel?"},
+        {"CHARACTER":"Hugo_huh"},
+        {"TEXT":"I don't know, mister.", "TIME":0.03},
+        {"CHARACTER":"Joel_smile"},
+        {"TEXT":"Alright, thank you, kid. I'll pass it along to the boys in the labs, see if they can crack it."},
+        {"CHARACTER":"Hugo"},
+        {"TEXT":"Okay... bye, then!", "TIME":0.03},
+        {"CHARACTER":"Narrator"},
+        {"TEXT":"With this, you two go back to your rocket-box and fly away.", "NARRATOR":true},
+        {"END":"END"}
+    ]
+}

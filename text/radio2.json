@@ -1,11 +1,11 @@
 {
-    "DATA":[
-        {"CHARACTER":"Radio"},
-        {"LIVE_TEXT":"Bzzz, bzzz...", "TIME":0.15},
-        {"LIVE_TEXT":"This just in! Renowned author Benta Encerrabodes announces delay on the launch of her next book!", "TIME":0.025},
-        {"LIVE_TEXT":"'Sorry, but I'm all out of feathers to write! I did try with one of my pigeon's feathers, but I ended up just tearing my manuscript down...'", "TIME":0.025},
-        {"LIVE_TEXT":"We still await a new release date to be announced. Good luck, Mrs. Encerrabodes!", "TIME":0.025},
-        {"LIVE_TEXT":"Bzz!", "TIME":0.01},
-        {"END":"END"}
-    ]
+	"DATA":[
+		{"CHARACTER":"Radio"},
+		{"LIVE_TEXT":"Bzzz, bzzz...", "TIME":0.15},
+		{"LIVE_TEXT":"This just in! Renowned author Benta Encerrabodes announces delay on the launch of her next book!", "TIME":0.025},
+		{"LIVE_TEXT":"'Sorry, but I'm all out of feathers to write! I did try with one of my pigeon's feathers, but I ended up just tearing my manuscript down...'", "TIME":0.025},
+		{"LIVE_TEXT":"We still await a new release date to be announced. Good luck, Mrs. Encerrabodes!", "TIME":0.025},
+		{"LIVE_TEXT":"Bzz!", "TIME":0.01},
+		{"END":"END"}
+	]
 }

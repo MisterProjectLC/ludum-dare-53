@@ -1,7 +1,7 @@
 {
-    "DATA":[
-        {"CHARACTER":"Protagonist"},
-        {"TEXT":"A", "TIME":0.01},
-        {"END":"END"}
-    ]
+	"DATA":[
+		{"CHARACTER":"Protagonist"},
+		{"TEXT":"A", "TIME":0.01},
+		{"END":"END"}
+	]
 }

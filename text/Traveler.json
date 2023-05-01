@@ -1,14 +1,14 @@
 {
-    "DATA":[
-        {"CHARACTER":"Traveler"},	
-        {"TEXT":"Hey, fellow travelers! How do you do?"},
-        {"CHARACTER":"Hugo"},	
-        {"TEXT":"Hiya!! We're doing great! Flying around is so much fun!", "TIME": 0.03},
-        {"CHARACTER":"Traveler"},	
-        {"TEXT":"Ah, couldn't have said better myself! I never want to put down roots, man! Never settle! There's always a horizon to chase after!"},
-        {"CHARACTER":"Hugo"},	
-        {"LIVE_TEXT":"Y-Yeah!", "TIME": 0.03},
-        {"END":"END"}
-    ]
+	"DATA":[
+		{"CHARACTER":"Traveler"},	
+		{"TEXT":"Hey, fellow travelers! How do you do?"},
+		{"CHARACTER":"hugo_yay"},	
+		{"TEXT":"Hiya!! We're doing great! Flying around is so much fun!", "TIME": 0.03},
+		{"CHARACTER":"Traveler"},	
+		{"TEXT":"Ah, couldn't have said better myself! I never want to put down roots, man! Never settle! There's always a horizon to chase after!"},
+		{"CHARACTER":"hugo_yay"},	
+		{"LIVE_TEXT":"Y-Yeah!", "TIME": 0.03},
+		{"END":"END"}
+	]
 }
 
