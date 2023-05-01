@@ -163,25 +163,70 @@ metadata/_edit_lock_ = true
 [node name="Cycle" type="Node2D" parent="Cycles"]
 
 [node name="Planet" parent="Cycles/Cycle" instance=ExtResource("4_57lwj")]
-position = Vector2(6558, 4665)
+position = Vector2(2943, 1583)
 dialog_title = "planet1"
 
 [node name="Planet2" parent="Cycles/Cycle" instance=ExtResource("4_57lwj")]
-position = Vector2(4494, -4814)
+position = Vector2(-10158, 19)
 dialog_title = "planet2"
 
 [node name="Planet3" parent="Cycles/Cycle" instance=ExtResource("4_57lwj")]
-position = Vector2(-7500, -3128)
+position = Vector2(-1241, -3924)
 dialog_title = "planet3"
+
+[node name="Cycle2" type="Node2D" parent="Cycles"]
+
+[node name="Planet4" parent="Cycles/Cycle2" instance=ExtResource("4_57lwj")]
+position = Vector2(-6314, 8477)
+dialog_title = "planet1"
+
+[node name="Planet5" parent="Cycles/Cycle2" instance=ExtResource("4_57lwj")]
+position = Vector2(5712, 6704)
+dialog_title = "planet2"
+
+[node name="Planet6" parent="Cycles/Cycle2" instance=ExtResource("4_57lwj")]
+position = Vector2(9067, -737)
+dialog_title = "planet3"
+
+[node name="Cycle3" type="Node2D" parent="Cycles"]
+
+[node name="Planet7" parent="Cycles/Cycle3" instance=ExtResource("4_57lwj")]
+position = Vector2(-7228, -5156)
+dialog_title = "planet1"
+
+[node name="PlanetX" parent="." instance=ExtResource("4_57lwj")]
+position = Vector2(6966, -7767)
+dialog_title = "planet3"
+hidden_body = true
 
 [node name="Asteroids" type="Node2D" parent="."]
 
-[node name="Asteroid" parent="Asteroids" instance=ExtResource("5_c1ndk")]
+[node name="ComicFan" parent="Asteroids" instance=ExtResource("5_c1ndk")]
 position = Vector2(-8204, 2003)
-dialog_title = "comic_fan"
+
+[node name="Emma" parent="Asteroids" instance=ExtResource("5_c1ndk")]
+position = Vector2(4773, 3107)
+
+[node name="Soldier" parent="Asteroids" instance=ExtResource("5_c1ndk")]
+position = Vector2(-4627, -4923)
+
+[node name="GirlMusic" parent="Asteroids" instance=ExtResource("5_c1ndk")]
+position = Vector2(3327, -1841)
+
+[node name="ManCorner" parent="Asteroids" instance=ExtResource("5_c1ndk")]
+position = Vector2(10595, 7293)
+
+[node name="BoyArco" parent="Asteroids" instance=ExtResource("5_c1ndk")]
+position = Vector2(3712, -5463)
+
+[node name="Traveler" parent="Asteroids" instance=ExtResource("5_c1ndk")]
+position = Vector2(-3035, -1286)
+
+[node name="Astronomer" parent="Asteroids" instance=ExtResource("5_c1ndk")]
+position = Vector2(-2202, 6641)
 
 [node name="Station" parent="." instance=ExtResource("4_57lwj")]
-position = Vector2(-1701, 1147)
+position = Vector2(-2392, 2795)
 dialog_title = "companion0"
 active = true
 
@@ -227,10 +272,10 @@ region_rect = Rect2(0, 0, 40000, 40000)
 metadata/_edit_lock_ = true
 
 [node name="Accelerate" type="Label" parent="."]
-offset_left = 646.0
-offset_top = 17.0
-offset_right = 827.0
-offset_bottom = 115.0
+offset_left = 302.0
+offset_top = 25.0
+offset_right = 483.0
+offset_bottom = 123.0
 theme_override_fonts/font = ExtResource("9_fu04u")
 theme_override_font_sizes/font_size = 20
 text = "Hold the Left Mouse Button to accelerate"
@@ -240,23 +285,24 @@ keyboard_text = "Hold the Left Mouse Button to accelerate"
 controller_text = "Hold X to accelerate"
 
 [node name="ZoomIn" type="Label" parent="."]
-offset_left = -292.0
-offset_top = 35.0
-offset_right = -70.0
-offset_bottom = 115.0
+offset_left = -201.0
+offset_top = 32.0
+offset_right = -45.0
+offset_bottom = 112.0
 theme_override_fonts/font = ExtResource("9_fu04u")
 theme_override_font_sizes/font_size = 20
 text = "Hold A to Zoom-Out"
+horizontal_alignment = 2
 autowrap_mode = 2
 script = ExtResource("10_6w66c")
 keyboard_text = "Hold A to Zoom-Out"
 controller_text = "Hold L2 to Zoom-Out"
 
 [node name="ZoomOut" type="Label" parent="."]
-offset_left = 135.0
-offset_top = 37.0
-offset_right = 312.0
-offset_bottom = 96.0
+offset_left = 44.0
+offset_top = 33.0
+offset_right = 221.0
+offset_bottom = 92.0
 theme_override_fonts/font = ExtResource("9_fu04u")
 theme_override_font_sizes/font_size = 20
 text = "Hold D to Zoom-In"
@@ -266,10 +312,10 @@ keyboard_text = "Hold D to Zoom-In"
 controller_text = "Hold R2 to Zoom-In"
 
 [node name="Zoom" type="Label" parent="."]
-offset_left = -125.0
-offset_top = 351.0
-offset_right = 101.0
-offset_bottom = 448.0
+offset_left = -139.0
+offset_top = 205.0
+offset_right = 87.0
+offset_bottom = 302.0
 theme_override_fonts/font = ExtResource("9_fu04u")
 theme_override_font_sizes/font_size = 20
 text = "You can also use the Scroll Wheel to control Zoom"
