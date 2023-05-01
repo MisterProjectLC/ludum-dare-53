@@ -52,6 +52,7 @@ func manage_fuel(delta):
 	
 	if Input.is_action_just_pressed("dash"):
 		if fuel >= FUEL_TO_DASH:
+			$DashSound.play()
 			move_velocity += look_vector*DASH_SPEED
 		fuel = 0
 		emit_signal("dash_updated", fuel)
