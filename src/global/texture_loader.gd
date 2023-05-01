@@ -9,6 +9,6 @@ static func get_tex_from_title(title):
 
 static func get_audio_from_title(title):
 	var tex = AudioStream.new()
-	var path = "res://assets/audio/sfx/chatter/" + title + ".wav"
+	var path = "res://assets/audio/sfx/chatter/" + title + ".mp3"
 	tex = load(ProjectSettings.globalize_path(path))
 	return tex

@@ -38,9 +38,9 @@ func change_character(character):
 	portrait.texture = TextureLoader.get_tex_from_title(
 		"characters/" + character.to_lower())
 	
-	#var audio_name = character.to_lower().split("_")[0]
-	#var audio_title = TextureLoader.get_audio_from_title(audio_name)
-	#set_chatter_audiostream(audio_title)
+	var audio_name = character.to_lower().split("_")[0]
+	var audio_title = TextureLoader.get_audio_from_title(audio_name)
+	set_chatter_audiostream(audio_title)
 	
 
 
@@ -54,7 +54,7 @@ func _show_text(time):
 
 
 func _on_Timer_timeout():
-	#$ChatterSound.play()
+	$ChatterSound.play()
 	label.visible_characters += 1
 	if label.visible_characters < label.text.length():
 		timer.start(current_char_time)
