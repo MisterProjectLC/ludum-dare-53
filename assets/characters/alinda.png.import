@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mfyj88yvmi0c"
-path="res://.godot/imported/hugofeliz.png-68cf0c36766d9500508034c130a180d0.ctex"
+uid="uid://boiwns3mfsyxl"
+path="res://.godot/imported/alinda.png-92de9eadf52bc6b3f2f5c2e03c604251.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/hugofeliz.png"
-dest_files=["res://.godot/imported/hugofeliz.png-68cf0c36766d9500508034c130a180d0.ctex"]
+source_file="res://assets/characters/alinda.png"
+dest_files=["res://.godot/imported/alinda.png-92de9eadf52bc6b3f2f5c2e03c604251.ctex"]
 
 [params]
 

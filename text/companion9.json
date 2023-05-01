@@ -1,12 +1,16 @@
 {
     "DATA":[
-        {"CHARACTER":"Hugo"},
+        {"CHARACTER":"Hugo_serious"},
         {"LIVE_TEXT":"Our journey is ending soon, huh?", "TIME":0.04},
+        {"CHARACTER":"Hugo"},
         {"LIVE_TEXT":"What a weird feeling... Like, yeah, I wish we could fly forever!!", "TIME":0.03},
+        {"CHARACTER":"Hugo_sad"},
         {"LIVE_TEXT":"But at the same time... I think I miss home. Dad must be worried.", "TIME":0.04},
+        {"CHARACTER":"Hugo_serious"},
         {"LIVE_TEXT":"...Do you have somewhere to go, too?", "TIME":0.04},
         {"LIVE_TEXT":"...", "TIME":0.05},
         {"LIVE_TEXT":"Huh... Yeah, I think I get it. It's like this box is your home too, right?", "TIME":0.03},
+        {"CHARACTER":"Hugo"},
         {"LIVE_TEXT":"I... I really enjoyed today.", "TIME":0.04},
         {"END":"END"}
     ]

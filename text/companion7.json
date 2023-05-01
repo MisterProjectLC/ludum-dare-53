@@ -1,8 +1,10 @@
 {
     "DATA":[
-        {"CHARACTER":"Hugo"},
+        {"CHARACTER":"Hugo_serious"},
         {"LIVE_TEXT":"My teacher said space is infinite... no matter where we look, there's stuff...", "TIME":0.04},
+        {"CHARACTER":"Hugo"},
         {"LIVE_TEXT":"S-Sometimes, when I'm feeling lonely... I like to look up at space!", "TIME":0.03},
+        {"CHARACTER":"Hugo_serious"},
         {"LIVE_TEXT":"It's like, if space is infinite... then anywhere I look, somewhere, out there...", "TIME":0.04},
         {"LIVE_TEXT":"There must be someone staring right back, right? Even if it's far away.", "TIME":0.04},
         {"END":"END"}
