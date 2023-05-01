@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6shbc01x3sgl"
-path="res://.godot/imported/tales_irritated.png-76250a9aeb15c4389a8fe023e75b6a4a.ctex"
+uid="uid://cq4ffb3yee8fc"
+path="res://.godot/imported/tales_mad.png-5ef2e55e3ec05ecfc2be03f91c95a694.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/tales_irritated.png"
-dest_files=["res://.godot/imported/tales_irritated.png-76250a9aeb15c4389a8fe023e75b6a4a.ctex"]
+source_file="res://assets/characters/tales_mad.png"
+dest_files=["res://.godot/imported/tales_mad.png-5ef2e55e3ec05ecfc2be03f91c95a694.ctex"]
 
 [params]
 

@@ -1,0 +1,27 @@
+{
+    "DATA":[
+        {"CHARACTER":"Tales_glad"},	
+        {"TEXT":"Oh, heavens above! Y-You shall not believe this, friends, but... the great general will make a special visit to my planet!"},
+        {"CHARACTER":"Tales_glad"},	
+        {"TEXT":"O-Oh... Oh, goodness gracious!", "TIME":0.02},
+        {"APPEND_TEXT":" M-My skills are finally being recognized! I can't believe it!"},
+        {"CHARACTER":"Hugo_yay"},	
+        {"TEXT":"W-Whoa! That's awesome!", "TIME":0.03},
+        {"CHARACTER":"Hugo"},	
+        {"TEXT":"T-That, that means you can take a break now, right? Your statoo is done!"},
+        {"CHARACTER":"Tales_glad"},	
+        {"TEXT":"Hauhauhau, oh, my dear squiddly friend, my journey has only just begun! Now that I've joined Olympus, I must honor my place in the heavens..."},
+        {"CHARACTER":"Tales"},	
+        {"TEXT":"I apologize, I truly do apologize for expelling you in this manner, but... I must ask that you two leave. My work must be performed solely alone!"},
+        {"CHARACTER":"Hugo_sad"},	
+        {"TEXT":"Mister, I, I don't like this..."},
+        {"CHARACTER":"Protagonist"},	
+        {"TEXT":"..."},
+        {"CHARACTER":"Narrator"},	
+        {"TEXT":"Tales leaves no room to argue - you're soon kicked out of there.", "NARRATOR": true},	
+        {"TEXT":"With that, you two fly away in your rocket-box - Tales' studio fading in the distance.", "NARRATOR": true},
+        {"CHARACTER":"Hugo"},	
+        {"LIVE_TEXT":"I hope everything ends up okay for him...", "TIME":0.03},
+        {"END":"END"}
+    ]
+}
