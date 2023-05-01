@@ -2,6 +2,8 @@ extends Node2D
 
 @export var ZOOM_SENSITIVITY = 1.0
 @export_range(0, 1) var ZOOM_LERP = 0.9
+@export var MIN_ZOOM = 0.05
+@export var MAX_ZOOM = 8
 
 @export var player_path : NodePath
 @onready var player = get_node(player_path)
@@ -9,6 +11,12 @@ extends Node2D
 @onready var Camera = $Camera2D
 
 var player_on_screen = true
+
+
+func _ready():
+	Camera.MIN_ZOOM = MIN_ZOOM
+	Camera.MAX_ZOOM = MAX_ZOOM
+
 
 func _process(delta):
 	global_position = lerp(global_position, player.global_position, ZOOM_LERP)

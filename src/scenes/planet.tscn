@@ -9,13 +9,12 @@ size = Vector2(128, 128)
 
 [node name="Planet" type="Node2D"]
 script = ExtResource("1_74388")
+dialog_title = "test"
 
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(10, 10)
 texture = ExtResource("2_3q4va")
 
 [node name="Area2D" type="Area2D" parent="."]
-scale = Vector2(10, 10)
 collision_layer = 2
 monitorable = false
 
@@ -25,6 +24,7 @@ shape = SubResource("RectangleShape2D_824wv")
 [node name="ZoomSprite" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(1, 0, 0, 1)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_3q4va")
 script = ExtResource("3_f5g7u")
 

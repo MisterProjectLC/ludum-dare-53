@@ -12,14 +12,16 @@
         {"CLOSE_TEXT":"CLOSE_TEXT"},
         {"ANIMATION":"FadeOut", "REQUIRED":true},
         {"ANIMATION":"ShowBox", "REQUIRED":true},
-        {"WAIT":5},
+        {"WAIT":2, "REQUIRED":true},
         {"ANIMATION":"FadeOut", "BACKWARDS":true, "REQUIRED":true},
-        {"WAIT":4},
+        {"WAIT":2, "REQUIRED":true},
         {"CHARACTER":"Protagonist"},
+        {"TEXT":"...", "TIME":0.15},
         {"TEXT":"Goodbye, Hugo.", "TIME":0.06},
-        {"APPEND_TEXT":" Until then.", "TIME":0.06},
-        {"WAIT":6},
+        {"APPEND_TEXT":" ...Until then.", "TIME":0.06},
+        {"WAIT":2},
         {"ANIMATION":"FadeOut", "REQUIRED":true},
+        {"WAIT":4, "REQUIRED":true},
         {"END":"END"}
     ]
 }

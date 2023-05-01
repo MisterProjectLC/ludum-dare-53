@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cvem255yquq0s"]
 
-[ext_resource type="Script" path="res://src/scenes/planet.gd" id="1_sddj6"]
+[ext_resource type="Script" path="res://src/scenes/asteroid.gd" id="1_yieyy"]
 [ext_resource type="Texture2D" uid="uid://c1j7wiky7o0tw" path="res://icon.svg" id="2_er5am"]
 [ext_resource type="Script" path="res://src/spaceship/zoom_agnostic_sprite.gd" id="3_emh4y"]
 
@@ -8,18 +8,18 @@
 size = Vector2(128, 128)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wb8vt"]
-radius = 18381.9
+radius = 989.064
 
 [node name="Asteroid" type="Node2D"]
-script = ExtResource("1_sddj6")
-dialog_title = "planet"
+script = ExtResource("1_yieyy")
+dialog_title = "comic_fan"
 
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(4, 4)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_er5am")
 
 [node name="Area2D" type="Area2D" parent="."]
-scale = Vector2(4, 4)
+scale = Vector2(0.4, 0.4)
 collision_layer = 2
 monitorable = false
 
@@ -36,6 +36,7 @@ shape = SubResource("CircleShape2D_wb8vt")
 [node name="ZoomSprite" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(1, 0, 0, 1)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_er5am")
 script = ExtResource("3_emh4y")
 
