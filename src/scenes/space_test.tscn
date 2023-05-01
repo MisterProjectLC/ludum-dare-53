@@ -85,7 +85,7 @@ _data = {
 script = ExtResource("1_0xl6g")
 space_dialogs = Array[String](["test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test"])
 station_dialogs = Array[String](["packages", "packages", "ending"])
-items = Array[String](["feather", "rose", "coffee", "briefcase", "teddy bear", "royal letter", "tickets"])
+items = Array[String](["tickets", "teddy bear", "royal letter", "briefcase", "teddy bear", "royal letter", "tickets"])
 space_music = ExtResource("2_1ew7p")
 dialog_music = ExtResource("3_vl3q8")
 limit = 10000
@@ -248,15 +248,15 @@ metadata/_edit_lock_ = true
 
 [node name="Planet" parent="Cycles/Cycle" instance=ExtResource("4_jhfi4")]
 position = Vector2(-173, 1143)
-dialog_title = "test_planet"
+dialog_title = "planet7"
 
 [node name="Planet2" parent="Cycles/Cycle" instance=ExtResource("4_jhfi4")]
 position = Vector2(-744, 100)
-dialog_title = "test_planet"
+dialog_title = "planet5"
 
 [node name="Planet3" parent="Cycles/Cycle" instance=ExtResource("4_jhfi4")]
 position = Vector2(997, -25)
-dialog_title = "test_planet"
+dialog_title = "planet6"
 
 [node name="Cycle2" type="Node2D" parent="Cycles"]
 
@@ -428,7 +428,6 @@ libraries = {
 }
 
 [node name="Spaceship" parent="." instance=ExtResource("6_se3sy")]
-position = Vector2(-3753, 949)
 scale = Vector2(0.1, 0.1)
 ACCELERATION_STRENGTH = 10.0
 MAX_SPEED = 40.0

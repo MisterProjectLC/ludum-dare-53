@@ -73,6 +73,7 @@
         {"TEXT":"I... I think I understand how he feels..."},
         {"CHARACTER":"Protagonist"},
         {"TEXT":"..."},
+        {"CHOICE":["royal letter", "teddy bear"]},
         {"END":"END"}
     ]
 }
