@@ -12,6 +12,7 @@ var limit = 150000
 @export var hugo_sprite : Texture
 
 @onready var Pointer = $%Pointer
+@onready var SmokeAnimation = $%SmokeAnimation
 
 var move_velocity  = Vector2.ZERO
 var look_vector = Vector2.ZERO
@@ -60,6 +61,10 @@ func manager_acceleration(delta):
 	
 	if Input.is_action_pressed("accelerate"):
 		move_velocity += look_vector*ACCELERATION_STRENGTH*delta
+		SmokeAnimation.play("Smoke")
+	else:
+		SmokeAnimation.stop()
+		$Sprite/SmokeCloud.visible = false
 	
 	if move_velocity.length() > MAX_SPEED:
 		move_velocity = lerp(move_velocity, move_velocity.normalized()*MAX_SPEED, 0.75)

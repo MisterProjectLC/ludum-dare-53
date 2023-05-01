@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cr3fciq260ss8"]
+[gd_scene load_steps=11 format=3 uid="uid://cr3fciq260ss8"]
 
 [ext_resource type="Script" path="res://src/spaceship/spaceship.gd" id="1_2sslo"]
 [ext_resource type="Texture2D" uid="uid://bfdo0oq0rm5aw" path="res://assets/spaceship/foguete_v2.png" id="2_8wxfa"]
@@ -6,6 +6,41 @@
 [ext_resource type="Texture2D" uid="uid://bhc03rcrnnc17" path="res://assets/spaceship/pointer.png" id="3_4qkpf"]
 [ext_resource type="Texture2D" uid="uid://dco5nvyy2ofpg" path="res://assets/characters/catioromapa.png" id="4_qheor"]
 [ext_resource type="Script" path="res://src/spaceship/zoom_agnostic_sprite.gd" id="4_tmfj7"]
+[ext_resource type="Texture2D" uid="uid://bq2w4qql7vm7t" path="res://assets/misc/smoke.png" id="7_yieva"]
+
+[sub_resource type="Animation" id="Animation_qe5fp"]
+resource_name = "Smoke"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_moe5c"]
+_data = {
+"Smoke": SubResource("Animation_qe5fp")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5gvj4"]
 size = Vector2(53.882, 36.3354)
@@ -20,6 +55,18 @@ hugo_sprite = ExtResource("2_cvoyj")
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("2_8wxfa")
+
+[node name="SmokeCloud" type="Sprite2D" parent="Sprite"]
+position = Vector2(-282, 35)
+texture = ExtResource("7_yieva")
+hframes = 3
+
+[node name="SmokeAnimation" type="AnimationPlayer" parent="Sprite/SmokeCloud"]
+unique_name_in_owner = true
+autoplay = "Smoke"
+libraries = {
+"": SubResource("AnimationLibrary_moe5c")
+}
 
 [node name="Pointer" type="Sprite2D" parent="."]
 unique_name_in_owner = true
