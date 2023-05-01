@@ -24,6 +24,7 @@ func show_items():
 
 
 func _on_item_clicked(index):
+	$SelectSound.play()
 	for i in range(min(3, len(items))):
 		items_parent.get_child(i).set_active(false)
 	Animator.play_backwards(ITEM_ANIMATIONS[len(items)-1])

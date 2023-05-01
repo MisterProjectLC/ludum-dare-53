@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cr3fciq260ss8"]
+[gd_scene load_steps=20 format=3 uid="uid://cr3fciq260ss8"]
 
 [ext_resource type="Script" path="res://src/spaceship/spaceship.gd" id="1_2sslo"]
 [ext_resource type="Texture2D" uid="uid://du5u16rhg4u2i" path="res://assets/spaceship/tripulacao.png" id="2_cvoyj"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cqtiymw1umb6g" path="res://assets/spaceship/escultura.png" id="10_6k7tq"]
 [ext_resource type="Texture2D" uid="uid://d33fr6yo60cio" path="res://assets/spaceship/cachecol.png" id="11_2lk3n"]
 [ext_resource type="Texture2D" uid="uid://do8hrk1w4k4tc" path="res://assets/spaceship/polvo.png" id="12_qlwj2"]
+[ext_resource type="AudioStream" uid="uid://c7ai6j5hprfr4" path="res://assets/audio/sfx/boost.wav" id="16_bdjiw"]
 
 [sub_resource type="Animation" id="Animation_qe5fp"]
 resource_name = "Smoke"
@@ -44,6 +45,21 @@ tracks/1/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SmokeSound")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("16_bdjiw")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_moe5c"]
 _data = {
@@ -69,6 +85,11 @@ texture = ExtResource("4_oa4pf")
 position = Vector2(-282, 35)
 texture = ExtResource("7_yieva")
 hframes = 3
+
+[node name="SmokeSound" type="AudioStreamPlayer" parent="Sprite/SmokeCloud"]
+stream = ExtResource("16_bdjiw")
+volume_db = -8.0
+bus = &"SFX"
 
 [node name="SmokeAnimation" type="AnimationPlayer" parent="Sprite/SmokeCloud"]
 unique_name_in_owner = true
