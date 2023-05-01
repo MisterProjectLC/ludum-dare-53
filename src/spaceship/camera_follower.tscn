@@ -7,14 +7,14 @@
 [node name="CameraFollower" type="Node2D"]
 script = ExtResource("1_wwsa7")
 ZOOM_LERP = 0.1
+MIN_ZOOM = 0.1
 player_path = NodePath("../Spaceship")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.25, 0.25)
-limit_left = -150000
-limit_top = -150000
-limit_right = 150000
-limit_bottom = 150000
+limit_left = -10000
+limit_top = -10000
+limit_right = 10000
+limit_bottom = 10000
 position_smoothing_speed = 0.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true

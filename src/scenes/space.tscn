@@ -77,6 +77,7 @@ script = ExtResource("1_sb46e")
 space_dialogs = Array[String](["test", "companion1", "companion2", "radio1", "companion3", "radio2", "companion4", "companion5", "companion6"])
 station_dialogs = Array[String](["packages", "packages", "ending"])
 items = Array[String](["feather", "rose", "coffee", "briefcase"])
+limit = 10000
 
 [node name="DialogTimer" type="Timer" parent="."]
 wait_time = 5.0
@@ -157,33 +158,37 @@ metadata/_edit_lock_ = true
 
 [node name="Pause" parent="CanvasLayer" instance=ExtResource("7_m8k4q")]
 
-[node name="Planets" type="Node2D" parent="."]
+[node name="Cycles" type="Node2D" parent="."]
 
-[node name="Planet" parent="Planets" instance=ExtResource("4_57lwj")]
-position = Vector2(42844, 22353)
+[node name="Cycle" type="Node2D" parent="Cycles"]
+
+[node name="Planet" parent="Cycles/Cycle" instance=ExtResource("4_57lwj")]
+position = Vector2(15196, 5329)
 dialog_title = "planet1"
 
-[node name="Planet2" parent="Planets" instance=ExtResource("4_57lwj")]
-position = Vector2(-58428, -43506)
+[node name="Planet2" parent="Cycles/Cycle" instance=ExtResource("4_57lwj")]
+position = Vector2(14336, -11136)
 dialog_title = "planet2"
 
-[node name="Planet3" parent="Planets" instance=ExtResource("4_57lwj")]
-position = Vector2(58180, -40050)
+[node name="Planet3" parent="Cycles/Cycle" instance=ExtResource("4_57lwj")]
+position = Vector2(-12672, -10240)
 dialog_title = "planet3"
 
 [node name="Asteroids" type="Node2D" parent="."]
 
 [node name="Asteroid" parent="Asteroids" instance=ExtResource("5_c1ndk")]
-position = Vector2(-66060, 2515)
+position = Vector2(-31884, 339)
 dialog_title = "comic_fan"
 
 [node name="Station" parent="." instance=ExtResource("4_57lwj")]
-position = Vector2(-60708, 41937)
+position = Vector2(-1701, 1147)
 dialog_title = "companion0"
 active = true
 
 [node name="Spaceship" parent="." instance=ExtResource("1_16udo")]
-ACCELERATION_STRENGTH = 5.0
+scale = Vector2(0.1, 0.1)
+ACCELERATION_STRENGTH = 0.5
+MAX_SPEED = 40.0
 
 [node name="CameraFollower" parent="." instance=ExtResource("2_g1kqm")]
 
@@ -193,38 +198,41 @@ ACCELERATION_STRENGTH = 5.0
 
 [node name="Background" type="Sprite2D" parent="ParallaxBackground/BG"]
 texture_repeat = 2
-scale = Vector2(100, 100)
+scale = Vector2(10, 10)
 texture = ExtResource("8_6txdh")
 region_enabled = true
-region_rect = Rect2(0, 0, 200000, 200000)
+region_rect = Rect2(0, 0, 2000, 2000)
+metadata/_edit_lock_ = true
 
 [node name="NebulaParallax" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.75, 0.75)
 
 [node name="Background" type="Sprite2D" parent="ParallaxBackground/NebulaParallax"]
 texture_repeat = 2
-scale = Vector2(100, 100)
+scale = Vector2(10, 10)
 texture = ExtResource("9_s1de7")
 region_enabled = true
-region_rect = Rect2(0, 0, 200000, 200000)
+region_rect = Rect2(0, 0, 2000, 2000)
+metadata/_edit_lock_ = true
 
 [node name="StarsParallax" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.75, 0.75)
 
 [node name="Background" type="Sprite2D" parent="ParallaxBackground/StarsParallax"]
 texture_repeat = 2
-scale = Vector2(5, 5)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("10_w4adj")
 region_enabled = true
-region_rect = Rect2(0, 0, 200000, 200000)
+region_rect = Rect2(0, 0, 40000, 40000)
+metadata/_edit_lock_ = true
 
 [node name="Accelerate" type="Label" parent="."]
-offset_left = 2725.0
-offset_top = 155.0
-offset_right = 4129.0
-offset_bottom = 595.0
+offset_left = 646.0
+offset_top = 17.0
+offset_right = 827.0
+offset_bottom = 115.0
 theme_override_fonts/font = ExtResource("9_fu04u")
-theme_override_font_sizes/font_size = 200
+theme_override_font_sizes/font_size = 20
 text = "Hold the Left Mouse Button to accelerate"
 autowrap_mode = 2
 script = ExtResource("10_6w66c")
@@ -232,12 +240,12 @@ keyboard_text = "Hold the Left Mouse Button to accelerate"
 controller_text = "Hold X to accelerate"
 
 [node name="ZoomIn" type="Label" parent="."]
-offset_left = -1755.0
-offset_top = 292.0
-offset_right = -351.0
-offset_bottom = 732.0
+offset_left = -292.0
+offset_top = 35.0
+offset_right = -70.0
+offset_bottom = 115.0
 theme_override_fonts/font = ExtResource("9_fu04u")
-theme_override_font_sizes/font_size = 200
+theme_override_font_sizes/font_size = 20
 text = "Hold A to Zoom-Out"
 autowrap_mode = 2
 script = ExtResource("10_6w66c")
@@ -245,12 +253,12 @@ keyboard_text = "Hold A to Zoom-Out"
 controller_text = "Hold L2 to Zoom-Out"
 
 [node name="ZoomOut" type="Label" parent="."]
-offset_left = 293.0
-offset_top = 316.0
-offset_right = 1697.0
-offset_bottom = 756.0
+offset_left = 135.0
+offset_top = 37.0
+offset_right = 312.0
+offset_bottom = 96.0
 theme_override_fonts/font = ExtResource("9_fu04u")
-theme_override_font_sizes/font_size = 200
+theme_override_font_sizes/font_size = 20
 text = "Hold D to Zoom-In"
 autowrap_mode = 2
 script = ExtResource("10_6w66c")
@@ -258,12 +266,12 @@ keyboard_text = "Hold D to Zoom-In"
 controller_text = "Hold R2 to Zoom-In"
 
 [node name="Zoom" type="Label" parent="."]
-offset_left = -625.0
-offset_top = 2349.0
-offset_right = 779.0
-offset_bottom = 3009.0
+offset_left = -125.0
+offset_top = 351.0
+offset_right = 101.0
+offset_bottom = 448.0
 theme_override_fonts/font = ExtResource("9_fu04u")
-theme_override_font_sizes/font_size = 200
+theme_override_font_sizes/font_size = 20
 text = "You can also use the Scroll Wheel to control Zoom"
 horizontal_alignment = 1
 vertical_alignment = 1

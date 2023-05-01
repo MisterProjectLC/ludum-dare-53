@@ -2,9 +2,9 @@ extends Node2D
 
 @export var dialog_title = ""
 @export var active = false
+@export var hidden_planet = false
 
 @onready var area = $Area2D
-
 
 signal spaceship_approached(planet)
 
@@ -19,7 +19,8 @@ func get_dialog_title():
 
 func set_active(t):
 	active = t
-	$ZoomSprite.visible = t
+	if !hidden_planet:
+		$ZoomSprite.visible = t
 
 
 func _on_area_2d_body_entered(_body):

@@ -7,7 +7,7 @@ signal dash_updated(fuel_value)
 @export var MAX_SPEED = 1000.0
 @export var FUEL_TO_DASH = 4
 @export var DASH_SPEED = 200.0
-@export var limit = 150000
+var limit = 150000
 
 @export var hugo_sprite : Texture
 

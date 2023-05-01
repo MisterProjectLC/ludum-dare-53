@@ -274,6 +274,7 @@ autowrap_mode = 2
 [node name="Portrait" type="TextureRect" parent="LiveDialogBox/Rect"]
 modulate = Color(1, 1, 1, 0.219608)
 texture_filter = 1
+layout_mode = 0
 offset_left = 636.0
 offset_top = -548.0
 offset_right = 1148.0

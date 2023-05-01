@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var Planets = $Planets
+@onready var Cycles = $Cycles
 @onready var Asteroids = $Asteroids
 @onready var Station = $Station
 @onready var Spaceship = $Spaceship
@@ -26,8 +26,9 @@ var game_stage = -1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for planet in Planets.get_children():
-		planet.connect("spaceship_approached", Callable(self, "on_spaceship_approached_planet"))
+	for cycle in Cycles.get_children():
+		for planet in cycle.get_children():
+			planet.connect("spaceship_approached", Callable(self, "on_spaceship_approached_planet"))
 	for asteroid in Asteroids.get_children():
 		asteroid.connect("spaceship_approached", Callable(self, "on_spaceship_approached_asteroid"))
 	
@@ -37,7 +38,7 @@ func _ready():
 
 
 func _process(_delta):
-	Stars.modulate.a = clamp(GlobalNode.get_camera_zoom()*8, 0, 1)
+	Stars.modulate.a = clamp(GlobalNode.get_camera_zoom(), 0, 1)
 
 
 func on_spaceship_approached_station(body):
@@ -49,7 +50,7 @@ func on_spaceship_approached_station(body):
 		for asteroid in Asteroids.get_children():
 			asteroid.set_active(true)
 	
-	if (game_stage+1)*3 <= Planets.get_child_count():
+	if (game_stage+1) <= Cycles.get_child_count():
 		activate_planets()
 	
 	Station.set_active(false)
@@ -91,12 +92,15 @@ func _on_cutscene_controller_events_ended():
 
 func activate_planets():
 	UI.set_objective("Deliver packages!")
-	for i in range(game_stage*3, (game_stage+1)*3):
-		Planets.get_child(i).set_active(true)
-		var item = {"IMAGE": TextureLoader.get_tex_from_title(
-		"items/" + items[i].to_lower()), "TITLE": items[i]}
-		CutscenePlayer.add_item(item)
-		inventory.append(item)
+	for i in range(game_stage):
+		for planet in Cycles.get_child(i).get_children():
+			planet.set_active(true)
+			
+			var planet_index = planets_visited + i
+			var item = {"IMAGE": TextureLoader.get_tex_from_title(
+			"items/" + items[i].to_lower()), "TITLE": items[i]}
+			CutscenePlayer.add_item(item)
+			inventory.append(item)
 	UI.set_items(inventory)
 
 
