@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cr3fciq260ss8"]
+[gd_scene load_steps=21 format=3 uid="uid://cr3fciq260ss8"]
 
 [ext_resource type="Script" path="res://src/spaceship/spaceship.gd" id="1_2sslo"]
 [ext_resource type="Texture2D" uid="uid://du5u16rhg4u2i" path="res://assets/spaceship/tripulacao.png" id="2_cvoyj"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://1222s0rp3xmg" path="res://assets/spaceship/catioro e nave.png" id="4_oa4pf"]
 [ext_resource type="Texture2D" uid="uid://dco5nvyy2ofpg" path="res://assets/characters/catioromapa.png" id="4_qheor"]
 [ext_resource type="Script" path="res://src/spaceship/zoom_agnostic_sprite.gd" id="4_tmfj7"]
+[ext_resource type="AudioStream" uid="uid://b63r5cdvp5r4u" path="res://assets/audio/sfx/dash.wav" id="4_x0m3s"]
 [ext_resource type="Texture2D" uid="uid://buxmf34pw5k6c" path="res://assets/spaceship/pegue o pombo.png" id="6_kl11j"]
 [ext_resource type="Texture2D" uid="uid://ru8s7wlxs8kc" path="res://assets/spaceship/cafezinho.png" id="7_1rper"]
 [ext_resource type="Texture2D" uid="uid://bq2w4qql7vm7t" path="res://assets/misc/smoke.png" id="7_yieva"]
@@ -76,6 +77,11 @@ MAX_SPEED = 400.0
 DASH_SPEED = 2.0
 hugo_sprite = ExtResource("2_cvoyj")
 without_scarf_sprite = ExtResource("3_1cq7r")
+
+[node name="DashSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_x0m3s")
+volume_db = -8.0
+bus = &"SFX"
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1
