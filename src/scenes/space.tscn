@@ -33,6 +33,21 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_7kiu3"]
 resource_name = "HugoPopup"
+length = 0.3
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spaceship")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"hugo_popup"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_ujsrt"]
 resource_name = "ShowBox"

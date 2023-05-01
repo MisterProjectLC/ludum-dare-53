@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cr3fciq260ss8"]
+[gd_scene load_steps=8 format=3 uid="uid://cr3fciq260ss8"]
 
 [ext_resource type="Script" path="res://src/spaceship/spaceship.gd" id="1_2sslo"]
 [ext_resource type="Texture2D" uid="uid://bfdo0oq0rm5aw" path="res://assets/spaceship/foguete_v2.png" id="2_8wxfa"]
+[ext_resource type="Texture2D" uid="uid://du5u16rhg4u2i" path="res://assets/spaceship/tripulacao.png" id="2_cvoyj"]
 [ext_resource type="Texture2D" uid="uid://bhc03rcrnnc17" path="res://assets/spaceship/pointer.png" id="3_4qkpf"]
 [ext_resource type="Texture2D" uid="uid://dco5nvyy2ofpg" path="res://assets/characters/catioromapa.png" id="4_qheor"]
 [ext_resource type="Script" path="res://src/spaceship/zoom_agnostic_sprite.gd" id="4_tmfj7"]
@@ -14,6 +15,7 @@ script = ExtResource("1_2sslo")
 ACCELERATION_STRENGTH = 4.0
 MAX_SPEED = 400.0
 DASH_SPEED = 20.0
+hugo_sprite = ExtResource("2_cvoyj")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1

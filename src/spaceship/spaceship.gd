@@ -9,6 +9,8 @@ signal dash_updated(fuel_value)
 @export var DASH_SPEED = 200.0
 @export var limit = 150000
 
+@export var hugo_sprite : Texture
+
 @onready var Pointer = $%Pointer
 
 var move_velocity  = Vector2.ZERO
@@ -96,6 +98,10 @@ func manage_direction_controller():
 
 func manage_direction_mouse():
 	look_vector = (get_global_mouse_position() - global_position).normalized()
+
+
+func hugo_popup():
+	$Sprite.texture = hugo_sprite
 
 
 func set_dash_enabled(d):
