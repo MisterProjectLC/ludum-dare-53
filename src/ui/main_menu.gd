@@ -3,9 +3,12 @@ class_name Menu
 
 var starting = false
 var quitting = false
+@onready var start = $Buttons/Start
 
 func _ready():
 	Transitions.connect("transition_finished", Callable(self, "on_transition_finished"))
+	if not start == null:
+		start.grab_focus()
 
 
 func _on_start_button_up():

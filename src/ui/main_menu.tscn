@@ -135,6 +135,7 @@ offset_top = 111.0
 offset_right = 204.0
 offset_bottom = 170.0
 focus_neighbor_top = NodePath("../Options")
+focus_neighbor_bottom = NodePath("../Start")
 text = "Quit"
 
 [node name="OptionsMenu" parent="." instance=ExtResource("7_cn34p")]
