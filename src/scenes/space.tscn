@@ -219,27 +219,45 @@ image = ExtResource("16_6a451")
 
 [node name="ComicFan" parent="Asteroids" instance=ExtResource("5_c1ndk")]
 position = Vector2(-8204, 2003)
+active = true
 
 [node name="Emma" parent="Asteroids" instance=ExtResource("5_c1ndk")]
 position = Vector2(4773, 3107)
+dialog_title = "Emma"
+active = true
 
 [node name="Soldier" parent="Asteroids" instance=ExtResource("5_c1ndk")]
 position = Vector2(-4627, -4923)
+dialog_title = "Soldier"
+active = true
 
 [node name="GirlMusic" parent="Asteroids" instance=ExtResource("5_c1ndk")]
 position = Vector2(3327, -1841)
+dialog_title = "Girl"
+active = true
 
 [node name="ManCorner" parent="Asteroids" instance=ExtResource("5_c1ndk")]
 position = Vector2(10595, 7293)
+dialog_title = "TMCG"
+active = true
 
 [node name="BoyArco" parent="Asteroids" instance=ExtResource("5_c1ndk")]
 position = Vector2(3712, -5463)
 
 [node name="Traveler" parent="Asteroids" instance=ExtResource("5_c1ndk")]
 position = Vector2(-3035, -1286)
+dialog_title = "Traveler"
+active = true
 
 [node name="Astronomer" parent="Asteroids" instance=ExtResource("5_c1ndk")]
 position = Vector2(-2202, 6641)
+dialog_title = "Astronomer"
+active = true
+
+[node name="Loner" parent="Asteroids" instance=ExtResource("5_c1ndk")]
+position = Vector2(-1454, -7042)
+dialog_title = "Loner"
+active = true
 
 [node name="Station" parent="." instance=ExtResource("4_57lwj")]
 position = Vector2(-2392, 2795)

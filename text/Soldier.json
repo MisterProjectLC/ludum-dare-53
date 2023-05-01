@@ -1,0 +1,17 @@
+{
+    "DATA":[
+        {"CHARACTER":"Soldier"},	
+        {"TEXT":"At ease, pilot! Don't you know today is truce day?."},
+        {"CHARACTER":"Hugo"},	
+        {"TEXT":"O-Oh, we know... We're just delivering packages!", "TIME": 0.03},
+        {"CHARACTER":"Soldier"},	
+        {"TEXT":"Hmm, you look familiar... Aren't you General Clayton's kid?"},
+        {"CHARACTER":"Hugo"},	
+        {"TEXT":"Uh... I, uh...", "TIME": 0.03},
+        {"CHARACTER":"Soldier"},	
+        {"TEXT":"Send my regards to him, alright? His counter-offensive on Mars was damn brillant!"},
+        {"CHARACTER":"Hugo"},	
+        {"LIVE_TEXT":"Um, o-okay...", "TIME": 0.03},
+        {"END":"END"}
+    ]
+}
