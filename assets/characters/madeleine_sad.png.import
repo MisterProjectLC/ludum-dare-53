@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnqn0sba6c48i"
-path="res://.godot/imported/madeleine_bad.png-091c3c377d917eb53ca9176bce7cff18.ctex"
+path="res://.godot/imported/madeleine_sad.png-6f752d63527c664a2b3e62363c237161.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/madeleine_bad.png"
-dest_files=["res://.godot/imported/madeleine_bad.png-091c3c377d917eb53ca9176bce7cff18.ctex"]
+source_file="res://assets/characters/madeleine_sad.png"
+dest_files=["res://.godot/imported/madeleine_sad.png-6f752d63527c664a2b3e62363c237161.ctex"]
 
 [params]
 

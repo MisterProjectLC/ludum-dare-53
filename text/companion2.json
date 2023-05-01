@@ -8,7 +8,9 @@
         {"LIVE_TEXT":"...", "TIME":0.12},
         {"LIVE_TEXT":"Hehehe, sorry... Dad says sometimes I can be annoying.", "TIME":0.03},
         {"LIVE_TEXT":"He's all like 'Bossing around the galaxy isn't easy! I can't concentrate!'", "TIME":0.03},
+        {"CHARACTER":"Hugo_serious"},
         {"LIVE_TEXT":"...", "TIME":0.12},
+        {"CHARACTER":"Hugo_huh"},
         {"LIVE_TEXT":"Am I annoying?", "TIME":0.08},
         {"END":"END"}
     ]
