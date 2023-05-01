@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brfh8vy2b2jcg"
-path="res://.godot/imported/protagonist.png-ab2b236fa94dc12e275694a8b8722125.ctex"
+uid="uid://dbgk0aw7m11is"
+path="res://.godot/imported/Planeta dos Macacos.png-ccb249cc758d18e0e3da90027d262153.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/protagonist.png"
-dest_files=["res://.godot/imported/protagonist.png-ab2b236fa94dc12e275694a8b8722125.ctex"]
+source_file="res://assets/planets/Planeta dos Macacos.png"
+dest_files=["res://.godot/imported/Planeta dos Macacos.png-ccb249cc758d18e0e3da90027d262153.ctex"]
 
 [params]
 

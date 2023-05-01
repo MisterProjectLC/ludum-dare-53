@@ -102,10 +102,13 @@ func end_game():
 	get_tree().change_scene_to_file("res://src/ui/main_menu.tscn")
 
 
-func leave_planet():
+func leave_planet(current_scene):
 	on_planet = false
 	DialogTimer.start()
 	Spaceship.set_dash_enabled(false)
+	if current_scene == "planet4_wrong":
+		CutscenePlayer.is_without_scarf = true
+		Spaceship.lose_scarf()
 
 
 func ended_space_dialog():
@@ -148,12 +151,12 @@ func _on_dialog_timer_timeout():
 	play_dialog(space_dialogs[space_dialog_index])
 
 
-func _on_cutscene_controller_events_ended():
+func _on_cutscene_controller_events_ended(current_scene):
 	if game_stage == 3: # end game
 		end_game()
 	
 	elif on_planet: # Finished planet
-		leave_planet()
+		leave_planet(current_scene)
 	
 	else:
 		ended_space_dialog()

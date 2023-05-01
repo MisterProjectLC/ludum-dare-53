@@ -16,6 +16,8 @@ var stored_character = ""
 var waiting_choice = false
 var choice_events = []
 
+var is_without_scarf = false
+
 func _ready():
 	TimeController.connect("paused_game", Callable(self, "on_paused_game"))
 
@@ -63,7 +65,10 @@ func close_text(_event):
 
 func character(event):
 	current_character = event["CHARACTER"]
-	dialog.change_character(event["CHARACTER"])
+	if is_without_scarf and event["CHARACTER"] == "Protagonist":
+		dialog.change_character("protagonist_no_scarf")
+	else:
+		dialog.change_character(event["CHARACTER"])
 
 func play_voiceover(event):
 	voiceover.play_stream(voices[event["VOICEOVER"]])

@@ -10,6 +10,7 @@ signal dash_updated(fuel_value)
 var limit = 150000
 
 @export var hugo_sprite : Texture
+@export var without_scarf_sprite : Texture
 
 @onready var Pointer = $%Pointer
 @onready var SmokeAnimation = $%SmokeAnimation
@@ -107,6 +108,9 @@ func manage_direction_mouse():
 
 func hugo_popup():
 	$Sprite.texture = hugo_sprite
+
+func lose_scarf():
+	$Sprite.texture = without_scarf_sprite
 
 
 func set_dash_enabled(d):

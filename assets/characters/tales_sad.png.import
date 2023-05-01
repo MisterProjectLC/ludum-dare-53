@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brfh8vy2b2jcg"
-path="res://.godot/imported/protagonist.png-ab2b236fa94dc12e275694a8b8722125.ctex"
+uid="uid://b4kwb4m2sa0ku"
+path="res://.godot/imported/tales_sad.png-e1df50a393814a2b4175c86effcab2e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/protagonist.png"
-dest_files=["res://.godot/imported/protagonist.png-ab2b236fa94dc12e275694a8b8722125.ctex"]
+source_file="res://assets/characters/tales_sad.png"
+dest_files=["res://.godot/imported/tales_sad.png-e1df50a393814a2b4175c86effcab2e5.ctex"]
 
 [params]
 

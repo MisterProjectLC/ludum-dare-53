@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brfh8vy2b2jcg"
-path="res://.godot/imported/protagonist.png-ab2b236fa94dc12e275694a8b8722125.ctex"
+uid="uid://b0yyayphb0qxe"
+path="res://.godot/imported/Planeta do Artista.png-179e1644c72cbc2f26870487d7bf0950.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/protagonist.png"
-dest_files=["res://.godot/imported/protagonist.png-ab2b236fa94dc12e275694a8b8722125.ctex"]
+source_file="res://assets/planets/Planeta do Artista.png"
+dest_files=["res://.godot/imported/Planeta do Artista.png-179e1644c72cbc2f26870487d7bf0950.ctex"]
 
 [params]
 

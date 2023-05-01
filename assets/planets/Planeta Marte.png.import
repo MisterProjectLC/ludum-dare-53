@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brfh8vy2b2jcg"
-path="res://.godot/imported/protagonist.png-ab2b236fa94dc12e275694a8b8722125.ctex"
+uid="uid://cdx7oh4gmm28a"
+path="res://.godot/imported/Planeta Marte.png-7f7ae1671ca2d0607530a5e1d8e82851.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/protagonist.png"
-dest_files=["res://.godot/imported/protagonist.png-ab2b236fa94dc12e275694a8b8722125.ctex"]
+source_file="res://assets/planets/Planeta Marte.png"
+dest_files=["res://.godot/imported/Planeta Marte.png-7f7ae1671ca2d0607530a5e1d8e82851.ctex"]
 
 [params]
 

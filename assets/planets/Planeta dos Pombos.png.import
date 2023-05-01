@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brfh8vy2b2jcg"
-path="res://.godot/imported/protagonist.png-ab2b236fa94dc12e275694a8b8722125.ctex"
+uid="uid://bb0gqhflu0exl"
+path="res://.godot/imported/Planeta dos Pombos.png-d89cb8ffa473aeae95043dca1ceece8a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/protagonist.png"
-dest_files=["res://.godot/imported/protagonist.png-ab2b236fa94dc12e275694a8b8722125.ctex"]
+source_file="res://assets/planets/Planeta dos Pombos.png"
+dest_files=["res://.godot/imported/Planeta dos Pombos.png-d89cb8ffa473aeae95043dca1ceece8a.ctex"]
 
 [params]
 
