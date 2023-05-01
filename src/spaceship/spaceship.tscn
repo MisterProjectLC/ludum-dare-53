@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cr3fciq260ss8"]
+[gd_scene load_steps=20 format=3 uid="uid://cr3fciq260ss8"]
 
 [ext_resource type="Script" path="res://src/spaceship/spaceship.gd" id="1_2sslo"]
 [ext_resource type="Texture2D" uid="uid://du5u16rhg4u2i" path="res://assets/spaceship/tripulacao.png" id="2_cvoyj"]
@@ -7,7 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://1222s0rp3xmg" path="res://assets/spaceship/catioro e nave.png" id="4_oa4pf"]
 [ext_resource type="Texture2D" uid="uid://dco5nvyy2ofpg" path="res://assets/characters/catioromapa.png" id="4_qheor"]
 [ext_resource type="Script" path="res://src/spaceship/zoom_agnostic_sprite.gd" id="4_tmfj7"]
+[ext_resource type="Texture2D" uid="uid://buxmf34pw5k6c" path="res://assets/spaceship/pegue o pombo.png" id="6_kl11j"]
+[ext_resource type="Texture2D" uid="uid://ru8s7wlxs8kc" path="res://assets/spaceship/cafezinho.png" id="7_1rper"]
 [ext_resource type="Texture2D" uid="uid://bq2w4qql7vm7t" path="res://assets/misc/smoke.png" id="7_yieva"]
+[ext_resource type="Texture2D" uid="uid://dpec0si3ri6da" path="res://assets/spaceship/coracao.png" id="8_y8qia"]
+[ext_resource type="Texture2D" uid="uid://bg2s7l0in50mm" path="res://assets/spaceship/banananaa nft.png" id="9_bvsyv"]
+[ext_resource type="Texture2D" uid="uid://cqtiymw1umb6g" path="res://assets/spaceship/escultura.png" id="10_6k7tq"]
+[ext_resource type="Texture2D" uid="uid://d33fr6yo60cio" path="res://assets/spaceship/cachecol.png" id="11_2lk3n"]
+[ext_resource type="Texture2D" uid="uid://do8hrk1w4k4tc" path="res://assets/spaceship/polvo.png" id="12_qlwj2"]
+[ext_resource type="AudioStream" uid="uid://c7ai6j5hprfr4" path="res://assets/audio/sfx/boost.wav" id="16_bdjiw"]
 
 [sub_resource type="Animation" id="Animation_qe5fp"]
 resource_name = "Smoke"
@@ -37,6 +45,21 @@ tracks/1/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SmokeSound")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("16_bdjiw")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_moe5c"]
 _data = {
@@ -63,12 +86,47 @@ position = Vector2(-282, 35)
 texture = ExtResource("7_yieva")
 hframes = 3
 
+[node name="SmokeSound" type="AudioStreamPlayer" parent="Sprite/SmokeCloud"]
+stream = ExtResource("16_bdjiw")
+volume_db = -8.0
+bus = &"SFX"
+
 [node name="SmokeAnimation" type="AnimationPlayer" parent="Sprite/SmokeCloud"]
 unique_name_in_owner = true
 autoplay = "Smoke"
 libraries = {
 "": SubResource("AnimationLibrary_moe5c")
 }
+
+[node name="Souvenirs" type="Node2D" parent="Sprite"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite/Souvenirs"]
+visible = false
+texture = ExtResource("6_kl11j")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite/Souvenirs"]
+visible = false
+texture = ExtResource("7_1rper")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprite/Souvenirs"]
+visible = false
+texture = ExtResource("8_y8qia")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Sprite/Souvenirs"]
+visible = false
+texture = ExtResource("9_bvsyv")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Sprite/Souvenirs"]
+visible = false
+texture = ExtResource("10_6k7tq")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Sprite/Souvenirs"]
+visible = false
+texture = ExtResource("11_2lk3n")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Sprite/Souvenirs"]
+visible = false
+texture = ExtResource("12_qlwj2")
 
 [node name="Pointer" type="Sprite2D" parent="."]
 unique_name_in_owner = true
