@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://d3cp80y5ia73o"]
+[gd_scene load_steps=29 format=3 uid="uid://d3cp80y5ia73o"]
 
 [ext_resource type="Script" path="res://src/scenes/space.gd" id="1_0xl6g"]
 [ext_resource type="AudioStream" uid="uid://bu8udhcpnogbj" path="res://assets/audio/bgm/Adventure_Awaits.mp3" id="2_1ew7p"]
@@ -23,6 +23,7 @@
 [ext_resource type="Script" path="res://src/scenes/tutorial_label.gd" id="12_0a4vh"]
 [ext_resource type="Texture2D" uid="uid://d33fr6yo60cio" path="res://assets/spaceship/cachecol.png" id="12_j0v41"]
 [ext_resource type="Texture2D" uid="uid://do8hrk1w4k4tc" path="res://assets/spaceship/polvo.png" id="13_edyow"]
+[ext_resource type="Texture2D" uid="uid://bh67mkkpc7yqc" path="res://assets/planets/Correio.png" id="19_42pft"]
 
 [sub_resource type="Animation" id="Animation_0wi1v"]
 resource_name = "FadeOut"
@@ -331,6 +332,7 @@ active = true
 [node name="Station" parent="." instance=ExtResource("4_jhfi4")]
 position = Vector2(-549, 777)
 active = true
+image = ExtResource("19_42pft")
 
 [node name="CameraFollower" parent="." instance=ExtResource("7_3daj7")]
 

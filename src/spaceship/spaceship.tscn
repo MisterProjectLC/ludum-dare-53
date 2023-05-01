@@ -20,7 +20,6 @@
 
 [sub_resource type="Animation" id="Animation_qe5fp"]
 resource_name = "Smoke"
-length = 0.8
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -88,13 +87,15 @@ texture_filter = 1
 texture = ExtResource("4_oa4pf")
 
 [node name="SmokeCloud" type="Sprite2D" parent="Sprite"]
+visible = false
 position = Vector2(-282, 35)
 texture = ExtResource("7_yieva")
 hframes = 3
+frame = 2
 
 [node name="SmokeSound" type="AudioStreamPlayer" parent="Sprite/SmokeCloud"]
 stream = ExtResource("16_bdjiw")
-volume_db = -8.0
+volume_db = -16.0
 bus = &"SFX"
 
 [node name="SmokeAnimation" type="AnimationPlayer" parent="Sprite/SmokeCloud"]
