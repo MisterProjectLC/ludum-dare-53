@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://danu2maigu0qe"]
 
 [ext_resource type="Script" path="res://src/ui/dialog/item_box.gd" id="1_bjhlw"]
-[ext_resource type="Texture2D" uid="uid://c1j7wiky7o0tw" path="res://icon.svg" id="1_oqbku"]
 [ext_resource type="FontFile" uid="uid://cx6s3op6yjnhp" path="res://assets/ui/fonts/Spring Snowstorm.ttf" id="2_3t2u7"]
+[ext_resource type="Texture2D" uid="uid://08w2qspj02xt" path="res://assets/items/briefcase.png" id="2_40mnj"]
 
 [node name="Item" type="ColorRect"]
 anchors_preset = -1
@@ -21,13 +21,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -64.5
-offset_top = -77.5
-offset_right = 63.5
-offset_bottom = 50.5
+offset_left = -186.0
+offset_top = -97.0
+offset_right = 590.0
+offset_bottom = 412.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_oqbku")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_40mnj")
 metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="."]

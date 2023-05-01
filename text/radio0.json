@@ -1,15 +1,15 @@
 {
     "DATA":[
         {"CHARACTER":"Radio"},
-        {"LIVE_TEXT":"Bzzz, bzzz...", "TIME":0.15},
-        {"LIVE_TEXT":"Haaappy Pudding Day, folks!", "TIME":0.03},
-        {"LIVE_TEXT":"Remember, as is tradition across the galaxy, the war is officially halted until tomorrow!", "TIME":0.035},
-        {"LIVE_TEXT":"Take your time to see your family and friends! Who knows if they'll still be around next week!", "TIME":0.035},
+        {"LIVE_TEXT":"Bzzz, bzzz...", "TIME":0.05},
+        {"LIVE_TEXT":"Haaappy Pudding Day, folks!", "TIME":0.032},
+        {"LIVE_TEXT":"Remember, as is tradition across the galaxy, the war is officially halted until tomorrow!", "TIME":0.032},
+        {"LIVE_TEXT":"Take your time to see your family and friends! Who knows if they'll still be around next week!", "TIME":0.032},
         {"WAIT":4},
-        {"LIVE_TEXT":"Bzzz, bzzz...", "TIME":0.15},
-        {"LIVE_TEXT":"Hey, contractor, can you work the Post Office today? There's no one else delivering.", "TIME":0.035},
-        {"LIVE_TEXT":"Yeah, everyone's on vacation. Yeah, you'll get paid extra.", "TIME":0.03},
-        {"LIVE_TEXT":"Oh, actually... Uh, I think there's someone else also there? They don't have a box, though.", "TIME":0.035},
+        {"LIVE_TEXT":"Bzzz, bzzz...", "TIME":0.05},
+        {"LIVE_TEXT":"Hey, contractor, can you work the Post Office today? There's no one else delivering.", "TIME":0.02},
+        {"LIVE_TEXT":"Yeah, everyone's on vacation. Yeah, you'll get paid extra.", "TIME":0.025},
+        {"LIVE_TEXT":"Oh, actually... Uh, I think there's someone else also there? They don't have a box, though.", "TIME":0.02},
         {"LIVE_TEXT":"Yeah, check that out, please. Thank you.", "TIME":0.02},
         {"LIVE_TEXT":"Bzz!", "TIME":0.01},
         {"END":"END"}

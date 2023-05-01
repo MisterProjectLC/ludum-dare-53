@@ -15,6 +15,8 @@ extends Node2D
 @export var space_dialogs : Array[String]
 @export var station_dialogs : Array[String]
 @export var items : Array[String]
+@export var space_music : AudioStream
+@export var dialog_music : AudioStream
 var inventory = []
 
 var on_planet = false
@@ -47,6 +49,8 @@ func _process(_delta):
 
 
 func on_spaceship_approached_station(body):
+	$BGM.stream = dialog_music
+	$BGM.play()
 	play_dialog(body.get_dialog_title())
 	
 	space_dialog_index += 1
@@ -69,6 +73,8 @@ func on_spaceship_approached_station(body):
 
 
 func on_spaceship_approached_planet(body):
+	$BGM.stream = dialog_music
+	$BGM.play()
 	play_dialog(body.get_dialog_title())
 	planets_visited += 1
 	
@@ -81,6 +87,8 @@ func on_spaceship_approached_planet(body):
 
 
 func on_spaceship_approached_planetx(body):
+	$BGM.stream = dialog_music
+	$BGM.play()
 	play_dialog(body.get_dialog_title())
 	space_dialog_index += 1
 	replace_space_dialog("companion8", "companion9")
@@ -96,6 +104,9 @@ func _on_cutscene_controller_item_chosen(item, correct):
 	inventory.erase(item)
 	UI.set_items(inventory)
 	if correct:
+		GlobalNode.souvenirs[planets_visited-1] = true
+		$Spaceship/Sprite/Souvenirs.get_child(planets_visited-1).visible = true
+		$CanvasLayer/BoxEnding/Stickers.get_child(planets_visited-1).visible = true
 		if item["TITLE"].to_lower() == "feather":
 			replace_space_dialog("radio2", "radio2_right")
 
@@ -105,6 +116,8 @@ func end_game():
 
 
 func leave_planet(current_scene):
+	$BGM.stream = space_music
+	$BGM.play()
 	on_planet = false
 	DialogTimer.start()
 	Spaceship.set_dash_enabled(false)
