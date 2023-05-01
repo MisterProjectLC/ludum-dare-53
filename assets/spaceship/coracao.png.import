@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mvfh5jnfwaif"
-path="res://.godot/imported/coffee.png-5a9ecd70d2ff79a2510a4e98f7b17029.ctex"
+uid="uid://dpec0si3ri6da"
+path="res://.godot/imported/coracao.png-64c3043cd202ba82ffc4a631d213e18a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/items/coffee.png"
-dest_files=["res://.godot/imported/coffee.png-5a9ecd70d2ff79a2510a4e98f7b17029.ctex"]
+source_file="res://assets/spaceship/coracao.png"
+dest_files=["res://.godot/imported/coracao.png-64c3043cd202ba82ffc4a631d213e18a.ctex"]
 
 [params]
 

@@ -49,6 +49,8 @@ func _process(_delta):
 
 
 func on_spaceship_approached_station(body):
+	$BGM.stream = dialog_music
+	$BGM.play()
 	play_dialog(body.get_dialog_title())
 	
 	space_dialog_index += 1
@@ -102,6 +104,9 @@ func _on_cutscene_controller_item_chosen(item, correct):
 	inventory.erase(item)
 	UI.set_items(inventory)
 	if correct:
+		GlobalNode.souvenirs[planets_visited-1] = true
+		$Spaceship/Sprite/Souvenirs.get_child(planets_visited-1).visible = true
+		$CanvasLayer/BoxEnding/Stickers.get_child(planets_visited-1).visible = true
 		if item["TITLE"].to_lower() == "feather":
 			replace_space_dialog("radio2", "radio2_right")
 

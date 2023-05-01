@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mvfh5jnfwaif"
-path="res://.godot/imported/coffee.png-5a9ecd70d2ff79a2510a4e98f7b17029.ctex"
+uid="uid://bg2s7l0in50mm"
+path="res://.godot/imported/banananaa nft.png-875239c9ee24a95aae6541558d05b4e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/items/coffee.png"
-dest_files=["res://.godot/imported/coffee.png-5a9ecd70d2ff79a2510a4e98f7b17029.ctex"]
+source_file="res://assets/spaceship/banananaa nft.png"
+dest_files=["res://.godot/imported/banananaa nft.png-875239c9ee24a95aae6541558d05b4e3.ctex"]
 
 [params]
 
