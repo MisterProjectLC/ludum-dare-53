@@ -22,6 +22,10 @@ TimeController="*res://src/global/time_controller.tscn"
 GlobalNode="*res://src/global/global.tscn"
 Transitions="*res://src/ui/transitions.tscn"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [input]
 
 ui_accept={

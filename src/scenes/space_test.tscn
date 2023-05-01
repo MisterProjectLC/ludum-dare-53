@@ -280,7 +280,9 @@ position = Vector2(1732, -314)
 dialog_title = "test_planet"
 
 [node name="PlanetX" parent="." instance=ExtResource("4_jhfi4")]
-position = Vector2(3267, 378)
+position = Vector2(3602, 3221)
+dialog_title = "PlanetX"
+active = true
 hidden_body = true
 
 [node name="Asteroids" type="Node2D" parent="."]
