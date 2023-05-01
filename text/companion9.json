@@ -2,7 +2,7 @@
     "DATA":[
         {"CHARACTER":"Hugo_serious"},
         {"LIVE_TEXT":"Our journey is ending soon, huh?", "TIME":0.04},
-        {"CHARACTER":"Hugo"},
+        {"CHARACTER":"Hugo_yay"},
         {"LIVE_TEXT":"What a weird feeling... Like, yeah, I wish we could fly forever!!", "TIME":0.03},
         {"CHARACTER":"Hugo_sad"},
         {"LIVE_TEXT":"But at the same time... I think I miss home. Dad must be worried.", "TIME":0.04},

@@ -2,8 +2,9 @@
     "DATA":[
         {"CHARACTER":"Hugo_serious"},
         {"LIVE_TEXT":"...I wish Mom were here, flying with us.", "TIME":0.04},
-        {"CHARACTER":"Hugo"},
+        {"CHARACTER":"Hugo_yay"},
         {"LIVE_TEXT":"I remember her telling Dad, once... that she wanted to grow wings and fly!", "TIME":0.04},
+        {"CHARACTER":"Hugo"},
         {"LIVE_TEXT":"Haha, Mom would say really silly things sometimes.", "TIME":0.04},
         {"LIVE_TEXT":"I mean, octopuses can't grow wings!", "TIME":0.04},
         {"CHARACTER":"Hugo_huh"},

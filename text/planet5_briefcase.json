@@ -1,0 +1,15 @@
+{
+    "DATA":[
+        {"CHARACTER":"Tales_mad"},	
+        {"TEXT":"But... What the devil? Are you trying to scam me?", "TIME":0.03},
+        {"CHARACTER":"Hugo_sad"},	
+        {"TEXT":"Um... wait, I think we made a mistake!", "TIME":0.02},
+        {"CHARACTER":"Tales_mad"},	
+        {"TEXT":"Bah, get out! Get out, you trophy-hunting scum!", "TIME":0.03},
+        {"CHARACTER":"Narrator"},	
+        {"TEXT":"Scuttling out the studio, you two fly away in your rocket-box, leaving Tales' outraged comments fading in the distance.", "NARRATOR": true},
+        {"CHARACTER":"Hugo_sad"},		
+        {"LIVE_TEXT":" I... I'm sorry, Mister."},
+        {"END":"END"}
+    ]
+}
