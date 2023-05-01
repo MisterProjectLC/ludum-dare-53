@@ -39,6 +39,7 @@ func _on_long_range_detector_body_entered(_body):
 		return
 	
 	$ZoomSprite.visible = true
+	$DetectionSound.play()
 
 
 func _on_long_range_detector_body_exited(_body):

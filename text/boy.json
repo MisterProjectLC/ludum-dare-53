@@ -1,0 +1,18 @@
+{
+	"DATA":[
+		{"CHARACTER":"Boy"},	
+		{"TEXT":"AHHHHH... don't eat me!"},
+		{"CHARACTER":"hugo_serious"},	
+		{"TEXT":"Calm down, calm down, I'm not going to eat you!", "TIME": 0.03},
+		{"CHARACTER":"boy"},	
+		{"TEXT":"Sorry, but you... You're like that monster from that planet!"},
+		{"CHARACTER":"hugo_huh"},	
+		{"TEXT":"Oh, I think we're close to Arco... hey, you must be talking about my mommy!", "TIME": 0.03},
+		{"CHARACTER":"Boy"},	
+		{"TEXT":"Y-Your mom...? AHHHHH!"},
+		{"CHARACTER":"Hugo_huh"},	
+		{"LIVE_TEXT":"Huh, what got into him?"},
+		{"END":"END"}
+	]
+}
+

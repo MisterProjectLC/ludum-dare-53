@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://d3cp80y5ia73o"]
+[gd_scene load_steps=29 format=3 uid="uid://d3cp80y5ia73o"]
 
 [ext_resource type="Script" path="res://src/scenes/space.gd" id="1_0xl6g"]
 [ext_resource type="AudioStream" uid="uid://bu8udhcpnogbj" path="res://assets/audio/bgm/Adventure_Awaits.mp3" id="2_1ew7p"]
@@ -23,6 +23,7 @@
 [ext_resource type="Script" path="res://src/scenes/tutorial_label.gd" id="12_0a4vh"]
 [ext_resource type="Texture2D" uid="uid://d33fr6yo60cio" path="res://assets/spaceship/cachecol.png" id="12_j0v41"]
 [ext_resource type="Texture2D" uid="uid://do8hrk1w4k4tc" path="res://assets/spaceship/polvo.png" id="13_edyow"]
+[ext_resource type="Texture2D" uid="uid://bh67mkkpc7yqc" path="res://assets/planets/Correio.png" id="19_42pft"]
 
 [sub_resource type="Animation" id="Animation_0wi1v"]
 resource_name = "FadeOut"
@@ -85,7 +86,7 @@ _data = {
 script = ExtResource("1_0xl6g")
 space_dialogs = Array[String](["test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test"])
 station_dialogs = Array[String](["packages", "packages", "ending"])
-items = Array[String](["feather", "rose", "coffee", "briefcase", "teddy bear", "royal letter", "tickets"])
+items = Array[String](["tickets", "teddy bear", "royal letter", "briefcase", "teddy bear", "royal letter", "tickets"])
 space_music = ExtResource("2_1ew7p")
 dialog_music = ExtResource("3_vl3q8")
 limit = 10000
@@ -248,15 +249,15 @@ metadata/_edit_lock_ = true
 
 [node name="Planet" parent="Cycles/Cycle" instance=ExtResource("4_jhfi4")]
 position = Vector2(-173, 1143)
-dialog_title = "test_planet"
+dialog_title = "planet7"
 
 [node name="Planet2" parent="Cycles/Cycle" instance=ExtResource("4_jhfi4")]
 position = Vector2(-744, 100)
-dialog_title = "test_planet"
+dialog_title = "planet5"
 
 [node name="Planet3" parent="Cycles/Cycle" instance=ExtResource("4_jhfi4")]
 position = Vector2(997, -25)
-dialog_title = "test_planet"
+dialog_title = "planet6"
 
 [node name="Cycle2" type="Node2D" parent="Cycles"]
 
@@ -287,7 +288,8 @@ hidden_body = true
 [node name="Asteroids" type="Node2D" parent="."]
 
 [node name="ComicFan" parent="Asteroids" instance=ExtResource("5_3du45")]
-position = Vector2(1881, 1905)
+position = Vector2(-194, 4676)
+active = true
 
 [node name="Emma" parent="Asteroids" instance=ExtResource("5_3du45")]
 position = Vector2(4773, 3107)
@@ -311,6 +313,8 @@ active = true
 
 [node name="BoyArco" parent="Asteroids" instance=ExtResource("5_3du45")]
 position = Vector2(3712, -5463)
+dialog_title = "boy"
+active = true
 
 [node name="Traveler" parent="Asteroids" instance=ExtResource("5_3du45")]
 position = Vector2(-3586, 920)
@@ -323,13 +327,14 @@ dialog_title = "Astronomer"
 active = true
 
 [node name="Loner" parent="Asteroids" instance=ExtResource("5_3du45")]
-position = Vector2(-7189, 3473)
+position = Vector2(-7512, 5222)
 dialog_title = "Loner"
 active = true
 
 [node name="Station" parent="." instance=ExtResource("4_jhfi4")]
 position = Vector2(-549, 777)
 active = true
+image = ExtResource("19_42pft")
 
 [node name="CameraFollower" parent="." instance=ExtResource("7_3daj7")]
 
@@ -427,7 +432,6 @@ libraries = {
 }
 
 [node name="Spaceship" parent="." instance=ExtResource("6_se3sy")]
-position = Vector2(3461, 3209)
 scale = Vector2(0.1, 0.1)
 ACCELERATION_STRENGTH = 10.0
 MAX_SPEED = 40.0

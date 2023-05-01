@@ -5,6 +5,8 @@ signal back_pressed()
 func _ready():
 	$Sound.value = GlobalNode.sound_volume
 	$Music.value = GlobalNode.music_volume
+	AudioServer.set_bus_volume_db(2, log($Music.value) * 20)
+	AudioServer.set_bus_volume_db(1, log($Sound.value) * 20)
 
 func _on_music_value_changed(value):
 	GlobalNode.music_volume = $Music.value
