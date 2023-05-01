@@ -1,12 +1,20 @@
 {
     "DATA":[
         {"CHARACTER":"Hugo_serious"},
-        {"LIVE_TEXT":"My teacher said space is infinite... no matter where we look, there's stuff...", "TIME":0.04},
+        {"LIVE_TEXT":"...I wish Mom were here, flying with us.", "TIME":0.04},
         {"CHARACTER":"Hugo"},
-        {"LIVE_TEXT":"S-Sometimes, when I'm feeling lonely... I like to look up at space!", "TIME":0.03},
+        {"LIVE_TEXT":"I remember her telling Dad, once... that she wanted to grow wings and fly!", "TIME":0.04},
+        {"LIVE_TEXT":"Haha, Mom would say really silly things sometimes.", "TIME":0.04},
+        {"LIVE_TEXT":"I mean, octopuses can't grow wings!", "TIME":0.04},
+        {"CHARACTER":"Hugo_huh"},
+        {"LIVE_TEXT":"R-Right? I think they can't... Though that weird monkey did say that we can grow beards.", "TIME":0.04},
         {"CHARACTER":"Hugo_serious"},
-        {"LIVE_TEXT":"It's like, if space is infinite... then anywhere I look, somewhere, out there...", "TIME":0.04},
-        {"LIVE_TEXT":"There must be someone staring right back, right? Even if it's far away.", "TIME":0.04},
+        {"LIVE_TEXT":"...", "TIME":0.04},
+        {"LIVE_TEXT":"I understand why Dad doesn't let me travel around, you know... When I was on that planet, I felt...", "TIME":0.04},
+        {"CHARACTER":"Hugo_sad"},
+        {"LIVE_TEXT":"I felt afraid.", "TIME":0.04},
+        {"LIVE_TEXT":"...", "TIME":0.04},
+        {"LIVE_TEXT":"I wish I could see mom right now.", "TIME":0.03},
         {"END":"END"}
     ]
 }

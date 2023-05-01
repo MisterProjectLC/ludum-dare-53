@@ -83,6 +83,8 @@ func on_spaceship_approached_planet(body):
 func on_spaceship_approached_planetx(body):
 	play_dialog(body.get_dialog_title())
 	space_dialog_index += 1
+	replace_space_dialog("companion8", "companion9")
+	replace_space_dialog("companion7", "companion8")
 	on_planet = true
 
 
@@ -95,7 +97,7 @@ func _on_cutscene_controller_item_chosen(item, correct):
 	UI.set_items(inventory)
 	if correct:
 		if item["TITLE"].to_lower() == "feather":
-			space_dialogs[space_dialogs.find("radio2")] = "radio2_right"
+			replace_space_dialog("radio2", "radio2_right")
 
 
 func end_game():
@@ -139,6 +141,9 @@ func activate_station():
 
 
 # HELPERS AND REACTIONS -----------------------
+
+func replace_space_dialog(old, new):
+	space_dialogs[space_dialogs.find(old)] = new
 
 func get_planet_cycle(i):
 	return Cycles.get_child(i)
