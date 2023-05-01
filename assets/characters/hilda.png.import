@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnsx4hde3nfs8"
-path="res://.godot/imported/joel.png-354ad1e6ba169404a5173e4cfae92c85.ctex"
+uid="uid://dtim4hax5f6b3"
+path="res://.godot/imported/hilda.png-e9efb91906ccb8cf2c76203b4d30d360.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/joel.png"
-dest_files=["res://.godot/imported/joel.png-354ad1e6ba169404a5173e4cfae92c85.ctex"]
+source_file="res://assets/characters/hilda.png"
+dest_files=["res://.godot/imported/hilda.png-e9efb91906ccb8cf2c76203b4d30d360.ctex"]
 
 [params]
 

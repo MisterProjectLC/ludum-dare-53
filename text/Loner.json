@@ -1,0 +1,21 @@
+{
+	"DATA":[
+		{"CHARACTER":"Loner"},	
+		{"TEXT":"Argh, I'm so alone... I feel so alone."},
+		{"CHARACTER":"hugo"},	
+		{"TEXT":"H-Hey! If you want, you can climb aboard! There's still room here, right?", "TIME": 0.03},
+		{"CHARACTER":"Loner"},	
+		{"TEXT":"Sorry, I'm not really in the mood to talk to someone. I'm too tired, and sad, and lonely."},
+		{"CHARACTER":"hugo_huh"},	
+		{"TEXT":"But if you're lonely, shouldn't you talk to someone, then?", "TIME": 0.03},
+		{"CHARACTER":"Loner"},	
+		{"TEXT":" No! I need to be alone! Leave me be!"},
+		{"CHARACTER":"hugo_serious"},	
+		{"TEXT":"U-Uh, alright...", "TIME": 0.03},
+		{"CHARACTER":"Loner"},	
+		{"LIVE_TEXT":"I feel so alone..."},
+		{"END":"END"}
+	]
+}
+
+

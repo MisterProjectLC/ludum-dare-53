@@ -1,0 +1,16 @@
+{
+	"DATA":[
+		{"CHARACTER":"Emma"},	
+		{"TEXT":"Oh hey, Hugo! Man, what are you doing up here?"},
+		{"CHARACTER":"hugo_yay"},	
+		{"TEXT":"O-Oh, hiya, Emma! I'm traveling around with the mailman, he's my friend now!", "TIME": 0.03},
+		{"CHARACTER":"Emma"},	
+		{"TEXT":"The mailman, huh…? Hahaha, you're such a strange little guy, Hugo. Have a good Pudding Day!"},
+		{"CHARACTER":"hugo_yay"},	
+		{"TEXT":"T-Thanks, you too! And, uh… don't tell dad, please?", "TIME": 0.03},
+		{"CHARACTER":"Emma"},	
+		{"LIVE_TEXT":"My lips are sealed, lil' bro.?"},
+		{"END":"END"}
+	]
+}
+

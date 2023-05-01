@@ -1,0 +1,19 @@
+{
+	"DATA":[
+		{"CHARACTER":"Hugo"},	
+		{"TEXT":"Hiya! Hey, what are you doing?", "TIME": 0.03},
+		{"CHARACTER":"The Man"},	
+		{"TEXT":"...I'm not existing."},
+		{"CHARACTER":"hugo_huh"},	
+		{"TEXT":"W-What? What do you mean?","TIME": 0.03},
+		{"CHARACTER":"The Man"},	
+		{"TEXT":"I'm... I'm not fit to be a part of society. Not right now. So I'm taking a break."},
+		{"CHARACTER":"hugo_huh"},	
+		{"TEXT":"But... for how long you'll be standing there? Won't you get tired?","TIME": 0.03},
+		{"CHARACTER":"The Man"},	
+		{"LIVE_TEXT":"...I'm fine. Please, let me be."},
+		{"END":"END"}
+	]
+}
+
+
