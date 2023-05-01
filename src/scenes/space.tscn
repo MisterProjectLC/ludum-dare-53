@@ -297,7 +297,8 @@ image = ExtResource("15_0m83r")
 
 [node name="PlanetX" parent="." instance=ExtResource("4_57lwj")]
 position = Vector2(6966, -7767)
-dialog_title = "planet1"
+dialog_title = "PlanetX"
+active = true
 hidden_body = true
 image = ExtResource("16_6a451")
 

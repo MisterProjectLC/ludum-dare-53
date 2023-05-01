@@ -2,6 +2,8 @@ extends Menu
 
 var leaving = false
 
+func _ready():
+	pass
 
 func on_transition_finished(_anim_name):
 	if leaving:
