@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://qf6wgt3ongoo"]
+[gd_scene load_steps=19 format=3 uid="uid://bnagju62gsk7c"]
 
 [ext_resource type="Script" path="res://src/scenes/space.gd" id="1_0xl6g"]
 [ext_resource type="PackedScene" uid="uid://ti6aaccyf1kh" path="res://src/ui/ui.tscn" id="2_pp6a6"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cr3fciq260ss8" path="res://src/spaceship/spaceship.tscn" id="6_se3sy"]
 [ext_resource type="Texture2D" uid="uid://bfdo0oq0rm5aw" path="res://assets/spaceship/foguete_v2.png" id="6_sqfrl"]
 [ext_resource type="PackedScene" uid="uid://0a34ry1c2h6b" path="res://src/spaceship/camera_follower.tscn" id="7_3daj7"]
+[ext_resource type="PackedScene" uid="uid://ck2gcoikq0ki" path="res://src/ui/pause.tscn" id="7_m4u6l"]
 [ext_resource type="Texture2D" uid="uid://boyifkv68apv0" path="res://assets/background/bg.png" id="8_nkdbu"]
 [ext_resource type="Texture2D" uid="uid://2u4nxymn4fki" path="res://assets/background/nebula.png" id="9_mlr61"]
 [ext_resource type="Texture2D" uid="uid://wqgvbwqiylbq" path="res://assets/background/stars.png" id="10_c62ss"]
@@ -32,6 +33,21 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_7kiu3"]
 resource_name = "HugoPopup"
+length = 0.3
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spaceship")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"hugo_popup"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_ujsrt"]
 resource_name = "ShowBox"
@@ -58,9 +74,10 @@ _data = {
 
 [node name="Space" type="Node2D"]
 script = ExtResource("1_0xl6g")
-space_dialogs = Array[String](["test", "companion1", "companion2", "companion3", "companion4", "companion5", "companion6", "companion7", "companion9"])
+space_dialogs = Array[String](["test", "companion1", "companion2", "radio1", "companion3", "radio2", "companion4", "companion5", "companion6"])
 station_dialogs = Array[String](["packages", "packages", "ending"])
-items = Array[String](["feather", "rose", "coffee"])
+items = Array[String](["feather", "rose", "coffee", "briefcase"])
+limit = 10000
 
 [node name="DialogTimer" type="Timer" parent="."]
 wait_time = 5.0
@@ -70,6 +87,8 @@ autostart = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="UI" parent="CanvasLayer" instance=ExtResource("2_pp6a6")]
+
+[node name="CutsceneController" parent="CanvasLayer" instance=ExtResource("3_an4li")]
 
 [node name="BoxEnding" type="ColorRect" parent="CanvasLayer"]
 visible = false
@@ -127,8 +146,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_sqfrl")
 
-[node name="CutsceneController" parent="CanvasLayer" instance=ExtResource("3_an4li")]
-
 [node name="Foreground" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
@@ -139,33 +156,39 @@ mouse_filter = 2
 color = Color(0, 0, 0, 0)
 metadata/_edit_lock_ = true
 
-[node name="Planets" type="Node2D" parent="."]
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("7_m4u6l")]
 
-[node name="Planet" parent="Planets" instance=ExtResource("4_jhfi4")]
-position = Vector2(10588, 7505)
+[node name="Cycles" type="Node2D" parent="."]
+
+[node name="Cycle" type="Node2D" parent="Cycles"]
+
+[node name="Planet" parent="Cycles/Cycle" instance=ExtResource("4_jhfi4")]
+position = Vector2(15196, 5329)
 dialog_title = "planet1"
 
-[node name="Planet2" parent="Planets" instance=ExtResource("4_jhfi4")]
-position = Vector2(-28800, -13056)
+[node name="Planet2" parent="Cycles/Cycle" instance=ExtResource("4_jhfi4")]
+position = Vector2(14336, -11136)
 dialog_title = "planet2"
 
-[node name="Planet3" parent="Planets" instance=ExtResource("4_jhfi4")]
-position = Vector2(26624, -16768)
+[node name="Planet3" parent="Cycles/Cycle" instance=ExtResource("4_jhfi4")]
+position = Vector2(-12672, -10240)
 dialog_title = "planet3"
 
 [node name="Asteroids" type="Node2D" parent="."]
 
 [node name="Asteroid" parent="Asteroids" instance=ExtResource("5_3du45")]
-position = Vector2(-66060, 2515)
+position = Vector2(-31884, 339)
 dialog_title = "comic_fan"
 
 [node name="Station" parent="." instance=ExtResource("4_jhfi4")]
-position = Vector2(-5413, 4305)
+position = Vector2(-1701, 1147)
 dialog_title = "companion0"
 active = true
 
 [node name="Spaceship" parent="." instance=ExtResource("6_se3sy")]
-ACCELERATION_STRENGTH = 5.0
+scale = Vector2(0.1, 0.1)
+ACCELERATION_STRENGTH = 0.5
+MAX_SPEED = 40.0
 
 [node name="CameraFollower" parent="." instance=ExtResource("7_3daj7")]
 
@@ -175,10 +198,10 @@ ACCELERATION_STRENGTH = 5.0
 
 [node name="Background" type="Sprite2D" parent="ParallaxBackground/BG"]
 texture_repeat = 2
-scale = Vector2(100, 100)
+scale = Vector2(10, 10)
 texture = ExtResource("8_nkdbu")
 region_enabled = true
-region_rect = Rect2(0, 0, 200000, 200000)
+region_rect = Rect2(0, 0, 2000, 2000)
 metadata/_edit_lock_ = true
 
 [node name="NebulaParallax" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -186,28 +209,30 @@ motion_scale = Vector2(0.75, 0.75)
 
 [node name="Background" type="Sprite2D" parent="ParallaxBackground/NebulaParallax"]
 texture_repeat = 2
-scale = Vector2(100, 100)
+scale = Vector2(10, 10)
 texture = ExtResource("9_mlr61")
 region_enabled = true
-region_rect = Rect2(0, 0, 200000, 200000)
+region_rect = Rect2(0, 0, 2000, 2000)
+metadata/_edit_lock_ = true
 
 [node name="StarsParallax" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.75, 0.75)
 
 [node name="Background" type="Sprite2D" parent="ParallaxBackground/StarsParallax"]
 texture_repeat = 2
-scale = Vector2(5, 5)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("10_c62ss")
 region_enabled = true
-region_rect = Rect2(0, 0, 200000, 200000)
+region_rect = Rect2(0, 0, 40000, 40000)
+metadata/_edit_lock_ = true
 
 [node name="Accelerate" type="Label" parent="."]
-offset_left = 2725.0
-offset_top = 155.0
-offset_right = 4129.0
-offset_bottom = 595.0
+offset_left = 646.0
+offset_top = 17.0
+offset_right = 827.0
+offset_bottom = 115.0
 theme_override_fonts/font = ExtResource("11_t8qno")
-theme_override_font_sizes/font_size = 200
+theme_override_font_sizes/font_size = 20
 text = "Hold the Left Mouse Button to accelerate"
 autowrap_mode = 2
 script = ExtResource("12_0a4vh")
@@ -215,12 +240,12 @@ keyboard_text = "Hold the Left Mouse Button to accelerate"
 controller_text = "Hold X to accelerate"
 
 [node name="ZoomIn" type="Label" parent="."]
-offset_left = -1755.0
-offset_top = 292.0
-offset_right = -351.0
-offset_bottom = 732.0
+offset_left = -292.0
+offset_top = 35.0
+offset_right = -70.0
+offset_bottom = 115.0
 theme_override_fonts/font = ExtResource("11_t8qno")
-theme_override_font_sizes/font_size = 200
+theme_override_font_sizes/font_size = 20
 text = "Hold A to Zoom-Out"
 autowrap_mode = 2
 script = ExtResource("12_0a4vh")
@@ -228,12 +253,12 @@ keyboard_text = "Hold A to Zoom-Out"
 controller_text = "Hold L2 to Zoom-Out"
 
 [node name="ZoomOut" type="Label" parent="."]
-offset_left = 293.0
-offset_top = 316.0
-offset_right = 1697.0
-offset_bottom = 756.0
+offset_left = 135.0
+offset_top = 37.0
+offset_right = 312.0
+offset_bottom = 96.0
 theme_override_fonts/font = ExtResource("11_t8qno")
-theme_override_font_sizes/font_size = 200
+theme_override_font_sizes/font_size = 20
 text = "Hold D to Zoom-In"
 autowrap_mode = 2
 script = ExtResource("12_0a4vh")
@@ -241,12 +266,12 @@ keyboard_text = "Hold D to Zoom-In"
 controller_text = "Hold R2 to Zoom-In"
 
 [node name="Zoom" type="Label" parent="."]
-offset_left = -625.0
-offset_top = 2349.0
-offset_right = 779.0
-offset_bottom = 3009.0
+offset_left = -125.0
+offset_top = 351.0
+offset_right = 101.0
+offset_bottom = 448.0
 theme_override_fonts/font = ExtResource("11_t8qno")
-theme_override_font_sizes/font_size = 200
+theme_override_font_sizes/font_size = 20
 text = "You can also use the Scroll Wheel to control Zoom"
 horizontal_alignment = 1
 vertical_alignment = 1

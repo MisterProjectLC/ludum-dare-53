@@ -92,15 +92,15 @@ func _on_cutscene_controller_events_ended():
 
 func activate_planets():
 	UI.set_objective("Deliver packages!")
-	for i in range(game_stage):
-		for planet in Cycles.get_child(i).get_children():
-			planet.set_active(true)
+	var cycle = Cycles.get_child(game_stage)
+	for i in range(cycle.get_child_count()):
+		cycle.get_child(i).set_active(true)
 			
-			var planet_index = planets_visited + i
-			var item = {"IMAGE": TextureLoader.get_tex_from_title(
-			"items/" + items[i].to_lower()), "TITLE": items[i]}
-			CutscenePlayer.add_item(item)
-			inventory.append(item)
+		var planet_index = planets_visited + i
+		var item = {"IMAGE": TextureLoader.get_tex_from_title(
+		"items/" + items[planet_index].to_lower()), "TITLE": items[planet_index]}
+		CutscenePlayer.add_item(item)
+		inventory.append(item)
 	UI.set_items(inventory)
 
 

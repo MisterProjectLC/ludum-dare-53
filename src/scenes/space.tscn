@@ -163,21 +163,21 @@ metadata/_edit_lock_ = true
 [node name="Cycle" type="Node2D" parent="Cycles"]
 
 [node name="Planet" parent="Cycles/Cycle" instance=ExtResource("4_57lwj")]
-position = Vector2(15196, 5329)
+position = Vector2(6558, 4665)
 dialog_title = "planet1"
 
 [node name="Planet2" parent="Cycles/Cycle" instance=ExtResource("4_57lwj")]
-position = Vector2(14336, -11136)
+position = Vector2(4494, -4814)
 dialog_title = "planet2"
 
 [node name="Planet3" parent="Cycles/Cycle" instance=ExtResource("4_57lwj")]
-position = Vector2(-12672, -10240)
+position = Vector2(-7500, -3128)
 dialog_title = "planet3"
 
 [node name="Asteroids" type="Node2D" parent="."]
 
 [node name="Asteroid" parent="Asteroids" instance=ExtResource("5_c1ndk")]
-position = Vector2(-31884, 339)
+position = Vector2(-8204, 2003)
 dialog_title = "comic_fan"
 
 [node name="Station" parent="." instance=ExtResource("4_57lwj")]
@@ -201,7 +201,7 @@ texture_repeat = 2
 scale = Vector2(10, 10)
 texture = ExtResource("8_6txdh")
 region_enabled = true
-region_rect = Rect2(0, 0, 2000, 2000)
+region_rect = Rect2(0, 0, 2500, 2500)
 metadata/_edit_lock_ = true
 
 [node name="NebulaParallax" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -212,7 +212,7 @@ texture_repeat = 2
 scale = Vector2(10, 10)
 texture = ExtResource("9_s1de7")
 region_enabled = true
-region_rect = Rect2(0, 0, 2000, 2000)
+region_rect = Rect2(0, 0, 2500, 2500)
 metadata/_edit_lock_ = true
 
 [node name="StarsParallax" type="ParallaxLayer" parent="ParallaxBackground"]

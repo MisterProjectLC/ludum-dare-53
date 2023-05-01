@@ -14,7 +14,7 @@ size = Vector2(53.882, 36.3354)
 script = ExtResource("1_2sslo")
 ACCELERATION_STRENGTH = 4.0
 MAX_SPEED = 400.0
-DASH_SPEED = 20.0
+DASH_SPEED = 2.0
 hugo_sprite = ExtResource("2_cvoyj")
 
 [node name="Sprite" type="Sprite2D" parent="."]
