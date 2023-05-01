@@ -204,35 +204,45 @@ position = Vector2(1881, 1905)
 
 [node name="Emma" parent="Asteroids" instance=ExtResource("5_3du45")]
 position = Vector2(4773, 3107)
+dialog_title = "Emma"
+active = true
 
 [node name="Soldier" parent="Asteroids" instance=ExtResource("5_3du45")]
 position = Vector2(-4627, -4923)
+dialog_title = "Soldier"
+active = true
 
 [node name="GirlMusic" parent="Asteroids" instance=ExtResource("5_3du45")]
 position = Vector2(3327, -1841)
+dialog_title = "Girl"
+active = true
 
 [node name="ManCorner" parent="Asteroids" instance=ExtResource("5_3du45")]
-position = Vector2(10595, 7293)
+position = Vector2(2468, 7892)
+dialog_title = "TMCG"
+active = true
 
 [node name="BoyArco" parent="Asteroids" instance=ExtResource("5_3du45")]
 position = Vector2(3712, -5463)
 
 [node name="Traveler" parent="Asteroids" instance=ExtResource("5_3du45")]
-position = Vector2(-3035, -1286)
+position = Vector2(-3586, 920)
+dialog_title = "Traveler"
+active = true
 
 [node name="Astronomer" parent="Asteroids" instance=ExtResource("5_3du45")]
 position = Vector2(-2202, 6641)
+dialog_title = "Astronomer"
+active = true
+
+[node name="Loner" parent="Asteroids" instance=ExtResource("5_3du45")]
+position = Vector2(-7189, 3473)
+dialog_title = "Loner"
+active = true
 
 [node name="Station" parent="." instance=ExtResource("4_jhfi4")]
 position = Vector2(-549, 777)
 active = true
-
-[node name="Spaceship" parent="." instance=ExtResource("6_se3sy")]
-scale = Vector2(0.1, 0.1)
-ACCELERATION_STRENGTH = 10.0
-MAX_SPEED = 40.0
-FUEL_TO_DASH = 1
-DASH_SPEED = 5.0
 
 [node name="CameraFollower" parent="." instance=ExtResource("7_3daj7")]
 
@@ -329,10 +339,18 @@ libraries = {
 "": SubResource("AnimationLibrary_gkhll")
 }
 
+[node name="Spaceship" parent="." instance=ExtResource("6_se3sy")]
+position = Vector2(3461, 3209)
+scale = Vector2(0.1, 0.1)
+ACCELERATION_STRENGTH = 10.0
+MAX_SPEED = 40.0
+FUEL_TO_DASH = 1
+DASH_SPEED = 5.0
+
 [connection signal="timeout" from="DialogTimer" to="." method="_on_dialog_timer_timeout"]
 [connection signal="animation_requested" from="CanvasLayer/CutsceneController" to="." method="_on_cutscene_controller_animation_requested"]
 [connection signal="events_ended" from="CanvasLayer/CutsceneController" to="." method="_on_cutscene_controller_events_ended"]
 [connection signal="item_chosen" from="CanvasLayer/CutsceneController" to="." method="_on_cutscene_controller_item_chosen"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="dash_updated" from="Spaceship" to="CanvasLayer/UI" method="_on_spaceship_dash_updated"]
 [connection signal="on_screen_changed" from="Spaceship" to="CameraFollower" method="_on_spaceship_on_screen_changed"]
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
