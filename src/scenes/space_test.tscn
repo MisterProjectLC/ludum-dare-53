@@ -61,6 +61,18 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_ujsrt"]
 resource_name = "ShowBox"
 length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/BoxEnding:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gkhll"]
 _data = {
@@ -73,7 +85,7 @@ _data = {
 script = ExtResource("1_0xl6g")
 space_dialogs = Array[String](["test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test"])
 station_dialogs = Array[String](["packages", "packages", "ending"])
-items = Array[String](["feather", "rose", "coffee", "briefcase", "teddy bear", "letter", "tickets"])
+items = Array[String](["feather", "rose", "coffee", "briefcase", "teddy bear", "royal letter", "tickets"])
 space_music = ExtResource("2_1ew7p")
 dialog_music = ExtResource("3_vl3q8")
 limit = 10000

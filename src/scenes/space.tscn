@@ -7,10 +7,10 @@
 [ext_resource type="AudioStream" uid="uid://ibkief2kjb35" path="res://assets/audio/bgm/Your_package_is_here.mp3" id="3_38vu4"]
 [ext_resource type="PackedScene" uid="uid://cfa5r1ixno5d6" path="res://src/scenes/planet.tscn" id="4_57lwj"]
 [ext_resource type="PackedScene" uid="uid://ti6aaccyf1kh" path="res://src/ui/ui.tscn" id="4_ea8f2"]
+[ext_resource type="Texture2D" uid="uid://bfdo0oq0rm5aw" path="res://assets/spaceship/foguete_v2.png" id="4_rhgmn"]
 [ext_resource type="PackedScene" uid="uid://cvem255yquq0s" path="res://src/scenes/asteroid.tscn" id="5_c1ndk"]
 [ext_resource type="PackedScene" uid="uid://hfbgrdp6bmgq" path="res://src/ui/dialog/cutscene_controller.tscn" id="5_pgckx"]
 [ext_resource type="PackedScene" uid="uid://ck2gcoikq0ki" path="res://src/ui/pause.tscn" id="7_m8k4q"]
-[ext_resource type="Texture2D" uid="uid://1222s0rp3xmg" path="res://assets/spaceship/catioro e nave.png" id="7_ni07x"]
 [ext_resource type="Texture2D" uid="uid://buxmf34pw5k6c" path="res://assets/spaceship/pegue o pombo.png" id="8_6do3v"]
 [ext_resource type="Texture2D" uid="uid://boyifkv68apv0" path="res://assets/background/bg.png" id="8_6txdh"]
 [ext_resource type="Texture2D" uid="uid://ru8s7wlxs8kc" path="res://assets/spaceship/cafezinho.png" id="8_mr206"]
@@ -153,20 +153,20 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_s1de7")
 
-[node name="Box" type="TextureRect" parent="CanvasLayer/BoxEnding"]
+[node name="Box2" type="TextureRect" parent="CanvasLayer/BoxEnding"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -237.0
-offset_top = -210.0
-offset_right = 259.0
-offset_bottom = 178.0
+offset_left = -233.0
+offset_top = -182.0
+offset_right = 263.0
+offset_bottom = 206.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_ni07x")
+texture = ExtResource("4_rhgmn")
 
 [node name="Stickers" type="Control" parent="CanvasLayer/BoxEnding"]
 anchors_preset = 0
