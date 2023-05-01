@@ -1,7 +1,7 @@
 extends Control
 class_name CutsceneHandler
 
-signal events_ended()
+signal events_ended(current_scene)
 signal animation_requested(animation, backwards)
 
 @export var disable_cutscenes = false
@@ -87,4 +87,4 @@ func choice(_event):
 	run_next_event()
 
 func end():
-	emit_signal("events_ended")
+	emit_signal("events_ended", current_scene)
