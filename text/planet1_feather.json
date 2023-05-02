@@ -2,7 +2,7 @@
     "DATA":[
         {"CHARACTER":"Benta"},
         {"TEXT":"Ah... here it is.", "TIME":0.05},
-        {"TEXT":"This letter, do you see its seal? I heard it actually comes from a long line of pigeon-knights...", "TIME":0.05},
+        {"TEXT":"This feather, do you see it? I heard it actually comes from a long line of pigeon-knights...", "TIME":0.05},
         {"CHARACTER":"Hugo_wow"},
         {"TEXT":"P-Pigeon-Knights?", "TIME":0.02},
         {"CHARACTER":"Benta"},

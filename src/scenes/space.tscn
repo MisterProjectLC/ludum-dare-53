@@ -299,7 +299,6 @@ image = ExtResource("15_0m83r")
 position = Vector2(5544, -6294)
 dialog_title = "PlanetX"
 active = true
-hidden_body = true
 image = ExtResource("16_6a451")
 
 [node name="Asteroids" type="Node2D" parent="."]
@@ -404,11 +403,11 @@ offset_right = 483.0
 offset_bottom = 123.0
 theme_override_fonts/font = ExtResource("9_fu04u")
 theme_override_font_sizes/font_size = 20
-text = "Hold the Left Mouse Button to accelerate"
+text = "HOLD the Left Mouse Button to accelerate"
 autowrap_mode = 2
 script = ExtResource("10_6w66c")
-keyboard_text = "Hold the Left Mouse Button to accelerate"
-controller_text = "Hold X to accelerate"
+keyboard_text = "HOLD the Left Mouse Button to accelerate"
+controller_text = "HOLD X to accelerate"
 
 [node name="ZoomIn" type="Label" parent="."]
 offset_left = -201.0
@@ -417,12 +416,12 @@ offset_right = -45.0
 offset_bottom = 112.0
 theme_override_fonts/font = ExtResource("9_fu04u")
 theme_override_font_sizes/font_size = 20
-text = "Hold A to Zoom-Out"
+text = "HOLD A to Zoom-Out"
 horizontal_alignment = 2
 autowrap_mode = 2
 script = ExtResource("10_6w66c")
-keyboard_text = "Hold A to Zoom-Out"
-controller_text = "Hold L2 to Zoom-Out"
+keyboard_text = "HOLD A to Zoom-Out"
+controller_text = "HOLD L2 to Zoom-Out"
 
 [node name="ZoomOut" type="Label" parent="."]
 offset_left = 44.0
@@ -431,11 +430,11 @@ offset_right = 221.0
 offset_bottom = 92.0
 theme_override_fonts/font = ExtResource("9_fu04u")
 theme_override_font_sizes/font_size = 20
-text = "Hold D to Zoom-In"
+text = "HOLD D to Zoom-In"
 autowrap_mode = 2
 script = ExtResource("10_6w66c")
-keyboard_text = "Hold D to Zoom-In"
-controller_text = "Hold R2 to Zoom-In"
+keyboard_text = "HOLD D to Zoom-In"
+controller_text = "HOLD R2 to Zoom-In"
 
 [node name="Zoom" type="Label" parent="."]
 offset_left = -139.0

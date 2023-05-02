@@ -110,9 +110,9 @@ func _on_cutscene_controller_item_chosen(item, correct):
 	inventory.erase(item)
 	UI.set_items(inventory)
 	if correct:
-		GlobalNode.souvenirs[scene_names.find(scene_name)-1] = true
-		$Spaceship/Sprite/Souvenirs.get_child(scene_names.find(scene_name)-1).visible = true
-		$CanvasLayer/BoxEnding/Stickers.get_child(scene_names.find(scene_name)-1).visible = true
+		GlobalNode.souvenirs[scene_names.find(scene_name)] = true
+		$Spaceship/Sprite/Souvenirs.get_child(scene_names.find(scene_name)).visible = true
+		$CanvasLayer/BoxEnding/Stickers.get_child(scene_names.find(scene_name)).visible = true
 		if item["TITLE"].to_lower() == "feather":
 			replace_space_dialog("radio2", "radio2_right")
 
