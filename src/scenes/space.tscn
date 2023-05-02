@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dkatjtsrcspru"]
+[gd_scene load_steps=38 format=3 uid="uid://dkatjtsrcspru"]
 
 [ext_resource type="PackedScene" uid="uid://cr3fciq260ss8" path="res://src/spaceship/spaceship.tscn" id="1_16udo"]
 [ext_resource type="Script" path="res://src/scenes/space.gd" id="1_sb46e"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://do8hrk1w4k4tc" path="res://assets/spaceship/polvo.png" id="14_wmhhl"]
 [ext_resource type="Texture2D" uid="uid://dinfethmjt6sj" path="res://assets/planets/Planeta Suiça-Hospital.png" id="15_0m83r"]
 [ext_resource type="Texture2D" uid="uid://blpgi1p1pdfic" path="res://assets/planets/Planeta da Mãe.png" id="16_6a451"]
+[ext_resource type="Texture2D" uid="uid://dq6cdfvdcvxyh" path="res://assets/asteroids/Asteroide 2.png" id="27_81jnl"]
 [ext_resource type="Texture2D" uid="uid://bh67mkkpc7yqc" path="res://assets/planets/Correio.png" id="27_d45o7"]
 
 [sub_resource type="Animation" id="Animation_0wi1v"]
@@ -256,46 +257,46 @@ metadata/_edit_lock_ = true
 [node name="Cycle" type="Node2D" parent="Cycles"]
 
 [node name="Planet" parent="Cycles/Cycle" instance=ExtResource("4_57lwj")]
-position = Vector2(2943, 1583)
+position = Vector2(-3809, 6614)
 dialog_title = "planet1"
 image = ExtResource("9_6gdby")
 
 [node name="Planet2" parent="Cycles/Cycle" instance=ExtResource("4_57lwj")]
-position = Vector2(-10158, 19)
+position = Vector2(-9057, 2202)
 dialog_title = "planet2"
 image = ExtResource("10_hffeq")
 
 [node name="Planet3" parent="Cycles/Cycle" instance=ExtResource("4_57lwj")]
-position = Vector2(-1241, -3924)
+position = Vector2(-8392, 8842)
 dialog_title = "planet3"
 image = ExtResource("11_76wlb")
 
 [node name="Cycle2" type="Node2D" parent="Cycles"]
 
 [node name="Planet4" parent="Cycles/Cycle2" instance=ExtResource("4_57lwj")]
-position = Vector2(-6314, 8477)
-dialog_title = "planet1"
+position = Vector2(6128, 1546)
+dialog_title = "planet4"
 image = ExtResource("12_1uux8")
 
 [node name="Planet5" parent="Cycles/Cycle2" instance=ExtResource("4_57lwj")]
-position = Vector2(5712, 6704)
-dialog_title = "planet2"
+position = Vector2(6146, 6349)
+dialog_title = "planet5"
 image = ExtResource("13_6pp5n")
 
 [node name="Planet6" parent="Cycles/Cycle2" instance=ExtResource("4_57lwj")]
-position = Vector2(9067, -737)
-dialog_title = "planet3"
+position = Vector2(-3752, -2222)
+dialog_title = "planet6"
 image = ExtResource("14_vpioa")
 
 [node name="Cycle3" type="Node2D" parent="Cycles"]
 
 [node name="Planet7" parent="Cycles/Cycle3" instance=ExtResource("4_57lwj")]
-position = Vector2(-7228, -5156)
-dialog_title = "planet1"
+position = Vector2(-2295, -5434)
+dialog_title = "planet7"
 image = ExtResource("15_0m83r")
 
 [node name="PlanetX" parent="." instance=ExtResource("4_57lwj")]
-position = Vector2(6966, -7767)
+position = Vector2(5544, -6294)
 dialog_title = "PlanetX"
 active = true
 hidden_body = true
@@ -304,53 +305,55 @@ image = ExtResource("16_6a451")
 [node name="Asteroids" type="Node2D" parent="."]
 
 [node name="ComicFan" parent="Asteroids" instance=ExtResource("5_c1ndk")]
-position = Vector2(-8204, 2003)
+position = Vector2(3391, 5868)
 active = true
 
 [node name="Emma" parent="Asteroids" instance=ExtResource("5_c1ndk")]
-position = Vector2(4773, 3107)
+position = Vector2(-5703, 3480)
 dialog_title = "Emma"
 active = true
+image = ExtResource("27_81jnl")
 
 [node name="Soldier" parent="Asteroids" instance=ExtResource("5_c1ndk")]
-position = Vector2(-4627, -4923)
+position = Vector2(-5110, 968)
 dialog_title = "Soldier"
 active = true
 
 [node name="GirlMusic" parent="Asteroids" instance=ExtResource("5_c1ndk")]
-position = Vector2(3327, -1841)
+position = Vector2(-8222, 6750)
 dialog_title = "Girl"
 active = true
+image = ExtResource("27_81jnl")
 
 [node name="ManCorner" parent="Asteroids" instance=ExtResource("5_c1ndk")]
-position = Vector2(10595, 7293)
+position = Vector2(8792, 6531)
 dialog_title = "TMCG"
 active = true
 
 [node name="BoyArco" parent="Asteroids" instance=ExtResource("5_c1ndk")]
-position = Vector2(3712, -5463)
+position = Vector2(3534, -4269)
 dialog_title = "boy"
 active = true
 
 [node name="Traveler" parent="Asteroids" instance=ExtResource("5_c1ndk")]
-position = Vector2(-3035, -1286)
+position = Vector2(6250, -1134)
 dialog_title = "Traveler"
 active = true
 
 [node name="Astronomer" parent="Asteroids" instance=ExtResource("5_c1ndk")]
-position = Vector2(-2202, 6641)
+position = Vector2(-307, -1745)
 dialog_title = "Astronomer"
 active = true
+image = ExtResource("27_81jnl")
 
 [node name="Loner" parent="Asteroids" instance=ExtResource("5_c1ndk")]
-position = Vector2(-1454, -7042)
+position = Vector2(-6749, -7359)
 dialog_title = "Loner"
 active = true
 
 [node name="Station" parent="." instance=ExtResource("4_57lwj")]
-position = Vector2(-2392, 2795)
+position = Vector2(-1073, 2468)
 dialog_title = "companion0"
-active = true
 image = ExtResource("27_d45o7")
 
 [node name="Spaceship" parent="." instance=ExtResource("1_16udo")]

@@ -116,7 +116,7 @@ func stop():
 
 
 func end():
-	if stored_events == []:
+	if stored_events == [] or stored_events == [{"END":"END"}]:
 		future_events = []
 		dialog.end()
 		GlobalNode.set_in_cutscene(false)
@@ -124,11 +124,15 @@ func end():
 	else:
 		future_events = stored_events
 		current_character = stored_character
-		future_events.push_front({"CHARACTER":stored_character})
+		stored_events = []
 		if stored_character == "Radio":
 			future_events.push_front({"LIVE_TEXT":"And we're back to our programming..."})
 		else:
 			future_events.push_front({"LIVE_TEXT":"Uh, so what I was saying was..."})
+		future_events.push_front({"CHARACTER":stored_character})
+		future_events.push_back({"END":"END"})
+		run_next_event()
+		super.end()
 
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://d3cp80y5ia73o"]
+[gd_scene load_steps=30 format=3 uid="uid://d3cp80y5ia73o"]
 
 [ext_resource type="Script" path="res://src/scenes/space.gd" id="1_0xl6g"]
 [ext_resource type="AudioStream" uid="uid://bu8udhcpnogbj" path="res://assets/audio/bgm/Adventure_Awaits.mp3" id="2_1ew7p"]
@@ -23,6 +23,7 @@
 [ext_resource type="Script" path="res://src/scenes/tutorial_label.gd" id="12_0a4vh"]
 [ext_resource type="Texture2D" uid="uid://d33fr6yo60cio" path="res://assets/spaceship/cachecol.png" id="12_j0v41"]
 [ext_resource type="Texture2D" uid="uid://do8hrk1w4k4tc" path="res://assets/spaceship/polvo.png" id="13_edyow"]
+[ext_resource type="Texture2D" uid="uid://c58n6r7ma2wu" path="res://assets/background/page_space_background.png" id="18_03u2r"]
 [ext_resource type="Texture2D" uid="uid://bh67mkkpc7yqc" path="res://assets/planets/Correio.png" id="19_42pft"]
 
 [sub_resource type="Animation" id="Animation_0wi1v"]
@@ -84,7 +85,7 @@ _data = {
 
 [node name="Space" type="Node2D"]
 script = ExtResource("1_0xl6g")
-space_dialogs = Array[String](["test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test"])
+space_dialogs = Array[String](["test", "radio0", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test"])
 station_dialogs = Array[String](["packages", "packages", "ending"])
 items = Array[String](["tickets", "teddy bear", "royal letter", "briefcase", "teddy bear", "royal letter", "tickets"])
 space_music = ExtResource("2_1ew7p")
@@ -280,15 +281,16 @@ position = Vector2(1732, -314)
 dialog_title = "test_planet"
 
 [node name="PlanetX" parent="." instance=ExtResource("4_jhfi4")]
-position = Vector2(3602, 3221)
+position = Vector2(749, 327)
 dialog_title = "PlanetX"
 active = true
 hidden_body = true
+image = ExtResource("18_03u2r")
 
 [node name="Asteroids" type="Node2D" parent="."]
 
 [node name="ComicFan" parent="Asteroids" instance=ExtResource("5_3du45")]
-position = Vector2(-194, 4676)
+position = Vector2(-1694, 315)
 active = true
 
 [node name="Emma" parent="Asteroids" instance=ExtResource("5_3du45")]

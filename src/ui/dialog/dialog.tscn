@@ -221,6 +221,9 @@ process_mode = 3
 wait_time = 0.1
 one_shot = true
 
+[node name="ChatterSound" type="AudioStreamPlayer" parent="CutsceneDialogBox"]
+bus = &"SFX"
+
 [node name="LiveDialogBox" type="Control" parent="."]
 anchors_preset = 0
 anchor_right = 1.0
@@ -291,6 +294,9 @@ one_shot = true
 
 [node name="EndTimer" type="Timer" parent="LiveDialogBox"]
 one_shot = true
+
+[node name="ChatterSound" type="AudioStreamPlayer" parent="LiveDialogBox"]
+bus = &"SFX"
 
 [connection signal="dialog_finished" from="CutsceneDialogBox" to="." method="_on_dialog_finished"]
 [connection signal="timeout" from="CutsceneDialogBox/Rect/Timer" to="CutsceneDialogBox" method="_on_Timer_timeout"]

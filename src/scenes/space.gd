@@ -26,6 +26,10 @@ var space_dialog_index = 0
 var game_stage = -1
 enum STAGE {PREGAME = -1, CYCLE1, CYCLE2, CYCLE3, ENDING}
 
+const scene_names = ["planet1", "planet2", "planet3", "planet4", 
+	"planet5", "planet6", "planet7"]
+var scene_name = ""
+
 
 @export var limit = 100000
 
@@ -75,6 +79,8 @@ func on_spaceship_approached_station(body):
 func on_spaceship_approached_planet(body):
 	$BGM.stream = dialog_music
 	$BGM.play()
+	
+	scene_name = body.get_dialog_title()
 	play_dialog(body.get_dialog_title())
 	planets_visited += 1
 	
@@ -104,9 +110,9 @@ func _on_cutscene_controller_item_chosen(item, correct):
 	inventory.erase(item)
 	UI.set_items(inventory)
 	if correct:
-		GlobalNode.souvenirs[planets_visited-1] = true
-		$Spaceship/Sprite/Souvenirs.get_child(planets_visited-1).visible = true
-		$CanvasLayer/BoxEnding/Stickers.get_child(planets_visited-1).visible = true
+		GlobalNode.souvenirs[scene_names.find(scene_name)-1] = true
+		$Spaceship/Sprite/Souvenirs.get_child(scene_names.find(scene_name)-1).visible = true
+		$CanvasLayer/BoxEnding/Stickers.get_child(scene_names.find(scene_name)-1).visible = true
 		if item["TITLE"].to_lower() == "feather":
 			replace_space_dialog("radio2", "radio2_right")
 

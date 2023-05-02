@@ -71,8 +71,8 @@ size = Vector2(53.882, 36.3354)
 
 [node name="Spaceship" type="CharacterBody2D"]
 script = ExtResource("1_2sslo")
-ACCELERATION_STRENGTH = 4.0
-MAX_SPEED = 400.0
+ACCELERATION_STRENGTH = 3.5
+MAX_SPEED = 320.0
 DASH_SPEED = 2.0
 hugo_sprite = ExtResource("2_cvoyj")
 without_scarf_sprite = ExtResource("3_1cq7r")
