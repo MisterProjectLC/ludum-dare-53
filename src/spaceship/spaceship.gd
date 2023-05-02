@@ -69,7 +69,7 @@ func manager_acceleration(delta):
 		$Sprite/SmokeCloud.visible = false
 	
 	if move_velocity.length() > MAX_SPEED:
-		move_velocity = lerp(move_velocity, move_velocity.normalized()*MAX_SPEED, 0.75)
+		move_velocity = lerp(move_velocity, move_velocity.normalized()*MAX_SPEED, 0.6*delta)
 	
 	if global_position.x > limit:
 		global_position.x = -limit + 100

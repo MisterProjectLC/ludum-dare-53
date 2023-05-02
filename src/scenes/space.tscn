@@ -357,8 +357,10 @@ image = ExtResource("27_d45o7")
 
 [node name="Spaceship" parent="." instance=ExtResource("1_16udo")]
 scale = Vector2(0.1, 0.1)
-ACCELERATION_STRENGTH = 0.5
-MAX_SPEED = 40.0
+ACCELERATION_STRENGTH = 0.6
+MAX_SPEED = 1.5
+FUEL_TO_DASH = 3
+DASH_SPEED = 5.0
 
 [node name="CameraFollower" parent="." instance=ExtResource("2_g1kqm")]
 
