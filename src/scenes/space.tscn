@@ -354,7 +354,6 @@ active = true
 [node name="Station" parent="." instance=ExtResource("4_57lwj")]
 position = Vector2(-1073, 2468)
 dialog_title = "companion0"
-active = true
 image = ExtResource("27_d45o7")
 
 [node name="Spaceship" parent="." instance=ExtResource("1_16udo")]

@@ -8,6 +8,9 @@ class_name AstralBody
 
 @onready var area = $Area2D
 
+var visited = false
+
+
 signal spaceship_approached(planet)
 
 
@@ -32,15 +35,3 @@ func _on_area_2d_body_entered(_body):
 	
 	set_active(false)
 	emit_signal("spaceship_approached", self)
-
-
-func _on_long_range_detector_body_entered(_body):
-	if !active:
-		return
-	
-	$ZoomSprite.visible = true
-	$DetectionSound.play()
-
-
-func _on_long_range_detector_body_exited(_body):
-	$ZoomSprite.visible = false

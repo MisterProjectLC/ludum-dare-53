@@ -96,12 +96,12 @@ libraries = {
 layout_mode = 0
 offset_left = 64.0
 offset_top = 67.0
-offset_right = 611.0
+offset_right = 741.0
 offset_bottom = 154.0
 theme_override_colors/font_color = Color(1, 0.866667, 0.65098, 1)
 theme_override_fonts/font = ExtResource("5_44c5o")
 theme_override_font_sizes/font_size = 80
-text = "Courrier de Cadeau"
+text = "Courrier de Souvenirs"
 autowrap_mode = 2
 
 [node name="Buttons" type="Control" parent="."]
